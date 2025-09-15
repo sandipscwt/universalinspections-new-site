@@ -5,6 +5,7 @@ import Container from "@/components/container";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Button from "@/components/layout/button";
 
 
 const HeroSection: React.FC = () => {
@@ -25,26 +26,15 @@ const HeroSection: React.FC = () => {
                 {/* Content container */}
                 <div className={`relative ${style.heroContent} z-10 flex flex-col items-start justify-center  text-white`}>
 
-                    <h1 className="text-[clamp(32px,4vw,58px)] prompt-bold  max-w-4xl mb-[22px] leading-[clamp(40px,4vw,68px)] sm:leading-snug md:leading-normal">
+                    <h1 className="text-[clamp(32px,4vw,58px)] prompt-bold  max-w-3xl mb-[22px] !leading-[clamp(30px,5vw,68px)] sm:leading-snug md:leading-normal">
                         We take the worries out of your purchases and repairs
                     </h1>
                     <p className="text-[clamp(20px,4vw,26px)] font-glacial-regular  max-w-5xl mb-[30px] sm:mb-10 px-2 sm:px-0">
                         Pre-Existing Mechanical Breakdowns Can Cost Thousands Of Dollars!
                     </p>
 
-                    <div className="inline-flex rounded-md overflow-hidden text-[clamp(12px,4vw,14px)] ">
-                        <Link
-                            href="/book"
-                            className="bg-[#DAA628] hover:bg-[#F4A300] px-5 py-3 text-[#2C3037] flex items-center "
-                        >
-                            Get Started
-                        </Link>
-                        <Link
-                            href="/book"
-                            className="bg-[#BD632F] rounded-r-md hover:bg-[#e77026] px-4 py-3 flex items-center justify-center"
-                        >
-                            <ArrowRight className="w-5 h-5 text-white" />
-                        </Link>
+                    <div className="p-0">
+                        <Button title="Get Started" href="/book" />
                     </div>
 
                 </div>
@@ -58,21 +48,29 @@ const HeroSection: React.FC = () => {
                             <Feature
                                 imgSrc="/images/business_icon.png"
                                 title="24+"
+                                width={51}
+                                height={51}
                                 subtitle="Years in Business"
                             />
                             <Feature
                                 imgSrc="/images/veteran_icon.png"
                                 title="Veteran"
+                                width={34}
+                                height={52}
                                 subtitle="Owned"
                             />
                             <Feature
                                 imgSrc="/images/expert_icon.png"
                                 title="Expert"
+                                width={50}
+                                height={51}
                                 subtitle="Certified Inspectors"
                             />
                             <Feature
                                 imgSrc="/images/vehical_number.png"
                                 title="25,000+"
+                                width={52}
+                                height={52}
                                 subtitle="Vehicles Inspected"
                             />
                         </div>
@@ -88,11 +86,22 @@ type FeatureProps = {
     imgSrc: string;
     title: string;
     subtitle: string;
+    width: number;
+    height: number;
 };
 
-const Feature: React.FC<FeatureProps> = ({ imgSrc, title, subtitle }) => (
-    <div className="flex items-start space-x-3">
-        <img src={imgSrc} alt={title} className="w-17 h-17 sm:w- 6 sm:h-6 object-contain" />
+const Feature: React.FC<FeatureProps> = ({ imgSrc, title, subtitle, width, height }) => (
+    <div className="flex items-start space-x-4">
+        <div className=" w-[52px]">
+            <Image
+                src={imgSrc}
+                alt={title}
+                width={width}
+                height={height}
+                className=" object-contain"
+            />
+        </div>
+
         <div className="text-left">
             <p className="text-white prompt-bold text-[clamp(24px,4vw,32px)] ">{title}</p>
             <p className="text-[clamp(14px,4vw,18px)] font-glacial-regular text-white">{subtitle}</p>

@@ -7,6 +7,7 @@ import { Star } from 'lucide-react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Image from 'next/image';
+import Container from '@/components/container';
 
 const testimonials = [
     {
@@ -54,18 +55,22 @@ export default function TestimonialsSection() {
     return (
         <section className="bg-[#FFFFFF] py-[clamp(30px,4vw,100px)] ">
 
+
             <div
                 className=" mx-auto "
             >
-                {/* Header */}
-                <div className="text-center prompt-bold mb-[clamp(20px,5vw,48px)]">
-                    <h2 className="text-[clamp(24px,5vw,36px)] font-bold text-[#2C3037]">
-                        Testimonials
-                    </h2>
-                    <p className="text-[clamp(14px,3vw,16px)] font-glacial-regular text-[#2C3037] mt-[clamp(8px,3vw,16px)]">
-                        Don't just take our word. Here's what our valued clients have to say
-                    </p>
-                </div>
+                <Container>
+                    {/* Header */}
+                    <div className="text-center prompt-bold mb-[clamp(20px,5vw,48px)]">
+                        <h2 className="text-[clamp(24px,5vw,36px)] font-bold text-[#2C3037]">
+                            Testimonials
+                        </h2>
+                        <p className="text-[clamp(14px,3vw,16px)] font-glacial-regular text-[#2C3037] mt-[clamp(8px,3vw,16px)]">
+                            Don't just take our word. Here's what our valued clients have to say
+                        </p>
+                    </div>
+                </Container>
+
 
                 {/* Swiper Slider */}
                 <div className="relative">
@@ -126,7 +131,7 @@ export default function TestimonialsSection() {
                                 <SwiperSlide key={testimonial.id} className="flex justify-center">
                                     <div
                                         className={`bg-gray-50 rounded-[1px] mt-0.5 p-6 md:p-8 shadow-lg flex flex-col justify-between 
-    border border-[#DAA6284D] transition-transform duration-500 w-full max-w-[700px]
+    border border-[#DAA6284D] transition-transform duration-500 w-full max-w-[700px]  min-w-[440px]
     ${isActive ? "scale-105 opacity-100 z-10" : "scale-95 opacity-60"}`}
                                     >
                                         {/* Stars */}

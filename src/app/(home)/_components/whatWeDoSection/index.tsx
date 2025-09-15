@@ -58,11 +58,11 @@ const WhatWeDoSection = () => {
                     />
                 </div>
 
-                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="relative z-10 max-w-7xl mx-auto  sm:px-6 lg:px-8">
                     {/* Header */}
                     <div className="mb-[clamp(20px,4vw,48px)]">
                         <h2 className="text-[clamp(28px,4vw,38px)]   prompt-bold text-[#2C3037]">What We Do</h2>
-                        <p className="text-[clamp(12px,4vw,16px)] font-glacial-regular text-[#2C3037] mt-[clamp(7px,4vw,20px)]">
+                        <p className="text-[clamp(12px,4vw,16px)] font-glacial-regular text-[#2C3037] mt-[clamp(7px,4vw,18px)]">
                             Professional vehicle inspection services you can trust.
                         </p>
                     </div>
@@ -76,7 +76,7 @@ const WhatWeDoSection = () => {
                             >
 
                                 <div>
-                                    <Image src={service.icon} alt={service.title} width={62} height={62}     className="object-cover" />
+                                    <Image src={service.icon} alt={service.title} width={62} height={62} className="object-cover" />
                                 </div>
                                 <h3 className={`text-2xl prompt-bold mt-3  ${service.color}`}>{service.title}</h3>
                                 <p className="text-base prompt-regular  text-[#2C3037] mt-2">{service.description}</p>
@@ -90,7 +90,7 @@ const WhatWeDoSection = () => {
             {/* CTA Banner */}
             <div className={`absolute bottom-0 right-0 gap-5 bg-[#BD632F] rounded-tl-lg flex flex-col sm:flex-row justify-between p-6 text-white ${style.ctaBanner}`}>
                 <div className="flex items-center gap-4">
-                    <Image src="/images/Inspections_logo.png" alt="Need Service" width={50} height={50} />
+                    <Image src="/images/Inspections_logo.png" alt="Need Service" width={70} height={70} />
                     <div>
                         <h4 className="prompt-bold text-[clamp(16px,4vw,24px)] w-full lg:w-[70%]">Need Any Service</h4>
                     </div>
@@ -103,15 +103,15 @@ const WhatWeDoSection = () => {
                             width={0}
                             height={0}
                             style={{
-                                width: 'clamp(20px, 4vw, 22px)',
-                                height: 'clamp(20px, 4vw, 22px)',
+                                width: 'clamp(20px, 4vw, 25px)',
+                                height: 'clamp(20px, 4vw, 25px)',
                             }}
                             className="object-contain invert"
                         />
                     </div>
                     <div className="ml-3">
-                        <p className="text-[#2A2D34] prompt-bold text-[clamp(14px,4vw,18px)]">Call Now <Link href={"tel:(205) 558-8284"} className="text-white">(205) 558-8284</Link></p>
-                        <p className="text-[#2A2D34] prompt-bold text-[clamp(14px,4vw,18px)]">Toll-Free <Link href={"tel:1-833-935-1888"} className="text-white">1-833-935-1888</Link></p>
+                        <p className="text-[#2A2D34] font-glacial-bold text-[clamp(14px,4vw,18px)]">Call Now <Link href={"tel:(205) 558-8284"} className="text-white">(205) 558-8284</Link></p>
+                        <p className="text-[#2A2D34] font-glacial-bold text-[clamp(14px,4vw,18px)]">Toll-Free <Link href={"tel:1-833-935-1888"} className="text-white">1-833-935-1888</Link></p>
                     </div>
                 </div>
             </div>

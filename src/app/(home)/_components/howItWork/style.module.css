@@ -1,31 +1,31 @@
 .customWrapper>div:nth-child(2) {
-    margin-left: 1.5rem;
+    margin-left: 30px !important;
     /* 24px */
 }
 
 .customWrapper>div:nth-child(3) {
-    margin-left: 3rem;
+    margin-left: 48px !important;
     /* 48px */
 }
 
 .customWrapper>div:nth-child(4) {
-    margin-left: 4.5rem;
+    margin-left: 72px !important;
     /* 72px */
 }
 
 @media (max-width: 768px) {
     .customWrapper>div:nth-child(2) {
-        margin-left: 1rem;
+        margin-left: 1rem !important;
         /* 16px */
     }
 
     .customWrapper>div:nth-child(3) {
-        margin-left: 2rem;
+        margin-left: 2rem !important;
         /* 32px */
     }
 
     .customWrapper>div:nth-child(4) {
-        margin-left: 3rem;
+        margin-left: 3rem !important;
         /* 48px */
     }
 }

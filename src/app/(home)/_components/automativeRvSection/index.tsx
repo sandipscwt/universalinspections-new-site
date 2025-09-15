@@ -1,4 +1,5 @@
 import Container from '@/components/container';
+import Button from '@/components/layout/button';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -75,7 +76,7 @@ const AutomativeRvSection: React.FC = () => {
                         </div>
 
                         {/* Right Column - Service Items */}
-                        <div className="flex flex-col gap-8 px-4 sm:px-6 lg:px-0 ">
+                        <div className="flex flex-col gap-9  sm:px-6 lg:px-0 ">
                             {services.map((service, index) => (
                                 <div key={index} className="flex items-start gap-5 ">
                                     {/* Icon */}
@@ -102,26 +103,15 @@ const AutomativeRvSection: React.FC = () => {
                             ))}
 
                             {/* Button */}
-                            <div className="inline-flex rounded-md overflow-hidden text-sm sm:text-sm ">
-                                <Link
-                                    href="/book"
-                                    className="bg-[#DAA628] hover:bg-[#F4A300] px-5 py-3 text-[#2C3037] flex items-center "
-                                >
-                                    Get Started
-                                </Link>
-                                <Link
-                                    href="/book"
-                                    className="bg-[#BD632F] rounded-r-md hover:bg-[#e77026] px-4 py-3 flex items-center justify-center"
-                                >
-                                    <ArrowRight className="w-5 h-5 text-white" />
-                                </Link>
+                            <div className="p-0">
+                                <Button title="Get Started" href="/book" />
                             </div>
                         </div>
-                        
+
                     </div>
                 </Container>
             </div>
-            
+
         </section>
     );
 };
