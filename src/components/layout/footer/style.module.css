@@ -1,0 +1,5 @@
+.clamp {
+    overflow: hidden;
+    max-height: 7.5em; 
+    line-height: 1.5em;
+}

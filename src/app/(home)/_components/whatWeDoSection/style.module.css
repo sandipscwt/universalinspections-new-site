@@ -1,0 +1,47 @@
+.customBoxWrapper>div:nth-child(1) {
+    margin-top:200px;
+}
+
+.customBoxWrapper>div:nth-child(2) {
+    margin-top: 100px;
+}
+
+.customBoxWrapper>div:nth-child(5) {
+    position: relative;
+    transform: translateY(-100px);
+}
+
+.customBoxWrapper>div:nth-child(6) {
+    position: relative;
+    transform: translateY(-199px);
+}
+
+@media (max-width:640) {
+    .ctaBanner {
+        /* position: relative; */
+        bottom: 0px;
+        right: auto;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .customBoxWrapper>div:nth-child(1) {
+        margin-top: auto;
+    }
+
+    .customBoxWrapper>div:nth-child(2) {
+        margin-top: auto;
+    }
+
+    .customBoxWrapper>div:nth-child(5) {
+        position: relative;
+        transform: translateY(0px);
+    }
+
+    .customBoxWrapper>div:nth-child(6) {
+        position: relative;
+        transform: translateY(0px);
+        margin-bottom: clamp(190px,4vw,314px);
+    }
+
+}

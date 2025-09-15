@@ -1,0 +1,19 @@
+.navItems a{
+font-size:small ;
+}
+.customLg {
+    display: none;
+}
+
+.hideOnCustomLg {
+    display: flex;
+}
+
+@media (min-width: 1260px) {
+    .customLg {
+        display: flex;
+    }
+    .hideOnCustomLg {
+        display: none;
+    }
+}
