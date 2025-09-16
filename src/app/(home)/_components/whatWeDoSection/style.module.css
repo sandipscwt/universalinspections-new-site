@@ -16,7 +16,29 @@
     transform: translateY(-199px);
 }
 
-@media (max-width:640) {
+@media (max-width:1024px) {
+    .customBoxWrapper>div:nth-child(1) {
+        margin-top:auto;
+    }
+
+    .customBoxWrapper>div:nth-child(2) {
+        margin-top: auto;
+    }
+
+    .customBoxWrapper>div:nth-child(5) {
+        position: relative;
+        transform: translateY(0px);
+    }
+
+    .customBoxWrapper>div:nth-child(6) {
+        position: relative;
+        transform: translateY(0px);
+        margin-bottom: clamp(190px,4vw,314px);
+    }
+
+}
+
+@media (max-width:640px) {
     .ctaBanner {
         /* position: relative; */
         bottom: 0px;

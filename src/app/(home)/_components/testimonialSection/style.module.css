@@ -1,0 +1,21 @@
+.colon_img_top {
+    position: absolute;
+    left: 50px;
+    top: 44px;
+}
+
+.colon_img_bottom {
+    position: absolute;
+    right: 50px;
+    bottom: 75px;
+}
+
+@media (max-width: 640px) {
+    .swiper_item {
+        padding-left: 20px;
+        padding-right: 20px;
+        /* width: 90% !important; */
+        /* border: 1px solid red; */
+
+    }
+}

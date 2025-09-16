@@ -50,13 +50,13 @@ const Header: FC = () => {
                                         />
                                     </div>
                                 </div>
-                                <span className="text-[#DAA628] text-base font-glacial-regular">
+                                <span className="text-[#DAA628] text-[clamp(12px,4vw,16px)]  font-glacial-regular">
                                     Call Now{" "}
                                     <Link href="tel:(205) 558-8284" className="text-white">
                                         (205) 558-8284
                                     </Link>
                                 </span>
-                                <span className="text-[#DAA628] text-base font-glacial-regular">
+                                <span className="text-[#DAA628] text-[clamp(12px,4vw,16px)]  font-glacial-regular">
                                     Toll-Free{" "}
                                     <Link href="tel:1-833-935-1888" className="text-white">
                                         1-833-935-1888
@@ -76,7 +76,7 @@ const Header: FC = () => {
                                     className="object-contain invert"
                                 />
                             </div>
-                            <span className="text-[#DAA628] text-base font-glacial-regular text-center md:text-left">
+                            <span className="text-[#DAA628] text-[clamp(12px,4vw,16px)] font-glacial-regular text-center md:text-left">
                                 Mail Address:{" "}
                                 <Link href="mailto:info@universalinspections.com" className="text-white">
                                     info@universalinspections.com
@@ -115,7 +115,7 @@ const Header: FC = () => {
                                         
                                                 >
                                                     <span className={`text-white text-[14px]  font-glacial-regular`}>Opportunities</span>
-                                                    <ChevronDown className="w-4 h-4 text-white" />
+                                                    <ChevronDown className="w-6 h-6 text-white" />
                                                 </button>
                                                 {/* Dropdown */}
                                                 {desktopOpportunitiesOpen && (
@@ -136,6 +136,7 @@ const Header: FC = () => {
 
                                             <Link
                                                 key={item.href}
+                                                style={{fontWeight:300 }}
                                                 href={item.href}
                                                 className={`text-white  text-[14px] ${pathname === item.href ? "font-glacial-bold" : "font-glacial-regular"}`}
                                             >
@@ -150,10 +151,10 @@ const Header: FC = () => {
                         {/* Book Button */}
                         <div className={`hidden ${style.customLg} rounded overflow-hidden shadow-md`}>
                             <Link href="/book" className="flex cursor-pointer">
-                                <span className="bg-[#FF9800] hover:bg-[#F4A300] px-5 py-4 text-[#2C3037] font-glacial-regular flex items-center text-[clamp(12px,4vw,14px)]">
+                                <span className="bg-[#DAA628]  px-5 py-4 text-[#2C3037] font-glacial-regular flex items-center text-[clamp(12px,4vw,14px)]">
                                     Book an Inspection Today!
                                 </span>
-                                <span className="bg-[#BD632F] hover:bg-[#a85a2b] px-4 py-2 flex items-center justify-center">
+                                <span className="bg-[#BD632F] px-4 py-2 flex items-center justify-center">
                                     <ArrowRight className="w-5 h-5 text-white" />
                                 </span>
                             </Link>
@@ -162,7 +163,7 @@ const Header: FC = () => {
                         {/* Mobile Menu Button */}
                         <div className={`flex items-center ${style.hideOnCustomLg}`}>
                             <button onClick={() => setMenuOpen(!menuOpen)} className="text-white">
-                                {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                                {menuOpen ? <X className="w-8 h-8" /> : <Menu className="w-9 h-9" />}
                             </button>
                         </div>
                     </div>
@@ -207,9 +208,7 @@ const Header: FC = () => {
                             </div>
 
 
-
-
-                            <Link href="/book" className="bg-[#FF9800] hover:bg-[#F4A300] px-4 py-2 rounded text-[#2C3037] font-medium text-center mt-4 flex items-center justify-center gap-2" onClick={() => setMenuOpen(false)}>
+                            <Link href="/book" className="bg-[#DAA628]  px-4 py-2 rounded text-[#2C3037] font-medium text-center mt-4 flex items-center justify-center gap-2" onClick={() => setMenuOpen(false)}>
                                 Book an Inspection Today! <ArrowRight className="w-5 h-5 text-white" />
                             </Link>
                         </nav>

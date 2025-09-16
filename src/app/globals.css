@@ -8,13 +8,47 @@
     --foreground: #171717;
     --font-glacial: 'Glacial Indifference', sans-serif;
 }
+
 .section-spacing-y {
-  padding-block: clamp(40px, 6vw, 167px);
-}
-.section-spacing-y-top {
-  padding-top: clamp(30px, 6vw, 167px);
+    padding-block: clamp(40px, 6vw, 167px);
 }
 
+.section-spacing-y-top {
+    padding-top: 167px
+}
+
+
+@media (max-width:1270px) {
+    .section-spacing-y-top {
+        padding-top: 140px;
+    }
+
+    .line-borderPadding {
+        padding-bottom: 10px;
+    }
+}
+@media (max-width:1160px) {
+    .section-spacing-y-top {
+        padding-top: 120px ;
+    }
+
+    .line-borderPadding {
+        padding-bottom: 10px;
+    }
+}
+@media (max-width:1024px) {
+    .section-spacing-y-top {
+        padding-top: 40px ;
+    }
+}
+@media (max-width:576px) {
+    .section-spacing-y-top {
+        padding-top: 40px ;
+    }
+    .line-borderPadding {
+        padding-bottom: 20px;
+    }
+}
 /* --font-prompt */
 .prompt {
     font-family: "Prompt", "Prompt Fallback";

@@ -35,18 +35,18 @@ const services = [
 const AutomativeRvSection: React.FC = () => {
     return (
         <section className="bg-white section-spacing-y-top">
-            <Container className='section-spacing-y-top'>
+            <Container className=''>
                 {/* Header Section */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
                     {/* Left Side - Heading */}
-                    <div className="lg:pr-6 border-b lg:border-b-0 lg:border-r border-black">
+                    <div className="lg:pr-6 border-b lg:border-b-0 lg:border-r border-black line-borderPadding">
                         <h2 className="text-[clamp(28px,4vw,38px)]  prompt-bold text-[#2C3037]  leading-[clamp(30px,4vw,48px)]">
                             Automotive, RV, Marine,<br /> Motorcycles and Commercial
                         </h2>
                     </div>
 
                     {/* Right Side - Paragraph */}
-                    <div className="lg:pl-6 pt-[clamp(1px,4vw,4px)] lg:pt-0">
+                    <div className="lg:pl-2 pt-[clamp(7px,4vw,4px)] lg:pt-0">
                         <p className="text-[clamp(12px,4vw,16)] font-glacial-regular text-[#2C3037] leading-relaxed">
                             Universal Inspections proudly maintains a network of highly skilled
                             mechanical and electronics technicians across the nation. We deliver clear,
@@ -70,7 +70,7 @@ const AutomativeRvSection: React.FC = () => {
                                     layout="responsive"
                                     width={556}
                                     height={641}
-                                    className="object-cover relative transform translate-y-[-10%]"
+                                    className="object-cover relative transform translate-y-[0%] lg:translate-y-[-10%]"
                                 />
                             </div>
                         </div>

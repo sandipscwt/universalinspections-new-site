@@ -29,7 +29,7 @@ const HeroSection: React.FC = () => {
                     <h1 className="text-[clamp(32px,4vw,58px)] prompt-bold  max-w-3xl mb-[22px] !leading-[clamp(30px,5vw,68px)] sm:leading-snug md:leading-normal">
                         We take the worries out of your purchases and repairs
                     </h1>
-                    <p className="text-[clamp(20px,4vw,26px)] font-glacial-regular  max-w-5xl mb-[30px] sm:mb-10 px-2 sm:px-0">
+                    <p className="text-[clamp(20px,4vw,26px)] font-glacial-regular  max-w-5xl mb-[30px] sm:mb-10  sm:px-0">
                         Pre-Existing Mechanical Breakdowns Can Cost Thousands Of Dollars!
                     </p>
 

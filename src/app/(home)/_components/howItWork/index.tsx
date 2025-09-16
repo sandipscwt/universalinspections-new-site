@@ -32,7 +32,7 @@ const HowItWorks: NextPage = () => {
             <Container>
 
                 {/* Header */}
-                <div className=" mx-auto text-center px-4">
+                <div className=" mx-auto text-center ">
                     <h2 className="text-[clamp(28px,4vw,38px)] prompt-bold text-[#2A2D34]">
                         How It Works
                     </h2>
@@ -42,27 +42,28 @@ const HowItWorks: NextPage = () => {
                 </div>
 
                 {/* Image and Steps */}
-                <div className="max-w-6xl mx-auto pt-[30px] grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4">
+                <div className=" grid grid-cols-1 lg:grid-cols-2  ">
 
                     {/* Left Image Section */}
-                    <div className="w-full flex justify-center">
+                    <div className={`relative left-0 h-[480px] w-[100%] lg:left-[-150px] lg:w-[705px] lg:h-[480px] flex justify-center ${style.section_img}`}>
                         <Image
                             src="/images/work_bg.png"
                             alt="Mechanic with car lift"
-                            width={705}
-                            height={537}
-                            className="object-contain w-full max-w-md md:max-w-full"
+                            fill
+                            className="w-[100%] h-[100%] object-fill"
                         />
                     </div>
 
                     {/* Right Steps Section */}
-                    <div className={`space-y-4 ${style.customWrapper}`}>
+                    <div className={`lg:space-y-6 md:space-y-4 space-y-2 items-start ${style.customWrapper}`}>
                         {steps.map((step) => (
                             <div
                                 key={step.id}
-                                className={`flex bg-white  items-center space-x-4 border rounded px-4 py-5 hover:shadow-md transition-shadow cursor-pointer `}
+                                className={`flex bg-white  items-center space-x-4 border border-[#DAA6284D] rounded-[1px]  px-5 py-4 hover:shadow-md transition-shadow cursor-pointer `}
                             >
-                                <div className=' relative h-[28px] w-[28px]'>
+                                <div 
+                                className="relative h-[28px] w-[28px]"
+                                >
                                     <Image
                                         src={step.icon}
                                         alt={step.title}
@@ -76,7 +77,6 @@ const HowItWorks: NextPage = () => {
                     </div>
 
                 </div>
-
             </Container>
         </section>
 

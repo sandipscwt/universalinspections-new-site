@@ -14,7 +14,7 @@ const steps = [
 
 const ScheduleInspectionSection: NextPage = () => {
     return (
-        <section className='bg-white px-4 py-[clamp(30px,4vw,100px)]'>
+        <section className='bg-white  py-[clamp(30px,4vw,100px)]'>
             <Container>
                 <div className="grid md:grid-cols-2 gap-10 items-center">
                     {/* Left Side - Text and Cards */}
@@ -37,9 +37,13 @@ const ScheduleInspectionSection: NextPage = () => {
 
 
                                     <div className="flex items-start space-x-4 relative z-10">
-                                        <div className="w-[clamp(8px,4vw,15px)] h-[clamp(8px,4vw,15px)] bg-[#BD632F] rounded-[3px] mt-1"></div>
+                                        <div className="w-max">
+                                            <div className="!w-[15px] !h-[15px] bg-[#BD632F] rounded-[3px] mt-1"></div>
+                                        </div>
+
+
                                         <div>
-                                            <p className="text-[clamp(12px,4vw,16px)] text-[#203740] font-glacial-bold">
+                                            <p className="text-[clamp(12px,4vw,16px)] w-[100%] sm:w-[90%] lg:w-[90%]  text-[#203740] font-glacial-bold">
                                                 {step.title}
                                             </p>
                                         </div>

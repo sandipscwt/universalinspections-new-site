@@ -9,7 +9,7 @@ import Button from '@/components/layout/button';
 
 const WarrantyInspection: NextPage = () => {
     return (
-        <section className="bg-[#FFFFFF] pt-[clamp(3px,4vw,10px)]">
+        <section className="bg-[#FFFFFF] pt-[clamp(10px,4vw,0px)]">
             <Container>
                 <div className={`relative py-[clamp(40px,4vw,82px)] px-[clamp(40px,4vw,86px)]  rounded-lg overflow-hidden ${style.bgGradient}`}>
 

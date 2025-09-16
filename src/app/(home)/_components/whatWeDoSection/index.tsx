@@ -74,7 +74,6 @@ const WhatWeDoSection = () => {
                                 key={idx}
                                 className="bg-white h-[278px] rounded-lg shadow-sm border border-[#DAA6284D]  transition hover:shadow-md flex flex-col justify-between py-[40px] px-[20px]"
                             >
-
                                 <div>
                                     <Image src={service.icon} alt={service.title} width={62} height={62} className="object-cover" />
                                 </div>
