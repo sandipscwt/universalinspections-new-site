@@ -43,7 +43,7 @@ const ScheduleInspectionSection: NextPage = () => {
 
 
                                         <div>
-                                            <p className="text-[clamp(12px,4vw,16px)] w-[100%] sm:w-[90%] lg:w-[90%]  text-[#203740] font-glacial-bold">
+                                            <p className="text-[clamp(12px,4vw,16px)] w-[100%] sm:w-[90%] lg:w-[95%]  text-[#203740] font-glacial-bold">
                                                 {step.title}
                                             </p>
                                         </div>
@@ -56,20 +56,22 @@ const ScheduleInspectionSection: NextPage = () => {
 
 
 
-                        <div className="inline-flex mt-[clamp(15px,4vw,30px)] rounded-md overflow-hidden text-[clamp(12px,4vw,14px)] ">
-                            <Link
-                                href="/book"
-                                className="bg-[#DAA628] hover:bg-[#F4A300] px-6 py-4 text-[#2C3037] flex items-center "
-                            >
-                                Book an Inspection Today!
-                            </Link>
-                            <Link
-                                href="/book"
-                                className="bg-[#BD632F] rounded-r-md hover:bg-[#e77026] px-4 py-3 flex items-center justify-center"
-                            >
-                                <ArrowRight className="w-5 h-5 text-white" />
+
+                        <div className="inline-flex mt-[clamp(15px,4vw,30px)] rounded-md overflow-hidden text-[clamp(12px,4vw,14px)]">
+                            <Link href="/book" className="flex">
+                                {/* Text side → 206px (258 - 52) */}
+                                <span className="bg-[#DAA628] text-[#2C3037] flex items-center justify-center w-[206px] h-[52px]">
+                                    Book an Inspection Today!
+                                </span>
+
+                                {/* Arrow side → 52px */}
+                                <span className="bg-[#BD632F] flex items-center justify-center w-[52px] h-[52px]">
+                                    <ArrowRight className="w-5 h-5 text-white" />
+                                </span>
                             </Link>
                         </div>
+
+
 
 
                     </div>

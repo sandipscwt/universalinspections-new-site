@@ -8,8 +8,8 @@ import style from "./style.module.css";
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-gray-300">
-            <Container className="space-y-10 py-10">
+        <footer className="bg-gray-900 text-gray-300 py-[clamp(25px,4vw,70px)]">
+            <Container className="space-y-10 ">
                 {/* Top Section */}
                 <div className="grid grid-cols-1 md:grid-cols-[40%_23%_30%] gap-6 md:gap-8">
                     {/* Logo and Contact (40%) */}

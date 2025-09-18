@@ -1,0 +1,23 @@
+.heroSection {
+    position: relative;
+
+}
+
+.heroContent {
+    padding-block: 150px;
+    padding-bottom: 240px;
+}
+
+.heroSection::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(270deg, rgba(44, 48, 55, 0.5) 0%, rgba(44, 48, 55, 0.5) 100%);
+    z-index: 1;
+}
+
+@media (max-width:1024px) {
+    .heroContent {
+        padding-block: 50px;
+    }
+}
