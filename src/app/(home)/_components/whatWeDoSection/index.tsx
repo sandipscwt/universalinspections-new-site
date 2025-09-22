@@ -46,7 +46,7 @@ const services = [
 
 const WhatWeDoSection = () => {
     return (
-        <section className="relative py-[clamp(30px,4vw,100px)] bg-white overflow-hidden ">
+        <section className={`${style.container} overflow-hidden `} >
             <Container>
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 opacity-20 ">
@@ -61,8 +61,8 @@ const WhatWeDoSection = () => {
                 <div className="relative z-10 max-w-7xl mx-auto  sm:px-6 lg:px-8">
                     {/* Header */}
                     <div className="mb-[clamp(20px,4vw,48px)]">
-                        <h2 className="text-[clamp(28px,4vw,38px)]   prompt-bold text-[#2C3037]">What We Do</h2>
-                        <p className="text-[clamp(12px,4vw,16px)] font-glacial-regular text-[#2C3037] mt-[clamp(7px,4vw,18px)]">
+                        <h2 className={`${style.title}`}>What We Do</h2>
+                        <p className={`${style.subTitle}`}>
                             Professional vehicle inspection services you can trust.
                         </p>
                     </div>
@@ -72,7 +72,7 @@ const WhatWeDoSection = () => {
                         {services.map((service, idx) => (
                             <div
                                 key={idx}
-                                className="bg-white h-[278px] rounded-lg shadow-sm border border-[#DAA6284D]  transition hover:shadow-md flex flex-col justify-between py-[40px] px-[20px]"
+                                className={`${style.cardBox}`}
                             >
                                 <div>
                                     <Image src={service.icon} alt={service.title} width={62} height={62} className="object-cover" />

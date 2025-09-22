@@ -11,9 +11,9 @@ import Button from "@/components/layout/button";
 const HeroSection: React.FC = () => {
     return (
         <section
-            className={`relative w-full  bg-contain  bg-center ${style.heroSection}`}
+            className={`${style.heroSection}`}
         >
-            <div className="absolute inset-0 z-0  ">
+            <div className="absolute inset-0 z-0">
                 <Image
                     src="/images/hero_img.png"
                     alt="Background"
@@ -24,12 +24,12 @@ const HeroSection: React.FC = () => {
 
             <Container>
                 {/* Content container */}
-                <div className={`relative ${style.heroContent} z-10 flex flex-col items-start justify-center  text-white`}>
+                <div className={` ${style.heroContent}`}>
 
-                    <h1 className="text-[clamp(32px,4vw,58px)] prompt-bold  max-w-3xl mb-[22px] !leading-[clamp(30px,5vw,68px)] sm:leading-snug md:leading-normal">
+                    <h1 className={`${style.heroheading} leading[clamp(50px,4vw,68px)]`}>
                         We take the worries out of your purchases and repairs
                     </h1>
-                    <p className="text-[clamp(20px,4vw,26px)] font-glacial-regular  max-w-5xl mb-[30px] sm:mb-10  sm:px-0">
+                    <p className={`${style.herosubtext}`}>
                         Pre-Existing Mechanical Breakdowns Can Cost Thousands Of Dollars!
                     </p>
 
@@ -92,19 +92,19 @@ type FeatureProps = {
 
 const Feature: React.FC<FeatureProps> = ({ imgSrc, title, subtitle, width, height }) => (
     <div className="flex items-start space-x-4">
-        <div className=" w-[52px]">
+        <div className={`${style.logoStyle}`}>
             <Image
                 src={imgSrc}
                 alt={title}
                 width={width}
                 height={height}
-                className=" object-contain"
+                className="object-contain object-center"
             />
         </div>
 
         <div className="text-left">
-            <p className="text-white prompt-bold text-[clamp(24px,4vw,32px)] ">{title}</p>
-            <p className="text-[clamp(14px,4vw,18px)] font-glacial-regular text-white">{subtitle}</p>
+            <p className={`${style.fearureTitle}`}>{title}</p>
+            <p className={`${style.featureSubtitle}`}>{subtitle}</p>
         </div>
     </div>
 );

@@ -1,0 +1,58 @@
+.responsivetext {
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: clamp(30px, 4vw, 48px);
+    color: #2C3037;
+    font-weight: 700;
+    font-family: 'Prompt', 'Prompt Fallback';
+}
+
+.responsivebodytext {
+    font-size: clamp(12px, 4vw, 16px);
+    line-height: clamp(16px, 4vw, 26px);
+    color: #2C3037;
+    font-family: var(--font-glacial);
+    font-weight: 400;
+}
+
+.serviceSection {
+    background-color: #F8F8F8;
+    margin-top: clamp(30px, 4vw, 70px);
+    padding-top: clamp(28px, 4vw, 28px);
+    padding-bottom: clamp(40px, 4vw, 80px);
+}
+
+.iconflexbox {
+    min-width: 58px;
+    height: 58px;
+    background-color: #EDEDED;
+    border-radius: 6px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+
+.serviceTitle {
+    color: #DAA628;
+    font-weight: 700;
+    font-family: 'Prompt', 'Prompt Fallback';
+    font-size: clamp(16px, 4vw, 20px);
+    line-height: clamp(26px, 4vw, 32px);
+}
+
+.description {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(12px, 4vw, 16px);
+    margin-top: 12px;
+    line-height: clamp(16px, 4vw, 26px);
+    color: #2C3037;
+}
+
+
+
+
+
+/* @media (min-width: 1024px) {
+
+} */

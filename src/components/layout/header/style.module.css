@@ -1,19 +1,110 @@
-.navItems a{
-font-size:small ;
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.callBox {
+    display: flex;
+    background-color: #BD632F;
+    height: 19px;
+    width: 19px;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+}
+
+.callText {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(11px, 2.5vw, 16px);
+    color: #FFFFFF;
+}
+
+.navItems a {
+    font-size: small;
+}
+
 .customLg {
-    display: none;
+    display: block;
 }
 
 .hideOnCustomLg {
+    display: none;
+}
+
+.navItems {
     display: flex;
 }
 
-@media (min-width: 1260px) {
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    /* margin-top: 2px; */
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.24);
+    width: max-content;
+    z-index: 50;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 200ms ease-in-out;
+}
+
+.group:hover .dropdownMenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.opportunitiesText {
+    color: white;
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 14px !important;
+    padding: 7px;
+    
+}
+
+@media (max-width: 768px) {
+    .callBox {
+        display: none;
+    }
+
+    .topBar {
+        justify-items: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .customLg {
+        display: none !important;
+    }
+
+}
+
+
+@media (max-width: 1300px) {
     .customLg {
         display: flex;
     }
-    .hideOnCustomLg {
+
+    .navItems {
         display: none;
     }
+
+    .hideOnCustomLg {
+        display: block;
+    }
 }
+
+/* @media (max-width: 768px) {
+    .customLg {
+        display: none;
+    }
+
+}  */

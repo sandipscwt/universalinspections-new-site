@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import style from "./style.module.css";
 
 const services = [
     {
@@ -37,28 +38,29 @@ const AutomativeRvSection: React.FC = () => {
         <section className="bg-white section-spacing-y-top">
             <Container className=''>
                 {/* Header Section */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-2 `}>
                     {/* Left Side - Heading */}
-                    <div className="lg:pr-6 border-b lg:border-b-0 lg:border-r border-black line-borderPadding">
-                        <h2 className="text-[clamp(28px,4vw,38px)]  prompt-bold text-[#2C3037]  leading-[clamp(30px,4vw,48px)]">
+                    <div className={`lg:pr-6 border-b lg:border-b-0 lg:border-r border-black line-borderPadding`}>
+                        <h2 className={`${style.responsivetext}`}>
                             Automotive, RV, Marine,<br /> Motorcycles and Commercial
                         </h2>
                     </div>
 
                     {/* Right Side - Paragraph */}
                     <div className="lg:pl-2 pt-[clamp(7px,4vw,4px)] lg:pt-0">
-                        <p className="text-[clamp(12px,4vw,16)] font-glacial-regular text-[#2C3037] leading-relaxed">
+                        <p className={`${style.responsivebodytext}`}>
                             Universal Inspections proudly maintains a network of highly skilled
                             mechanical and electronics technicians across the nation. We deliver clear,
                             comprehensive reports on mechanical issues and related failures, serving a
                             wide range of customers and industries. Our services encompass:
                         </p>
                     </div>
+
                 </div>
             </Container>
 
             {/* Services Section */}
-            <div className="bg-[#F8F8F8] mt-[clamp(30px,4vw,70px)] pt-[clamp(28px,4vw,28px)] pb-[clamp(40px,4vw,80px)]">
+            <div className={`${style.serviceSection}`}>
                 <Container>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         {/* Left Column - Image */}
@@ -80,7 +82,7 @@ const AutomativeRvSection: React.FC = () => {
                             {services.map((service, index) => (
                                 <div key={index} className="flex items-start gap-5 ">
                                     {/* Icon */}
-                                    <div className="min-w-[58px] h-[58px] sm:min-w-[58px] sm:h-[58px] bg-[#EDEDED] rounded-md flex items-end justify-end ">
+                                    <div className={`${style.iconflexbox}`}>
                                         <Image
                                             src={service.icon}
                                             alt={service.title}
@@ -92,10 +94,11 @@ const AutomativeRvSection: React.FC = () => {
 
                                     {/* Text */}
                                     <div className='ml-2'>
-                                        <h3 className="text-[#DAA628] prompt-bold text-[clamp(16px,4vw,20px)] w-full lg:w-[70%]   leading-snug">
+                                        <h3 className={`${style.serviceTitle} w-full lg:w-[70%]`}
+                                        >
                                             {service.title}
                                         </h3>
-                                        <p className="text-[clamp(12px,4vw,16px)] font-glacial-regular text-[#2C3037] mt-[12px] leading-relaxed">
+                                        <p className={`${style.description}`}>
                                             {service.description}
                                         </p>
                                     </div>

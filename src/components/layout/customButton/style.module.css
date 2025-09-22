@@ -1,0 +1,11 @@
+.customButton {
+  width: 258px;
+  height: 52px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.customButton:hover .textSection {
+  background-color: #BD632F;
+  color: white;
+}

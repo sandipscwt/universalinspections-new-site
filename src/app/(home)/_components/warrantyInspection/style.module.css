@@ -1,5 +1,19 @@
-
 .bgGradient {
-  position: relative;
-  background: linear-gradient(270deg, rgba(39, 39, 50, 1) 0%, rgba(41, 43, 49, 1) 100%);
+    position: relative;
+    background: linear-gradient(270deg, rgba(39, 39, 50, 1) 0%, rgba(41, 43, 49, 1) 100%);
+}
+
+.sectionSty {
+    position: relative;
+    /* background-color: blue; */
+}
+
+.sectionSty::before {
+    contain: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    background: red;
 }

@@ -1,5 +1,5 @@
 .customBoxWrapper>div:nth-child(1) {
-    margin-top:200px;
+    margin-top: 200px;
 }
 
 .customBoxWrapper>div:nth-child(2) {
@@ -18,7 +18,7 @@
 
 @media (max-width:1024px) {
     .customBoxWrapper>div:nth-child(1) {
-        margin-top:auto;
+        margin-top: auto;
     }
 
     .customBoxWrapper>div:nth-child(2) {
@@ -33,9 +33,49 @@
     .customBoxWrapper>div:nth-child(6) {
         position: relative;
         transform: translateY(0px);
-        margin-bottom: clamp(190px,4vw,314px);
+        margin-bottom: clamp(190px, 4vw, 314px);
     }
+}
 
+.container {
+    position: relative;
+    padding-top: clamp(30px, 4vw, 100px);
+    padding-bottom: clamp(30px, 4vw, 100px);
+    background-color: white;
+}
+
+.title {
+    color: #2C3037;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 700;
+    font-family: 'Prompt', 'Prompt Fallback';
+}
+
+.subTitle {
+    font-size: clamp(12px, 4vw, 16px);
+    line-height: clamp(16px, 4vw, 26px);
+    color: #2C3037;
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    margin-top: clamp(7px, 4vw, 18px);
+}
+
+.cardBox {
+    background-color: white;
+    height: 278px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #DAA6284D;
+    transition: all 150ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 20px;
+}
+
+.cardBox:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width:640px) {
@@ -63,7 +103,7 @@
     .customBoxWrapper>div:nth-child(6) {
         position: relative;
         transform: translateY(0px);
-        margin-bottom: clamp(190px,4vw,314px);
+        margin-bottom: clamp(190px, 4vw, 314px);
     }
 
 }

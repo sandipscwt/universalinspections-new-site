@@ -4,6 +4,7 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import style from "./style.module.css";
+import CustomButton from '@/components/layout/customButton';
 
 const steps = [
     { id: 1, title: "Schedule Your Inspection", description: "" },
@@ -14,24 +15,23 @@ const steps = [
 
 const ScheduleInspectionSection: NextPage = () => {
     return (
-        <section className='bg-white  py-[clamp(30px,4vw,100px)]'>
+        <section className='bg-[#FFFFFF]  py-[clamp(30px,4vw,100px)]'>
             <Container>
                 <div className="grid md:grid-cols-2 gap-10 items-center">
                     {/* Left Side - Text and Cards */}
                     <div>
-                        <h2 className="font-glacial-bold
-                           text-[clamp(28px,4vw,38px)]  text-[#2A2D34] w-[100%] lg:w-[90%] leading-[clamp(30px,4vw,48px)]">Schedule Your Inspection with Ease</h2>
+                        <h2 className={`${style.title} w-[100%] lg:w-[90%]`}>Schedule Your Inspection with Ease</h2>
 
-                        <p className="text-[#2A2D34] text-[clamp(12px,4vw,16)] mt-[clamp(10px,4vw,20px)] font-light mb-8 font-glacial-regular">
+                        <p className={`${style.subTitle}`}>
                             Get started by reaching out to us via phone or online to schedule your inspection at the time that fits your schedule. Whether you need an inspection at your location or ours, we offer flexible options for your convenience.
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {steps.map((step) => (
 
-                                <div key={step.id} className="relative border border-[#DAA6284D] rounded-[8px]  p-4 hover:shadow-md transition-shadow overflow-hidden">
+                                <div key={step.id} className={`${style.scheduleBox} hover:shadow-sm transition-shadow overflow-hidden  `}>
 
-                                    <div className="absolute bottom-[0px] transform right-0 text-[clamp(35px,4vw,68px)] prompt-bold text-[#DAA6281A] pointer-events-none select-none z-0 leading-[80%]">
+                                    <div className={`${style.scheduleId} pointer-events-none select-none z-0 leading-[80%] transform`}>
                                         {step.id.toString().padStart(2, '0')}
                                     </div>
 
@@ -53,26 +53,9 @@ const ScheduleInspectionSection: NextPage = () => {
                             ))}
                         </div>
 
-
-
-
-
-                        <div className="inline-flex mt-[clamp(15px,4vw,30px)] rounded-md overflow-hidden text-[clamp(12px,4vw,14px)]">
-                            <Link href="/book" className="flex">
-                                {/* Text side → 206px (258 - 52) */}
-                                <span className="bg-[#DAA628] text-[#2C3037] flex items-center justify-center w-[206px] h-[52px]">
-                                    Book an Inspection Today!
-                                </span>
-
-                                {/* Arrow side → 52px */}
-                                <span className="bg-[#BD632F] flex items-center justify-center w-[52px] h-[52px]">
-                                    <ArrowRight className="w-5 h-5 text-white" />
-                                </span>
-                            </Link>
+                        <div className="mt-[30px]">
+                            <CustomButton title="Book an Inspection Today!" href="/inspection" />
                         </div>
-
-
-
 
                     </div>
 

@@ -59,11 +59,9 @@ const HowItWorks: NextPage = () => {
                         {steps.map((step) => (
                             <div
                                 key={step.id}
-                                className={`flex bg-white  items-center space-x-4 border border-[#DAA6284D] rounded-[1px]  px-5 py-4 hover:shadow-md transition-shadow cursor-pointer `}
+                                className={`flex bg-white  items-center space-x-4 border border-[#DAA6284D] rounded-[8px]  px-5 py-[22px] hover:shadow-md transition-shadow cursor-pointer `}
                             >
-                                <div 
-                                className="relative h-[28px] w-[28px]"
-                                >
+                                <div className="relative h-[28px] w-[28px]">
                                     <Image
                                         src={step.icon}
                                         alt={step.title}

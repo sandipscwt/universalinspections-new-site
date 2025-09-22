@@ -1,6 +1,5 @@
 .customWrapper>div:nth-child(1) {
     margin-right: 75px;
-    /* 24px */
     margin-top: 30px;
 }
 
@@ -16,7 +15,6 @@
 
 .customWrapper>div:nth-child(4) {
     margin-left: 75px !important;
-    /* margin-right: 25px !important; */
 }
 
 @media (max-width: 1024px) {
