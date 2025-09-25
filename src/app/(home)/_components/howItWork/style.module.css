@@ -17,6 +17,28 @@
     margin-left: 75px !important;
 }
 
+.title {
+    color: #2C3037;
+    font-size: clamp(28px, 4vw, 38px);
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+}
+
+.stbTitle {
+    color: #2C3037;
+    font-size: clamp(12px, 4vw, 16px);
+    margin-top: clamp(10px, 4vw, 16px);
+    font-family: var(--font-glacial);
+    font-weight: 400;
+}
+
+.stepTitle {
+    font-family: var(--font-glacial);
+    font-weight: 700;
+    font-size: clamp(16px, 4vw, 22px);
+    color: #2C3037;
+}
+
 @media (max-width: 1024px) {
     .section_img {
         height: 400px;
@@ -25,7 +47,7 @@
 
     .customWrapper>div:nth-child(1) {
         margin-right: 0 !important;
-            margin-top: -20px;
+        margin-top: -20px;
     }
 
     .customWrapper>div:nth-child(2) {

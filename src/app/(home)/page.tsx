@@ -13,9 +13,9 @@ const Home = () => {
             <AutomativeRvSection />
             <WhatWeDoSection />
             <ScheduleInspectionSection/>
-            {/* <HowItWorks/> */}
-            {/* <WarrantyInspection/> */}
-            {/* <TestimonialsSection/>  */}
+            <HowItWorks/>
+            <WarrantyInspection/>
+            <TestimonialsSection/> 
         </>
     )
 }

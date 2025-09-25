@@ -33,10 +33,10 @@ const HowItWorks: NextPage = () => {
 
                 {/* Header */}
                 <div className=" mx-auto text-center ">
-                    <h2 className="text-[clamp(28px,4vw,38px)] prompt-bold text-[#2A2D34]">
+                    <h2 className={`${style.title}`}>
                         How It Works
                     </h2>
-                    <p className="text-[#2C3037] lg:w-[95%] font-glacial-regular text-[clamp(12px,4vw,16px)] mt-[clamp(10px,4vw,16px)]">
+                    <p className={`lg:w-[95%] ${style.stbTitle}`} >
                         Contact us to book a convenient time for your automotive or RV inspection. Our certified inspectors will conduct a thorough evaluation, covering all major components. You will receive a detailed report highlighting any issues or potential concerns. We’ll provide the documentation needed to ensure you know everything about your vehicle, giving you peace of mind on your investment.
                     </p>
                 </div>
@@ -69,7 +69,7 @@ const HowItWorks: NextPage = () => {
                                         className="object-contain absolute "
                                     />
                                 </div>
-                                <p className="text-[clamp(16px,4vw,22px)] font-glacial-bold text-[#2A2D34]">{step.title}</p>
+                                <p className={`${style.stepTitle}`}>{step.title}</p>
                             </div>
                         ))}
                     </div>

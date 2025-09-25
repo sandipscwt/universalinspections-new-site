@@ -7,15 +7,27 @@
 .colon_img_bottom {
     position: absolute;
     right: 50px;
-    bottom: 75px;
+    bottom: 65px;
+}
+/* text-[#2C3037] font-semibold text-[clamp(14px,3vw,16px)] */
+.userName{
+    color: #2C3037;
+    font-size: clamp(12px, 4vw, 16px);
+    margin-top: clamp(10px, 4vw, 16px);
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+}
+.userAddress{
+    color: #DAA628;
+    font-size: clamp(12px, 4vw, 16px);
+    font-family: var(--font-glacial);
+    font-weight: 400;
 }
 
-@media (max-width: 640px) {
+/* @media (max-width: 640px) {
     .swiper_item {
         padding-left: 20px;
         padding-right: 20px;
-        /* width: 90% !important; */
-        /* border: 1px solid red; */
 
     }
-}
+} */

@@ -14,7 +14,7 @@ const Header: FC = () => {
     const [opportunitiesOpen, setOpportunitiesOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const pathname = usePathname();
-
+    
     const menuItems = [
         { href: "/", label: "Home" },
         { href: "/about", label: "About Us" },
@@ -171,47 +171,65 @@ const Header: FC = () => {
 
                 {/* Mobile Menu Panel */}
                 {menuOpen && (
-                    <div className={`absolute top-full left-0 w-full bg-[#273E47] text-white shadow-lg ${style.hideOnCustomLg} z-50`}>
-                        <nav className="flex flex-col space-y-2 p-4">
-                            <Link href="/" className="text-white" onClick={() => setMenuOpen(false)}>Home</Link>
-                            <Link href="/about" className="text-white" onClick={() => setMenuOpen(false)}>About Us</Link>
-                            <Link href="/services" className="text-white" onClick={() => setMenuOpen(false)}>Services</Link>
-                            <Link href="/blogs" className="text-white" onClick={() => setMenuOpen(false)}>Blogs</Link>
-                            <Link href="/associates" className="text-white" onClick={() => setMenuOpen(false)}>Our Associates</Link>
-                            <Link href="/warranties" className="text-white" onClick={() => setMenuOpen(false)}>Extended Warranties</Link>
-                            <Link href="/financing" className="text-white" onClick={() => setMenuOpen(false)}>Financing</Link>
+                    <div className={`fixed inset-0  bg-[#273E47] text-white z-50 p-4 overflow-y-auto`}>
+                        <nav className="flex relative flex-col space-y-2 p-4">
+                            <div className="absolute right-0">
+                                    <button onClick={() => setMenuOpen(!menuOpen)} className="text-white flex items-center">
+                                         <X className="w-8 h-8" /> 
+                                    </button>
+                                </div>
+                            <ul className="flex flex-col gap-3 pt-[50px] space-y-2">
+                                
+                                {menuItems.map(({ href, label }) => (
+                                    <li key={href}>
 
-                            {/* Opportunities Dropdown */}
-                            <div className="relative ">
-                                <button
-                                    onClick={() => setOpportunitiesOpen(!opportunitiesOpen)}
-                                    className="flex items-center space-x-1 text-white "
-                                >
-                                    <span>Opportunities</span>
-                                    <ChevronDown className="w-4 h-4" />
-                                </button>
-
-                                {opportunitiesOpen && (
-                                    <div className="absolute left-0 mt-1 bg-[#1F3339] rounded shadow-lg w-48 z-50 overflow-visible">
-                                        <Link
-                                            href="/opportunities/dispatchers"
-                                            className="block px-4 py-2 hover:bg-[#2C4B52]"
-                                            onClick={() => {
-                                                setOpportunitiesOpen(false);
-                                                setMenuOpen(false);
-                                            }}
-                                        >
-                                            Dispatchers
+                                        <Link href={href} className="text-white" onClick={() => setMenuOpen(false)}>
+                                            {label}
                                         </Link>
-                                    </div>
-                                )}
+                                    </li>
+                                ))}
+
+                                {/* Opportunities Dropdown */}
+                                <li className="relative">
+                                    <button
+                                        onClick={() => setOpportunitiesOpen(!opportunitiesOpen)}
+                                        className="flex items-center space-x-1 text-white"
+                                    >
+                                        <span>Opportunities</span>
+                                        <ChevronDown className="w-4 h-4" />
+                                    </button>
+
+                                    {opportunitiesOpen && (
+                                        <ul className="absolute left-0 mt-1 bg-[#1F3339] rounded shadow-lg w-48 z-50">
+                                            <li>
+                                                <Link
+                                                    href="/opportunities/dispatchers"
+                                                    className="block px-4 py-2 hover:bg-[#2C4B52]"
+                                                    onClick={() => {
+                                                        setOpportunitiesOpen(false);
+                                                        setMenuOpen(false);
+                                                    }}
+                                                >
+                                                    Dispatchers
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    )}
+                                </li>
+                            </ul>
+
+                            {/* Book Button */}
+                            <div className="mt-4">
+                                <Link
+                                    href="/book"
+                                    className="bg-[#DAA628] px-4 py-2 rounded text-[#2C3037] font-medium text-center flex items-center justify-center gap-2"
+                                    onClick={() => setMenuOpen(false)}
+                                >
+                                    Book an Inspection Today! <ArrowRight className="w-5 h-5 text-white" />
+                                </Link>
                             </div>
-
-
-                            <Link href="/book" className="bg-[#DAA628]  px-4 py-2 rounded text-[#2C3037] font-medium text-center mt-4 flex items-center justify-center gap-2" onClick={() => setMenuOpen(false)}>
-                                Book an Inspection Today ! <ArrowRight className="w-5 h-5 text-white" />
-                            </Link>
                         </nav>
+
                     </div>
                 )}
             </div>
