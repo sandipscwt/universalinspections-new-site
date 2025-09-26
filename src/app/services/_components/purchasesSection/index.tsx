@@ -51,7 +51,7 @@ const PurchasesSection = () => {
                     {/* Left Side - Heading */}
                     <div className="lg:pr-6 border-b lg:border-b-0 lg:border-r border-[#2C3037] line-borderPadding">
                         <h2 className="text-[clamp(28px,4vw,38px)]  prompt-bold text-[#2C3037]  leading-[clamp(30px,4vw,48px)]">
-                            We take the worry out of<br /> your purchases and repairs
+                            We take the worry out of your purchases and repairs
                         </h2>
                     </div>
 

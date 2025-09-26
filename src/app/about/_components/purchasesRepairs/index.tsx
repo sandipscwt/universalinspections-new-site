@@ -1,6 +1,7 @@
 import Container from '@/components/container'
 import Image from 'next/image'
 import React from 'react'
+import style from "./style.module.css";
 
 const PurchasesRepairs = () => {
 
@@ -35,16 +36,12 @@ const PurchasesRepairs = () => {
         <section className='bg-[#F8F8F8] py-[clamp(30px,4vw,80px)]'>
             <Container>
                 <div className="flex items-center justify-center">
-                    <h2 className="font-glacial-bold text-center
-                           text-[clamp(28px,4vw,38px)]  text-[#2A2D34] w-[100%] lg:w-[60%] leading-[clamp(30px,4vw,48px)]">
+                    <h2 className={`${style.title} w-[100%] lg:w-[60%]`}>
                         We Take The Worries Out Of Your Purchases and Repairs
                     </h2>
                 </div>
 
-
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-[clamp(25px,4vw,40px)]">
-
-
                     {/* Right Column - Service Items */}
                     <div className="flex flex-col gap-9  sm:px-6 lg:px-0 ">
                         {services.map((service, index) => (
@@ -62,10 +59,10 @@ const PurchasesRepairs = () => {
 
                                 {/* Text */}
                                 <div className='ml-2'>
-                                    <h3 className="text-[#DAA628] prompt-bold text-[clamp(16px,4vw,20px)] w-full   leading-snug">
+                                    <h3 className={`${style.serviceTitle} leading-snug`}>
                                         {service.title}
                                     </h3>
-                                    <p className="text-[clamp(12px,4vw,16px)] font-glacial-regular text-[#2C3037] mt-[12px] leading-relaxed">
+                                    <p className={`${style.serviceSubtitle} leading-relaxed`} >
                                         {service.description}
                                     </p>
                                 </div>

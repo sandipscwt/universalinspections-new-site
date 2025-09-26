@@ -24,9 +24,8 @@ const HeroSection: React.FC = () => {
       <Container>
         {/* Content container */}
         <div
-          className={`relative ${style.heroContent} z-10 flex flex-col items-start justify-center text-white`}
-        >
-          <h1 className="text-[clamp(32px,4vw,58px)] prompt-bold !leading-[clamp(30px,5vw,68px)] sm:leading-snug md:leading-normal">
+          className={`relative ${style.heroContent} z-10 flex flex-col items-start justify-center text-white`}>
+          <h1 className={`${style.title} sm:leading-snug md:leading-normal`}>
             About us
           </h1>
 
@@ -37,7 +36,7 @@ const HeroSection: React.FC = () => {
               { label: "About Us" },
             ]}
             separator=">"
-            className="mt-2 text-[clamp(14px,2vw,18px)] font-glacial-regular"
+            className={`${style.subTitle}`}
           />
         </div>
       </Container>

@@ -1,6 +1,5 @@
 .heroSection {
     position: relative;
-
 }
 
 .heroContent {
@@ -14,6 +13,20 @@
     inset: 0;
     background: linear-gradient(270deg, rgba(44, 48, 55, 0.5) 0%, rgba(44, 48, 55, 0.5) 100%);
     z-index: 1;
+}
+
+.title {
+    font-size: clamp(32px, 4vw, 58px);
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    line-height: clamp(30px, 5vw, 68px);
+}
+
+.subTitle {
+    margin-top: 0.5rem;
+    font-size: clamp(14px, 2vw, 18px);
+    font-family: var(--font-glacial);
+    font-weight: 400;
 }
 
 @media (max-width:1024px) {

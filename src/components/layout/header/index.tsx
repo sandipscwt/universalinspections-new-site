@@ -48,7 +48,7 @@ const Header: FC = () => {
                                     <Link href="tel:(205) 558-8284" className="text-white cursor-pointer">
                                         (205) 558-8284
                                     </Link> /
-                                    <span className="text-[#DAA628]">Toll-Free </span>
+                                    <span className="text-[#DAA628]"> Toll-Free </span>
                                     <Link href="tel:1-833-935-1888" className="text-white cursor-pointer">
                                         1-833-935-1888
                                     </Link>

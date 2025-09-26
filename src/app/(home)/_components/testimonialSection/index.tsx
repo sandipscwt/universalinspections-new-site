@@ -52,7 +52,7 @@ export default function TestimonialsSection() {
         dots: true,
         infinite: true,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 3000,
         speed: 700,
         centerMode: true,
         centerPadding: "25%",
@@ -90,6 +90,7 @@ export default function TestimonialsSection() {
                     centerPadding: "0px",
                 },
             },
+            
         ],
     };
 

@@ -4,6 +4,7 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import style from "./style.module.css";
+import CustomButton from '@/components/layout/customButton';
 
 const steps = [
     { id: 1, title: "Schedule Your Inspection", description: "" },
@@ -53,23 +54,9 @@ const ScheduleInspectionSection: NextPage = () => {
                             ))}
                         </div>
 
-
-
-<div className="inline-flex mt-[clamp(15px,4vw,30px)] rounded-md overflow-hidden text-[clamp(12px,4vw,14px)]">
-  <Link href="/book" className="flex">
-    {/* Text side → 206px (258 - 52) */}
-    <span className="bg-[#DAA628] text-[#2C3037] flex items-center justify-center w-[206px] h-[52px]">
-      Book an Inspection Today!
-    </span>
-
-    {/* Arrow side → 52px */}
-    <span className="bg-[#BD632F] flex items-center justify-center w-[52px] h-[52px]">
-      <ArrowRight className="w-5 h-5 text-white" />
-    </span>
-  </Link>
-</div>
-
-
+                        <div className="mt-[30px]">
+                            <CustomButton title="Book an Inspection Today!" href="/inspection" />
+                        </div>
 
                     </div>
 

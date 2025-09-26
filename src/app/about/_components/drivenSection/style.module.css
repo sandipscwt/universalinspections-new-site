@@ -1,23 +1,15 @@
 .title {
     font-family: var(--font-glacial);
     font-weight: 700;
-    text-align: center;
     font-size: clamp(28px, 4vw, 38px);
     color: #2A2D34;
     line-height: clamp(30px, 4vw, 48px);
 }
 
-.serviceTitle {
-    color: #DAA628;
-    font-family: "Prompt", "Prompt Fallback";
-    font-weight: 700;
-    font-size: clamp(16px, 4vw, 20px);
-}
-
-.serviceSubtitle {
+.sobTitle {
+    color: #2A2D34;
     font-size: clamp(12px, 4vw, 16px);
+    margin-top: clamp(10px, 4vw, 20px);
     font-family: var(--font-glacial);
     font-weight: 400;
-    color: #2C3037;
-    margin-top: 12px;
 }
