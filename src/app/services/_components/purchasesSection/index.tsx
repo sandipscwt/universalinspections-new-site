@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import style from "./style.module.css";
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const PurchasesSection = () => {
     const services = [
@@ -87,13 +88,15 @@ const PurchasesSection = () => {
                             <p className="text-base prompt-regular text-[#2C3037] mt-2 group-hover:text-white">
                                 {service.description}
                             </p>
+                            <Link href={'/services/auto'}>
 
-                            <div className="flex items-center gap-1 mt-4 text-sm font-medium text-[#2C3037] group-hover:text-white">
-                                <span className="text-[clamp(12px,4vw,16)] font-glacial-regular group-hover:text-white">
-                                    View More
-                                </span>
-                                <ArrowRight className="w-5 h-5 text-[#2C3037] group-hover:text-white" />
-                            </div>
+                                <div className="flex items-center gap-1 mt-4 text-sm font-medium text-[#2C3037] group-hover:text-white">
+                                    <span className="text-[clamp(12px,4vw,16)] font-glacial-regular group-hover:text-white">
+                                        View More
+                                    </span>
+                                    <ArrowRight className="w-5 h-5 text-[#2C3037] group-hover:text-white" />
+                                </div>
+                            </Link>
                         </div>
 
 
