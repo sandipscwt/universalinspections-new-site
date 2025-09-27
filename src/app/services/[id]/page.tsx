@@ -1,9 +1,10 @@
 import React from 'react'
+import Herosection from './_components'
 
 const page = () => {
   return (
     <div>
-      <h1>Auto</h1>
+     <Herosection/>
     </div>
   )
 }
