@@ -3,7 +3,7 @@
     font-weight: 700;
     font-size: clamp(28px, 4vw, 38px);
     color: #2A2D34;
-    line-height: clamp(30px, 4vw, 48px);
+    line-height: clamp(32px, 4vw, 48px);
 }
 
 .sobTitle {
@@ -12,4 +12,13 @@
     margin-top: clamp(10px, 4vw, 20px);
     font-family: var(--font-glacial);
     font-weight: 400;
+}
+
+.sectitle {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(16px, 4vw, 24px);
+    color: #DAA628;
+    margin-top: clamp(15px, 4vw, 30px);
+    line-height: clamp(20px, 4vw, 24px);
 }

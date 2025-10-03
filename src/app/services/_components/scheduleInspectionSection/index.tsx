@@ -42,7 +42,6 @@ const ScheduleInspectionSection: NextPage = () => {
                                             <div className="!w-[15px] !h-[15px] bg-[#BD632F] rounded-[3px] mt-1"></div>
                                         </div>
 
-
                                         <div>
                                             <p className="text-[clamp(12px,4vw,16px)] w-[100%] sm:w-[90%] lg:w-[95%]  text-[#203740] font-glacial-bold">
                                                 {step.title}

@@ -1,0 +1,8 @@
+.btitle {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: 48px;
+    color: #212121;
+    text-align: center;
+}
