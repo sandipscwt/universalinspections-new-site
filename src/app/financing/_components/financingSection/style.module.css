@@ -1,0 +1,136 @@
+.yellowContainer h2 {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: clamp(30px, 4vw, 56px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #FFFFFF;
+}
+
+.yellowContainer p {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(12px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #FFFFFF;
+    margin-top: 15px;
+}
+
+.checkboxContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 14px;
+}
+
+.leftSection {
+    background-color: #DAA628;
+    display: flex;
+    padding-top: clamp(70px,4vw,108px);
+    padding-bottom: 76px;
+    align-items: center;
+    justify-content: center;
+}
+
+.rightSection {
+    background-color: #BD632F;
+    display: flex;
+    padding-top: clamp(40px,4vw,108px);
+    padding-bottom: 76px;
+    align-items: center;
+    justify-content: center;
+}
+
+.zipInput {
+    width: 253px;
+    height: 60px;
+    border: 1px solid #4E7766;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #4B5563;
+    text-align: center;
+    font-size: clamp(14px, 3vw, 16px);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: all 0.2s ease;
+    opacity: 1;
+    padding: 0 16px;
+}
+
+.zipInput::placeholder {
+    color: #A0AEC0;
+}
+
+.zipInput:focus {
+    border-color: #4E7766;
+    box-shadow: 0 0 0 3px rgba(78, 119, 102, 0.3);
+}
+
+.financeCard {
+    padding-top: clamp(25px,4vw,59px);
+    padding-bottom: clamp(25px,4vw,68px);
+    padding-right: clamp(0px,2vw,47px);
+    padding-left: clamp(0px,2vw,47px);
+    background-color: #F8F8F8;
+    border-radius: 8px;
+    position: relative;
+    top: -40px;
+}
+
+.financeTitle {
+    font-family: var(--font-glacial);
+    font-weight: 700;
+    font-size: clamp(16px, 4vw, 22px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-align: center;
+    color: #DAA628;
+    margin-bottom: 30px;
+}
+
+.Financercom {
+    font-family: var(--font-glacial);
+    font-weight: 700;
+    font-size: clamp(14px, 4vw, 18px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #2C3037;
+    margin-left: 14px;
+}
+
+.location {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(12px, 4vw, 14px);
+    line-height: clamp(20px, 4vw, 26px);
+    line-height: 26px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #2C3037;
+    margin-left: 18px;
+}
+
+.bottom {
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom p {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 400;
+    font-size: clamp(14px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 26px);
+    line-height: 26px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: #000000;
+}

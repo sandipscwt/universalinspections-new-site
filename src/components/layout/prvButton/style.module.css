@@ -1,0 +1,39 @@
+.button_sty {
+    width: 168px;
+    height: 52px;
+    display: flex;
+    cursor: pointer;
+}
+
+.textPart {
+    background-color: #DAA628;
+    color: #2C3037;
+    width: 128px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.arrowPart {
+    background-color: #BD632F;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.button_sty:hover .textPart {
+    background-color: #BD632F;
+    color: white;
+}
+
+.button_sty:hover .arrowPart {
+    background-color: #BD632F;
+}

@@ -14,7 +14,7 @@ const Header: FC = () => {
     const [opportunitiesOpen, setOpportunitiesOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const pathname = usePathname();
-    
+
     const menuItems = [
         { href: "/", label: "Home" },
         { href: "/about", label: "About Us" },
@@ -174,12 +174,12 @@ const Header: FC = () => {
                     <div className={`fixed inset-0  bg-[#273E47] text-white z-50 p-4 overflow-y-auto`}>
                         <nav className="flex relative flex-col space-y-2 p-4">
                             <div className="absolute right-0">
-                                    <button onClick={() => setMenuOpen(!menuOpen)} className="text-white flex items-center">
-                                         <X className="w-8 h-8" /> 
-                                    </button>
-                                </div>
+                                <button onClick={() => setMenuOpen(!menuOpen)} className="text-white flex items-center">
+                                    <X className="w-8 h-8" />
+                                </button>
+                            </div>
                             <ul className="flex flex-col gap-3 pt-[50px] space-y-2">
-                                
+
                                 {menuItems.map(({ href, label }) => (
                                     <li key={href}>
 

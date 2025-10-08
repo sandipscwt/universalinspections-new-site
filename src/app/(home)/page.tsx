@@ -9,13 +9,13 @@ import WarrantyInspection from './_components/warrantyInspection'
 const Home = () => {
     return (
         <>
-             <HeroSection />
+            <HeroSection />
             <AutomativeRvSection />
             <WhatWeDoSection />
-            <ScheduleInspectionSection/>
-            <HowItWorks/>
-            <WarrantyInspection/>
-            <TestimonialsSection/> 
+            <ScheduleInspectionSection />
+            <HowItWorks />
+            <WarrantyInspection />
+            <TestimonialsSection />
         </>
     )
 }

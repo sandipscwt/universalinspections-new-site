@@ -1,0 +1,128 @@
+.sectionContainer {
+    padding-top: clamp(30px, 8vw, 100px);
+    padding-bottom: clamp(30px, 8vw, 100px);
+}
+
+.containerlg {
+    width: 100%;
+    padding-right: 56px;
+    padding-left: 56px;
+}
+
+.bgCard {
+    padding-right: 93px;
+    padding-left: 93px;
+    padding-block: 60px;
+    margin-top: clamp(15px, 2vw, 30px);
+}
+
+.titleContainer {
+    align-items: center;
+    justify-content: center;
+}
+
+.titleContainer h2 {
+    color: #212121;
+    text-align: center;
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: clamp(30px, 4vw, 48px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.triangleTopLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 350px solid #f2f2f2;
+    border-right: 250px solid transparent;
+}
+
+.triangleBottomRight {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 250px solid #f2f2f2;
+    border-left: 350px solid transparent;
+}
+
+.contentul li:last-child {
+    margin-bottom: 0px;
+}
+
+.contentul li:nth-last-child(2) {
+    margin-bottom: 0px;
+}
+
+.warranty_title {
+    font-family: var(--font-glacial);
+    font-weight: 700;
+    font-size: clamp(12px, 4vw, 18px);
+    line-height: clamp(20px, 4vw, 24px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #212121;
+}
+
+.description {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(10px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 24px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #212121;
+}
+
+@media (max-width:1125px) {
+    .bgCard {
+        padding-right: clamp(20px, 4.5vw, 70px);
+        padding-left: clamp(20px, 4.5vw, 70px);
+        padding-block: clamp(20px, 4.5vw, 70px);
+    }
+}
+
+@media (max-width:960px) {
+    .contentul {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .contentul li:nth-last-child(2) {
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width:720px) {
+
+    .containerlg {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .contentul li:nth-last-child(2) {
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width:576px) {
+    .bgCard {
+        padding-right: 16px;
+        padding-left: 16px;
+        padding-block: 16px;
+    }
+
+    .containerlg {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .contentul li:nth-last-child(2) {
+        margin-bottom: 16px;
+    }
+}
