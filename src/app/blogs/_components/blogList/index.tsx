@@ -88,7 +88,7 @@ function BlogList() {
             <Container>
                 <div className={`${style.titleContainer}`}>
                     <h2>Explore Our Blogs</h2>
-                    <p className=''>Vivamus ullamcorper dictum mauris, quis faucibus lorem semper vel. Nulla metus ante, mattis quis egestas nec, faucibus vitae enim. Maecenas sagittis eros eu pretium porttitor. Etiam pretium purus sed mauris finibus mattis. Duis nec varius sapien,</p>
+                    <p >Vivamus ullamcorper dictum mauris, quis faucibus lorem semper vel. Nulla metus ante, mattis quis egestas nec, faucibus vitae enim. Maecenas sagittis eros eu pretium porttitor. Etiam pretium purus sed mauris finibus mattis. Duis nec varius sapien,</p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-[30px]">

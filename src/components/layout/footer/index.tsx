@@ -82,7 +82,7 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#" className="hover:text-white font-glacial-regular flex items-center">
+                                <Link href="/contactUs" className="hover:text-white font-glacial-regular flex items-center">
                                     <span className="w-2 h-2 bg-yellow-500 rounded-b-xs mr-2"></span>Contact Us
                                 </Link>
                             </li>
@@ -119,7 +119,7 @@ const Footer = () => {
                         </div>
 
 
-                        <div className="mt-6 flex space-x-4 items-start gap-2 flex-col lg:flex-row">
+                        <div className="mt-6 flex space-x-4 lg:items-end items-start gap-2 flex-col lg:flex-row">
                             <span className="text-[clamp(12px,4vw,16px)] prompt-bold">Follow Us On :</span>
                             <div className="flex space-x-4">
                                 <div className="px-3 py-3 rounded bg-[#DAA628]">
@@ -160,6 +160,7 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
 

@@ -59,7 +59,7 @@ function AssociateSection() {
             </div>
 
             {/* FINANCING PARTNERS GRID SECTION */}
-            <div className={`bg-[#ffffff] pb-[30px] md:pb-[4vw] lg:pb-[100px]`}>
+            <div className={`bg-[#FFFFFF] `}>
                 <Container className={`${style.financeCard}`}>
                     {/* Section Header */}
                     <div className="items-center flex justify-center">

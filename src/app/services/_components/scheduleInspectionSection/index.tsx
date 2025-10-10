@@ -54,7 +54,7 @@ const ScheduleInspectionSection: NextPage = () => {
                         </div>
 
                         <div className="mt-[30px]">
-                            <CustomButton title="Book an Inspection Today!" href="/inspection" />
+                            <CustomButton title="Book an Inspection Today!" href="/bookInspection" />
                         </div>
                     </div>
 

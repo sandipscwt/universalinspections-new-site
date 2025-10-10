@@ -4,10 +4,10 @@ import EmpoweringSection from './_components/empoweringSection'
 
 const page = () => {
   return (
-    <div>
+    <>
      <Herosection/>
      <EmpoweringSection/>
-    </div>
+    </>
   )
 }
 

@@ -1,0 +1,117 @@
+.sectionContainer {
+    padding-top: clamp(30px, 8vw, 100px);
+    padding-bottom: clamp(30px, 8vw, 100px);
+}
+
+.titleContainer {
+    align-items: center;
+    justify-content: center;
+}
+
+.titleContainer h2 {
+    color: #212121;
+    text-align: center;
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: clamp(30px, 4vw, 48px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.contact_wrapper {
+    display: flex;
+    background-color: #ffffff;
+    border: 1px solid #f1e4b3;
+    border-radius: 8px;
+    padding-top: clamp(30px, 8vw, 60px);
+    padding-bottom: clamp(30px, 8vw, 60px);
+    padding-left: clamp(20px, 8vw, 50px);
+    padding-right: clamp(20px, 8vw, 50px);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 2.5rem;
+    margin-top: clamp(20px, 4vw, 30px);
+}
+
+.address span {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(14px, 4vw, 18px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #F3F0FF;
+}
+
+.pinBox {
+    padding: 6px;
+    border-radius: 3px;
+    background-color: #DAA628;
+}
+
+.contactTitle {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(26px, 4vw, 32px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #F3F0FF;
+}
+
+.massageTitle {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(26px, 4vw, 32px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #DAA628;
+}
+
+.massagesubTitle {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(14px, 4vw, 18px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #2C3037;
+    margin-top: clamp(15px,4vw,30px);
+    margin-bottom: 16px;
+}
+
+.followus {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(20px, 4vw, 26px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #F3F0FF;
+}
+
+.mapview{
+    height: 429px;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+.mapview iframe{
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+}
+
+
+@media (min-width: 1024px) {
+    .contact_wrapper {
+        flex-direction: row;
+    }
+
+    .bannershow {
+        height: '100%';
+    }
+}

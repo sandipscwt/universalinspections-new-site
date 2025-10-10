@@ -1,0 +1,23 @@
+.sectionContainer {
+    padding-bottom: clamp(30px, 8vw, 100px);
+    padding-top: clamp(0px, 4vw, 60px);
+}
+
+.sectionTitle {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 38px);
+    color: #2A2D34;
+    line-height: clamp(30px, 4vw, 48px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.sectionItem {
+    color: #2A2D34;
+    font-size: clamp(12px, 4vw, 16px);
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    line-height: clamp(20px, 4vw, 24px);
+    letter-spacing: 0%;
+}

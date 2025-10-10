@@ -107,7 +107,15 @@ const Header: FC = () => {
                                                         onMouseEnter={() => setIsHovered(true)}
                                                         onMouseLeave={() => setIsHovered(false)}
                                                     >
-                                                        <span className={`${style.opportunitiesText}`}>
+                                                        <span
+                                                            // className={`!text-[14px]
+                                                            // ${pathname === item.href
+                                                            //         ? "text-white font-glacial-bold"
+                                                            //         : "text-white font-glacial-regular"
+                                                            //     }`}
+                                                            // className="text-red-600"
+                                                        className={`${style.opportunitiesText}`}
+                                                        >
                                                             Opportunities
                                                         </span>
                                                         {isHovered ? (
@@ -155,7 +163,7 @@ const Header: FC = () => {
                         <div className="flex items-center gap-4">
                             {/* Book Button */}
                             <div className={` ${style.customLg}`}>
-                                <CustomButton title="Book an Inspection Today!" href="/inspection" />
+                                <CustomButton title="Book an Inspection Today!" href="/bookInspection" />
                             </div>
 
                             {/* Mobile Menu Button */}
@@ -198,7 +206,7 @@ const Header: FC = () => {
                                         <span>Opportunities</span>
                                         <ChevronDown className="w-4 h-4" />
                                     </button>
-
+                                    
                                     {opportunitiesOpen && (
                                         <ul className="absolute left-0 mt-1 bg-[#1F3339] rounded shadow-lg w-48 z-50">
                                             <li>
@@ -215,13 +223,14 @@ const Header: FC = () => {
                                             </li>
                                         </ul>
                                     )}
+
                                 </li>
                             </ul>
 
                             {/* Book Button */}
                             <div className="mt-4">
                                 <Link
-                                    href="/book"
+                                    href="/bookInspection"
                                     className="bg-[#DAA628] px-4 py-2 rounded text-[#2C3037] font-medium text-center flex items-center justify-center gap-2"
                                     onClick={() => setMenuOpen(false)}
                                 >

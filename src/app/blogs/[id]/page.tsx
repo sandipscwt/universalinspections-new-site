@@ -4,10 +4,10 @@ import BlogDetails from './_components/blogDetails'
 
 const page = () => {
     return (
-        <div>
+        <>
             <Herosection/>
             <BlogDetails/>
-        </div>
+        </>
     )
 }
 
