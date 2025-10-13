@@ -24,7 +24,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
     value,
     onChange,
     placeholder = "Select...",
-    isMulti = false,
+    // isMulti = false,
     error = false,
     required = false,
     disabled = false,
@@ -85,7 +85,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         setSearchTerm(e.target.value);
     };
 
-    const displayValue = value ? value.label : '';
+    // const displayValue = value ? value.label : '';
 
     return (
         <div className="flex flex-col  w-full relative" ref={selectRef}>
@@ -99,7 +99,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
             <div
                 className={`
           relative flex items-center justify-between w-full px-[10px]  h-[45px] border rounded-md
-          bg-white cursor-pointer transition-colors font-glacial-regular
+          bg-white  cursor-pointer transition-colors font-glacial-regular
           ${error ? 'border-red-500' : 'border-gray-300'}
           ${disabled ? 'bg-gray-100 cursor-not-allowed opacity-50' : 'hover:border-gray-400'}
 
@@ -148,7 +148,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
                             placeholder="Search..."
                             value={searchTerm}
                             onChange={handleSearchChange}
-                            className="w-full p-2 border font-glacial-regular text-[#2C3037] border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full p-2 border font-glacial-regular text-[#2C3037] border-gray-300 font-glacial-regular rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                             onClick={(e) => e.stopPropagation()}
                         />
                     </div>
@@ -162,7 +162,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
                                 <div
                                     key={option.value}
                                     className={`
-                    p-3 cursor-pointer transition-colors border-b border-gray-100 last:border-b-0
+                    p-3 cursor-pointer transition-colors border-b font-glacial-regular border-gray-100 last:border-b-0
                     ${value?.value === option.value
                                             ? 'bg-blue-500 text-white'
                                             : 'hover:bg-gray-50 text-gray-700'

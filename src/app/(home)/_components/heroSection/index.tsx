@@ -2,8 +2,6 @@
 import React from "react";
 import style from "./style.module.css";
 import Container from "@/components/container";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Button from "@/components/layout/button";
 

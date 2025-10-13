@@ -10,7 +10,7 @@ const DispatcherOpportunities = () => {
             <Container>
                 <div className={`${style.titleContainer}`}>
                     <h2>Dispatcher Opportunities</h2>
-                    <p>oin the Universal Inspections family as a dedicated dispatcher and be part of a team where your contributions truly matter! We're more than just colleagues; we're a supportive and goal-oriented group that celebrates each other's success.</p>
+                    <p>{`oin the Universal Inspections family as a dedicated dispatcher and be part of a team where your contributions truly matter! We&quot;re more than just colleagues; we&quot;re a supportive and goal-oriented group that celebrates each other's success.`}</p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-10 items-center mt-[clamp(20px,4vw,30px)]">
@@ -33,7 +33,7 @@ const DispatcherOpportunities = () => {
                         <h2 className={`${style.title} w-[100%] lg:w-[90%]`}>Opportunities for Dispatchers</h2>
 
                         <p className={`${style.sobTitle}`}>
-                            At Universal Inspections, our success is also driven by our dedicated and efficient dispatch team. We are committed to providing the highest level of support to our operations and our clients by ensuring seamless coordination of our field operations. Both full-time and part-time positions are available to accommodate different work preferences and lifestyles. If you have a strong administrative background, excellent organizational and communication skills, and a passion for contributing to a dynamic team, we encourage you to get in touch with us by email at
+                            {`At Universal Inspections, our success is also driven by our dedicated and efficient dispatch team. We are committed to providing the highest level of support to our operations and our clients by ensuring seamless coordination of our field operations. Both full-time and part-time positions are available to accommodate different work preferences and lifestyles. If you have a strong administrative background, excellent organizational and communication skills, and a passion for contributing to a dynamic team, we encourage you to get in touch with us by email at`}
                         </p>
 
                         <div className="flex items-center mt-[22px]">

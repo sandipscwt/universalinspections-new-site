@@ -71,7 +71,7 @@ function AssociateSection() {
 
                     {/* Partners Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-6 sm:px-8 lg:px-0">
-                        {financingPartners.map((partner, index) => (
+                        {financingPartners.map((partner) => (
                             <div
                                 key={partner.id}
                                 className="bg-white border border-gray-200 rounded-lg px-[20px] py-[clamp(20px,4vw,40px)]  hover:shadow-md transition-all duration-300"

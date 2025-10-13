@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import Container from "@/components/container";
 import style from "./style.module.css";
 
@@ -101,7 +101,7 @@ const Footer = () => {
                                 <input
                                     type="email"
                                     placeholder="Email Address"
-                                    className="px-2 py-1 rounded-l-md bg-white text-white placeholder-gray-400 focus:outline-none w-full text-sm"
+                                    className="px-2 py-1 rounded-l-md text-sm font-glacial-regular bg-white text-black placeholder-[#2C3037] focus:outline-none w-full "
                                 />
                                 <button
                                     type="submit"

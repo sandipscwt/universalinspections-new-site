@@ -36,7 +36,7 @@ const EmpoweringSection = () => {
                             <h2 className={`${style.title} w-[100%] lg:w-[90%]`}>Empowering Informed Vehicle Purchases</h2>
 
                             <p className={`${style.sobTitle}`}>
-                                We recognize the critical role thorough and reliable inspections play in pre-purchase automotive decisions. Our meticulous inspectors conduct comprehensive evaluations, providing you or your clients with a clear understanding of a vehicle's condition before a sale. By employing detailed inspection protocols and cutting-edge diagnostic tools, we deliver the unbiased crucial information needed for confident purchasing decisions.
+                                We recognize the critical role thorough and reliable inspections play in pre-purchase automotive decisions. Our meticulous inspectors conduct comprehensive evaluations, providing you or your clients with a clear understanding of a vehicles condition before a sale. By employing detailed inspection protocols and cutting-edge diagnostic tools, we deliver the unbiased crucial information needed for confident purchasing decisions.
                             </p>
                         </div>
                         <div>

@@ -1,8 +1,6 @@
 import Container from '@/components/container';
-import { ArrowRight } from 'lucide-react';
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import style from "./style.module.css";
 import CustomButton from '@/components/layout/customButton';
 

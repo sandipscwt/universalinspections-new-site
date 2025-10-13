@@ -5,15 +5,13 @@ import style from "./style.module.css";
 import InputfileComponent from '@/components/formFields/InputfileComponent';
 import TextArea from '@/components/formFields/TextArea';
 import Button from '@/components/layout/button';
-import { MdCall, MdEmail } from "react-icons/md";
-import { FaUser } from "react-icons/fa";
 import RadioGroup from '@/components/formFields/RadioGroup';
 import CustomSelect from '@/components/formFields/CustomSelect';
 
 const FormSection = () => {
 
     const [message, setMessage] = useState('');
-    const [error, setError] = useState(false);
+    const [error] = useState(false);
 
     const shareOptions = [
         { value: 'public', label: 'Public' },
@@ -21,14 +19,14 @@ const FormSection = () => {
         { value: 'limited', label: 'Limited' },
     ];
 
-    const handleSubmit = () => {
-        if (!message.trim()) {
-            setError(true);
-        } else {
-            setError(false);
-            alert(`Message submitted: ${message}`);
-        }
-    }
+    // const handleSubmit = () => {
+    //     if (!message.trim()) {
+    //         setError(true);
+    //     } else {
+    //         setError(false);
+    //         alert(`Message submitted: ${message}`);
+    //     }
+    // }
 
     const handleAvailabilityChange = (value: string) => {
         console.log('Selected:', value);

@@ -15,35 +15,35 @@ const testimonials = [
         name: "Maria L.",
         designation: "Montgomery, Alabama",
         rating: 5,
-        text: "My daughter was looking for her first car, and I wanted to make sure she was safe. We hired Universal Inspections, and honestly, it was the best money we could have spent. The technician was so thorough and really put her at ease. Universal Inspections provided her report to both of us to give us peace of mind while she’s away at college and we just couldn’t be happier with the service. She's been driving her car for months now with no issues. Thank you, Universal Inspections and a special thanks to Paul, appreciate everything you did for us!",
+        text: `My daughter was looking for her first car, and I wanted to make sure she was safe. We hired Universal Inspections, and honestly, it was the best money we could have spent. The technician was so thorough and really put her at ease. Universal Inspections provided her report to both of us to give us peace of mind while she&apos;s away at college and we just couldn&apos;t be happier with the service. She's been driving her car for months now with no issues. Thank you, Universal Inspections and a special thanks to Paul, appreciate everything you did for us!`,
     },
     {
         id: 2,
         name: "Alex P.",
         designation: "Tuscaloosa, Alabama",
         rating: 5,
-        text: "I was skeptical at first, but after a friend raved about Universal Inspections, I decided to give them a try for a used truck. I consider myself pretty good with cars but I have to say the technician was sharp, thorough, and really explained the condition of the vehicle in detail. He caught something that I had totally overlooked. It gave me the confidence to negotiate the asking price, make the purchase and the truck has been fantastic. Definitely worth it.",
+        text: `I was skeptical at first, but after a friend raved about Universal Inspections, I decided to give them a try for a used truck. I consider myself pretty good with cars but I have to say the technician was sharp, thorough, and really explained the condition of the vehicle in detail. He caught something that I had totally overlooked. It gave me the confidence to negotiate the asking price, make the purchase and the truck has been fantastic. Definitely worth it.`,
     },
     {
         id: 3,
         name: "Ruth T.",
         designation: "Birmingham, Alabama",
         rating: 5,
-        text: "As a senior, I've bought plenty of cars, and I've been burned many times before. Universal Inspections sent a pro who really knew his stuff. He caught a few things the dealer conveniently 'missed,' saving me a headache and a good chunk of cash. I was able to negotiate a better deal on my car and they ended up fixing some issues that would have been a problem down the road. Highly recommend their service to anyone, especially us older folks who just want an honest deal.",
+        text: `As a senior, I&apos;ve bought plenty of cars, and I&apos;ve been burned many times before. Universal Inspections sent a pro who really knew his stuff. He caught a few things the dealer conveniently &apos;missed,&apos; saving me a headache and a good chunk of cash. I was able to negotiate a better deal on my car and they ended up fixing some issues that would have been a problem down the road. Highly recommend their service to anyone, especially us older folks who just want an honest deal.`,
     },
     {
         id: 4,
         name: "Ruth T.",
         designation: "Birmingham, Alabama",
         rating: 5,
-        text: "As a senior, I've bought plenty of cars, and I've been burned many times before. Universal Inspections sent a pro who really knew his stuff. He caught a few things the dealer conveniently 'missed,' saving me a headache and a good chunk of cash. I was able to negotiate a better deal on my car and they ended up fixing some issues that would have been a problem down the road. Highly recommend their service to anyone, especially us older folks who just want an honest deal.",
+        text: `As a senior, I&apos;ve bought plenty of cars, and I&apos;ve been burned many times before. Universal Inspections sent a pro who really knew his stuff. He caught a few things the dealer conveniently &apos;missed,&apos; saving me a headache and a good chunk of cash. I was able to negotiate a better deal on my car and they ended up fixing some issues that would have been a problem down the road. Highly recommend their service to anyone, especially us older folks who just want an honest deal.`,
     },
     {
         id: 5,
         name: "Ruth T.",
         designation: "Birmingham, Alabama",
         rating: 5,
-        text: "As a senior, I've bought plenty of cars, and I've been burned many times before. Universal Inspections sent a pro who really knew his stuff. He caught a few things the dealer conveniently 'missed,' saving me a headache and a good chunk of cash. I was able to negotiate a better deal on my car and they ended up fixing some issues that would have been a problem down the road. Highly recommend their service to anyone, especially us older folks who just want an honest deal.",
+        text: `As a senior, I&apos;ve bought plenty of cars, and I&apos;ve been burned many times before. Universal Inspections sent a pro who really knew his stuff. He caught a few things the dealer conveniently &apos;missed,&apos; saving me a headache and a good chunk of cash. I was able to negotiate a better deal on my car and they ended up fixing some issues that would have been a problem down the road. Highly recommend their service to anyone, especially us older folks who just want an honest deal.`,
     }
 ];
 
@@ -59,7 +59,7 @@ export default function TestimonialsSection() {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
-        appendDots: (dots: any) => (
+        appendDots: (dots: React.ReactNode) => (
             <div className="custom-pagination">
                 <ul className="flex justify-center space-x-2 mt-[-60px]">{dots}</ul>
             </div>
@@ -90,7 +90,7 @@ export default function TestimonialsSection() {
                     centerPadding: "0px",
                 },
             },
-            
+
         ],
     };
 
@@ -103,7 +103,7 @@ export default function TestimonialsSection() {
                         Testimonials
                     </h2>
                     <p className="text-[clamp(14px,3vw,16px)] font-glacial-regular text-[#2C3037] mt-[clamp(8px,3vw,16px)]">
-                        Don't just take our word. Here's what our valued clients have to say
+                        Don&apos;t just take our word. Here&apos;s what our valued clients have to say
                     </p>
                 </div>
             </Container>

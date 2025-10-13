@@ -9,28 +9,41 @@ import NextButton from '@/components/layout/nextButton';
 
 function BlogDetails() {
 
-    const blogDetails = `<ul>
-  <li>
-    Mauris volutpat mauris eget volutpat imperdiet. Nunc tortor lorem, faucibus eu tincidunt in, egestas vel ante. Quisque malesuada tincidunt lorem, nec vehicula leo luctus ac. Curabitur fermentum augue diam, non cursus arcu pellentesque at. Suspendisse scelerisque magna velit. Mauris ut lacinia justo. Phasellus ultrices mauris nisl, vel convallis est posuere a. Cras id risus semper,
-  </li>
+  const blogDetails = `
+  <div>
+    <p>
+      Below are unordered and ordered lists for demonstration:
+    </p>
 
-  <li>
-    In ullamcorper ligula at mi facilisis dapibus. Curabitur nec nibh sit amet enim fringilla vestibulum in id tellus. Fusce tortor nisi, consequat sit amet metus eu, posuere tincidunt mi. Quisque tristique interdum ligula, non sodales nulla vestibulum et. Morbi ante diam, dapibus vitae enim vel, volutpat faucibus risus. Integer maximus sed risus ut fermentum. Phasellus dignissim nisl mi, sit amet posuere mauris tincidunt eget. Phasellus porttitor nulla vitae magna accumsan mollis. Morbi consequat ex nec risus lacinia, vitae ultrices risus venenatis.
-  </li>
+    <ul>
+      <li>
+        Mauris volutpat mauris eget volutpat imperdiet. Nunc tortor lorem, faucibus eu tincidunt in, egestas vel ante. Quisque malesuada tincidunt lorem, nec vehicula leo luctus ac. Curabitur fermentum augue diam, non cursus arcu pellentesque at. Suspendisse scelerisque magna velit. Mauris ut lacinia justo. Phasellus ultrices mauris nisl, vel convallis est posuere a. Cras id risus semper.
+      </li>
 
-  <li>
-    Donec ut lacinia nibh. Nam eget interdum nisl. Vivamus ut elementum libero. Nulla posuere lectus ipsum. Fusce vel turpis vitae leo scelerisque mattis. Nulla ornare pulvinar feugiat. Nam ullamcorper ex in dolor accumsan sollicitudin. Nulla sit amet ligula quis metus euismod ullamcorper. Suspendisse eu magna neque. Praesent feugiat semper purus,
-  </li>
+      <li>
+        In ullamcorper ligula at mi facilisis dapibus. Curabitur nec nibh sit amet enim fringilla vestibulum in id tellus. Fusce tortor nisi, consequat sit amet metus eu, posuere tincidunt mi. Quisque tristique interdum ligula, non sodales nulla vestibulum et. Morbi ante diam, dapibus vitae enim vel, volutpat faucibus risus. Integer maximus sed risus ut fermentum.
+      </li>
 
-  <li>
-    Suspendisse potenti. Aliquam id luctus tortor. Sed consectetur vitae sapien id condimentum. Integer imperdiet erat lorem, vulputate porta dolor porttitor et. Proin sodales vehicula pharetra. Sed id vestibulum sapien. Vestibulum arcu lacus, mattis sit amet arcu feugiat, egestas iaculis velit. Vestibulum pretium, arcu sed facilisis elementum, sem turpis vehicula nisl, ac cursus erat nisi porttitor felis. Vivamus efficitur ac tellus tempus ornare. Donec viverra fermentum lacus, in porttitor nisl cursus sed.
-  </li>
+      <li>
+        Donec ut lacinia nibh. Nam eget interdum nisl. Vivamus ut elementum libero. Nulla posuere lectus ipsum. Fusce vel turpis vitae leo scelerisque mattis. Nulla ornare pulvinar feugiat.
+      </li>
+    </ul>
 
-  <li>
-    Cras non gravida nibh. Nulla in vulputate mauris, eu ultricies turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla interdum finibus mauris, convallis pellentesque justo porttitor vel. Sed placerat augue velit, at auctor tellus aliquet id. Mauris placerat viverra diam, eget sollicitudin erat gravida ut. Nullam in porta diam. Aenean convallis ipsum eget ullamcorper rhoncus.
-  </li>
-</ul>
-`
+    <p>Here’s a numbered (ordered) list example:</p>
+
+    <ol>
+      <li>
+        Suspendisse potenti. Aliquam id luctus tortor. Sed consectetur vitae sapien id condimentum. Integer imperdiet erat lorem, vulputate porta dolor porttitor et.
+      </li>
+      <li>
+        Cras non gravida nibh. Nulla in vulputate mauris, eu ultricies turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.
+      </li>
+      <li>
+        Mauris placerat viverra diam, eget sollicitudin erat gravida ut. Nullam in porta diam. Aenean convallis ipsum eget ullamcorper rhoncus.
+      </li>
+    </ol>
+  </div>
+  `;
     return (
         <section className="bg-white py-[clamp(30px,4vw,100px)]">
             <Container>

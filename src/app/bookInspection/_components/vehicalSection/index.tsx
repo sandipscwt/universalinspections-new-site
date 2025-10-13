@@ -1,7 +1,6 @@
 import Container from '@/components/container'
 import React from 'react'
 import style from './style.module.css'
-import Link from 'next/link'
 import Image from 'next/image'
 
 const VehicalSection = () => {

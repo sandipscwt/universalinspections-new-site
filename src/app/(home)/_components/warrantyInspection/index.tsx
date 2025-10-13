@@ -3,16 +3,13 @@ import Container from '@/components/container';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import style from './style.module.css';
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 import Button from '@/components/layout/button';
 
 const WarrantyInspection: NextPage = () => {
     return (
         <section className="pt-[clamp(15px,4vw,0px)] bg-[linear-gradient(to_bottom,#F8F8F8_50%,#FFFFFF_50%)]">
-
             <Container>
-                <div className={`relative py-[clamp(40px,4vw,82px)] px-[clamp(40px,4vw,86px)]  rounded-lg overflow-hidden ${style.bgGradient}`}>
+                <div className={`relative py-[clamp(40px,4vw,82px)] px-[clamp(8px,4vw,86px)]  rounded-lg overflow-hidden ${style.bgGradient}`}>
 
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0">

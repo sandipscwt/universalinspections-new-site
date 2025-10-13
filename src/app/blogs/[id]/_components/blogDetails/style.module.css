@@ -1,71 +1,131 @@
 .btitle {
-    font-family: "Prompt", "Prompt Fallback";
-    font-weight: 700;
-    font-size: clamp(28px, 4vw, 38px);
-    line-height: clamp(32px, 4vw, 48px);
-    color: #212121;
+  font-family: "Prompt", "Prompt Fallback";
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: clamp(32px, 4vw, 48px);
+  color: #212121;
 }
 
 .time {
-    margin-top: clamp(20px, 4vw, 30px);
-    display: flex;
-    align-items: center;
-    margin-bottom: clamp(20px, 4vw, 30px);
+  margin-top: clamp(20px, 4vw, 30px);
+  display: flex;
+  align-items: center;
+  margin-bottom: clamp(20px, 4vw, 30px);
 }
 
 .time_box {
-    height: 36px;
-    width: 36px;
-    align-items: center;
-    justify-content: center;
-    background-color: #DAA62878;
-    margin-right: 10px;
-    border-radius: 5px;
-    display: flex;
+  height: 36px;
+  width: 36px;
+  align-items: center;
+  justify-content: center;
+  background-color: #DAA62878;
+  margin-right: 10px;
+  border-radius: 5px;
+  display: flex;
 }
 
 .datetime {
-    font-family: var(--font-glacial);
-    font-weight: 400;
-    font-size: clamp(12px, 4vw, 16px);
-    line-height: 33px;
-    letter-spacing: 0%;
-    vertical-align: middle;
-    color: #212121;
+  font-family: var(--font-glacial);
+  font-weight: 400;
+  font-size: clamp(12px, 4vw, 16px);
+  line-height: 33px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #212121;
 }
 
 .blogtitle {
-    font-family: var(--font-glacial);
-    font-weight: 700;
-    font-size: clamp(12px, 4vw, 16px);
-    line-height: clamp(20px, 4vw, 25.9px);
-    letter-spacing: 0%;
-    vertical-align: middle;
-    color: #212121;
-    margin-bottom: 23px;
+  font-family: var(--font-glacial);
+  font-weight: 700;
+  font-size: clamp(12px, 4vw, 16px);
+  line-height: clamp(20px, 4vw, 25.9px);
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #212121;
+  margin-bottom: 23px;
 }
 
-.sectionlist ul {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+/* =========================
+   Section List (Scrollable)
+========================= */
+.sectionlist {
+  padding-right: 10px;
 }
 
+/* Paragraph inside sectionlist */
+.sectionlist p {
+  font-family: var(--font-glacial);
+  font-weight: 700;
+  font-size: clamp(12px, 4vw, 16px);
+  line-height: clamp(20px, 4vw, 25.9px);
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #212121;
+  margin-bottom: 23px;
+}
+
+/* List styling (UL + OL) */
+.sectionlist ul,
+.sectionlist ol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+/* Unordered list bullets */
 .sectionlist ul li {
-    font-family: var(--font-glacial);
-    font-weight: 400;
-    font-size: clamp(12px, 4vw, 16px);
-    line-height: clamp(20px, 4vw, 26px);
-    letter-spacing: 0%;
-    vertical-align: middle;
-    color: #212121;
+  list-style-type: none;
 }
 
+/* Ordered list numbers */
+.sectionlist ol li {
+  list-style-type: decimal;
+}
+
+/* Common list item style */
+.sectionlist ul li,
+.sectionlist ol li {
+  font-family: var(--font-glacial);
+  font-weight: 400;
+  font-size: clamp(12px, 4vw, 16px);
+  line-height: clamp(20px, 4vw, 26px);
+  letter-spacing: 0%;
+  color: #212121;
+}
+
+/* Ordered list marker styling */
+.sectionlist ol li::marker {
+  color: #212121;
+  font-weight: bold;
+}
+
+/* Bottom Buttons */
 .bottom {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center; 
-    gap: 30px; 
-   margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+  gap: 30px; 
+  margin-top: 30px;
+}
+
+
+/* Responsive: auto height on mobile */
+@media (max-width: 768px) {
+  .sectionlist {
+    height: auto;
+    max-height: 249px;
+  }
+}
+
+/* Bottom Buttons */
+.bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+  gap: 30px; 
+  margin-top: 30px;
 }

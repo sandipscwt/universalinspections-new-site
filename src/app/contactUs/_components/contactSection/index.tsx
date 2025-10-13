@@ -13,17 +13,17 @@ import Button from "@/components/layout/button";
 
 const ContactSection = () => {
     const [message, setMessage] = useState('');
-    const [error, setError] = useState(false);
+    const [error] = useState(false);
 
-    const handleSubmit = () => {
-        if (!message.trim()) {
-            setError(true);
-        } else {
-            setError(false);
-            alert(`Message submitted: ${message}`);
-        }
-    }
-    
+    // const handleSubmit = () => {
+    //     if (!message.trim()) {
+    //         setError(true);
+    //     } else {
+    //         setError(false);
+    //         alert(`Message submitted: ${message}`);
+    //     }
+    // }
+
     return (
         <section className={`${style.sectionContainer} bg-[#ffffff]`}>
             <Container>
@@ -43,10 +43,8 @@ const ContactSection = () => {
                         >
                             Send Us Message
                         </h3>
-                        <p
-                            className={`${style.massagesubTitle}`}
-                        >
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
+                        <p className={`${style.massagesubTitle}`}>
+                            Lorem Ipsum&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since
                         </p>
 
                         <form>
