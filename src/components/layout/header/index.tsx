@@ -114,7 +114,7 @@ const Header: FC = () => {
                                                             //         : "text-white font-glacial-regular"
                                                             //     }`}
                                                             // className="text-red-600"
-                                                        className={`${style.opportunitiesText}`}
+                                                            className={`${style.opportunitiesText}`}
                                                         >
                                                             Opportunities
                                                         </span>
@@ -125,13 +125,16 @@ const Header: FC = () => {
                                                         )}
                                                     </div>
 
-
                                                     <ul className={style.dropdownMenu}>
                                                         <li>
-                                                            <Link
-                                                                href="/opportunities/dispatchers"
-                                                                className="block px-4 py-2 text-black hover:bg-[#f0f0f0]"
-                                                            >
+                                                            <Link href="/opportunities/dispatchers">
+                                                                Dispatchers
+                                                            </Link>
+
+                                                            <Link href="/opportunities/dispatchers">
+                                                                Dispatchers
+                                                            </Link>
+                                                            <Link href="/opportunities/dispatchers">
                                                                 Dispatchers
                                                             </Link>
                                                         </li>
@@ -206,7 +209,7 @@ const Header: FC = () => {
                                         <span>Opportunities</span>
                                         <ChevronDown className="w-4 h-4" />
                                     </button>
-                                    
+
                                     {opportunitiesOpen && (
                                         <ul className="absolute left-0 mt-1 bg-[#1F3339] rounded shadow-lg w-48 z-50">
                                             <li>

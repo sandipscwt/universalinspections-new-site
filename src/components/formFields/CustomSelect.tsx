@@ -156,7 +156,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
                     {/* Options List */}
                     <div className="max-h-48 overflow-y-auto">
                         {filteredOptions.length === 0 ? (
-                            <div className="p-3 text-center text-gray-500">No options found</div>
+                            <div className="p-3 text-center font-glacial-regular text-gray-500">No options found</div>
                         ) : (
                             filteredOptions.map((option) => (
                                 <div

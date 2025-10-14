@@ -22,7 +22,7 @@ const CheckBox: React.FC<CheckBoxProps> = ({ label, checked = false, onChange, d
           disabled:bg-gray-200 font-glacial-regular disabled:border-gray-400
         "
       />
-      <span className={`text-gray-700 font-glacial-regular ${disabled ? 'text-gray-400' : ''}`}>{label}</span>
+      <span className={`text-[#000000] font-glacial-regular ${disabled ? 'text-gray-400' : ''}`}>{label}</span>
     </label>
   );
 };
