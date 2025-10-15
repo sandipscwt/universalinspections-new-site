@@ -1,9 +1,10 @@
-
+"use client";
 import Container from '@/components/container';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import style from "./style.module.css";
+import { motion } from "framer-motion";
 
 const services = [
     {
@@ -89,7 +90,30 @@ const WhatWeDoSection = () => {
             {/* CTA Banner */}
             <div className={`absolute bottom-0 right-0 gap-5 bg-[#BD632F] rounded-tl-lg flex flex-col sm:flex-row justify-between p-6 text-white ${style.ctaBanner}`}>
                 <div className="flex items-center gap-4">
-                    <Image src="/images/Inspections_logo.png" alt="Need Service" width={70} height={70} />
+                    <motion.div
+                        animate={{
+                            rotate: [0, 360, 0, -360, 0],
+                            scale: [1, 1.05, 1, 1.05, 1],
+                        }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: 10,
+                            ease: "linear",
+                        }}
+                        style={{ display: "inline-block" }}
+                    >
+                        <Image
+                            src="/images/Inspections_logo.png"
+                            alt="Need Service"
+                            width={70}
+                            height={70}
+                        />
+                    </motion.div>
+
+
+
+                    {/* <Image src="/images/Inspections_logo.png" 
+                    alt="Need Service" width={70} height={70} /> */}
                     <div>
                         <h4 className="prompt-bold text-[clamp(16px,4vw,24px)] w-full lg:w-[70%]">Need Any Service</h4>
                     </div>

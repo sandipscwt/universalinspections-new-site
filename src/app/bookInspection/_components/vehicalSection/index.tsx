@@ -8,7 +8,7 @@ interface VehicalSectionProps {
 }
 
 const VehicalSection: React.FC<VehicalSectionProps> = ({ setSelectVehical }) => {
-    const [selecctBox, setSelectBox] = useState(0)
+    const [selectBox, setSelectBox] = useState(0)
 
     const services = [
         {
@@ -61,24 +61,30 @@ const VehicalSection: React.FC<VehicalSectionProps> = ({ setSelectVehical }) => 
                                 setSelectBox(idx)
                             }}
                             className={`group justify-stretch cursor-pointer rounded-lg shadow-sm border border-[#DAA6284D] transition flex flex-col gap-[20px] py-[20px] px-[20px] min-h-[166px] items-stretch h-[100%] 
-      ${selecctBox === idx ? "bg-[#BD632F] text-white shadow-md" : "bg-white hover:bg-[#BD632F] hover:text-white hover:shadow-md"}
+      ${selectBox === idx ? "bg-[#BD632F] text-white shadow-md" : "bg-white hover:bg-[#BD632F] hover:text-white hover:shadow-md"}
     `}
                         >
-
                             <div className={`${style.boxicon}`}>
-                                <Image
-                                    src={service.icon}
-                                    alt={service.title}
-                                    fill
-                                    className=" w-[100%] h-[100%] absolute
-                                    object-contain object-left  group-hover:invert brightness-0 group-hover:brightness-0 group-hover:contrast-200"
-                                />
-                            </div>
-                            <h3
-                                className={`text-[clamp(18px,4vw,24px)] w-[100%] lg:w-[80%]  leading-1.2 text-[#DAA628] prompt-bold text-start  ${service.color} group-hover:text-white`}
-                            >
-                                {service.title}
-                            </h3>
+  <Image
+    src={service.icon}
+    alt={service.title}
+    fill
+    className={`w-[100%] h-[100%] absolute object-contain object-left 
+      ${selectBox === idx ? 'invert brightness-0 contrast-200' : 'group-hover:invert group-hover:brightness-0 group-hover:contrast-200'}
+    `}
+  />
+</div>
+
+<h3
+  className={`text-[clamp(18px,4vw,24px)] w-[100%] lg:w-[80%] leading-1.2 
+    text-[#DAA628] prompt-bold text-start 
+    ${service.color} ${selectBox === idx ? 'text-white' : 'group-hover:text-white'}
+  `}
+>
+  {service.title}
+</h3>
+
+                        
                         </button>
                     ))}
                 </div>

@@ -8,6 +8,8 @@ import style from "./style.module.css";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useEffect, useState } from "react";
+
 
 const testimonials = [
     {
@@ -48,6 +50,29 @@ const testimonials = [
 ];
 
 export default function TestimonialsSection() {
+    const [windowWidth, setWindowWidth] = useState(0);
+
+    useEffect(() => {
+        setWindowWidth(window.innerWidth);
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const getCenterPadding = () => {
+        if (windowWidth > 1200) {
+            return "25%";
+        } else if (windowWidth > 992) {
+            return "20%";
+        } else if (windowWidth > 768) {
+            return "15%";
+        } else if (windowWidth > 567) {
+            return "10%";
+        } else {
+            return "5%";
+        }
+    };
+
     const settings = {
         dots: true,
         infinite: true,
@@ -55,10 +80,11 @@ export default function TestimonialsSection() {
         autoplaySpeed: 3000,
         speed: 700,
         centerMode: true,
-        centerPadding: "25%",
+        centerPadding: getCenterPadding(),
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
+        key: windowWidth,
         appendDots: (dots: React.ReactNode) => (
             <div className="custom-pagination">
                 <ul className="flex justify-center space-x-2 mt-[-60px]">{dots}</ul>
@@ -68,29 +94,20 @@ export default function TestimonialsSection() {
         responsive: [
             {
                 breakpoint: 1024,
-                settings: {
-                    slidesToShow: 1,
-                    centerMode: true,
-                    centerPadding: "20%",
-                },
+                settings: { slidesToShow: 1, centerMode: true, centerPadding: "20%" },
+            },
+            {
+                breakpoint: 960,
+                settings: { slidesToShow: 1, centerMode: true, centerPadding: "5%" },
             },
             {
                 breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    centerMode: true,
-                    centerPadding: "10%",
-                },
+                settings: { slidesToShow: 1, centerMode: true, centerPadding: "10%" },
             },
             {
                 breakpoint: 576,
-                settings: {
-                    slidesToShow: 1,
-                    centerMode: false,
-                    centerPadding: "0px",
-                },
+                settings: { slidesToShow: 1, centerMode: true, centerPadding: "15px" },
             },
-
         ],
     };
 
@@ -113,7 +130,7 @@ export default function TestimonialsSection() {
                     {testimonials.map((testimonial, index) => (
                         <div key={index} className="flex justify-center items-center">
                             <div
-                                className={`testimonial-card bg-gray-50 rounded-[16px] shadow-lg flex flex-col justify-between py-10 px-[52px] border border-[#DAA6284D] text-center transition-all duration-500`}
+                                className={`testimonial-card bg-gray-50 rounded-[16px] shadow-lg flex flex-col justify-between py-[clamp(30px,3vw,40px)] px-[clamp(15px,4vw,52px)] border border-[#DAA6284D] text-center transition-all duration-500`}
                             >
 
                                 <div className="flex justify-center  space-x-2 mb-2">
@@ -216,7 +233,7 @@ export default function TestimonialsSection() {
         display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom:20px;
+    margin-bottom:50px;
 
     }
 }

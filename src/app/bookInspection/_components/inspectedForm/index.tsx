@@ -8,11 +8,10 @@ import TextArea from '@/components/formFields/TextArea'
 import { HiOutlineCalendar } from "react-icons/hi2";
 import CheckBox from '@/components/formFields/CheckBox';
 import Button from '@/components/layout/button';
-import { FaCircleInfo } from 'react-icons/fa6';
-import Link from 'next/link';
 import HtmlRender from '@/components/HtmlRender';
 import CustomSelect from '@/components/formFields/CustomSelect';
 import { vahicalservices } from './data';
+import Link from 'next/link';
 
 interface InspectedFormProps {
     vehicalType: string;
@@ -22,11 +21,11 @@ const InspectedForm: React.FC<InspectedFormProps> = ({ vehicalType }) => {
     const [message, setMessage] = useState('');
     const [error] = useState(false);
 
-    const getdata =  vahicalservices.find((it)=>it.title.toLowerCase() == vehicalType.toLowerCase())
-    console.log('getdata---------------',getdata);
-    console.log('vehicalType --------------',vehicalType );
-    
-    
+    const getdata = vahicalservices.find((it) => it.title.toLowerCase() == vehicalType.toLowerCase())
+    console.log('getdata---------------', getdata);
+    console.log('vehicalType --------------', vehicalType);
+
+
     const [selectAddOn, setSelectAddOn] = useState<{ [key: string]: boolean }>({
         carfax1: false,
         carfax2: false,
@@ -421,12 +420,10 @@ const InspectedForm: React.FC<InspectedFormProps> = ({ vehicalType }) => {
                             </div>
                             <p className={`${style.security}`}>Secured with industry-standard TLS encryption</p>
                         </div>
-
-
+                        
                         <div className="p-0 mt-[clamp(20px,4vw,30px)] flex items-start">
                             <Button title="Submit" href="/book" />
                         </div>
-
 
                     </form>
 
@@ -455,26 +452,23 @@ const InspectedForm: React.FC<InspectedFormProps> = ({ vehicalType }) => {
                                 </div>
 
                                 <div className=" gap-2 mb-3">
-                                    <p >
+                                    <p className='relative'>
                                         <span className={`${style.vahical_name} ${style.vahicalinfo_name}`}>
                                             Quickest turn around times in the industry.
                                         </span>
 
-
-                                        <Link href='/' className='bg-amber-300 !w-[18px] !h-[18px] rounded-full'>
-                                            i
+                                        <Link href='/' className={`${style.infoimg}`}>
+                                            <Image
+                                                src="/images/bookInspection/info.png"
+                                                alt="info"
+                                                width={13}
+                                                height={13}
+                                                className="object-contain"
+                                            />
                                         </Link>
 
                                     </p>
-                                    {/* <span className="w-[18px] h-[18px] bg-[#b45c2e] rounded-full flex items-center justify-center">
-                                        <Image
-                                            src="/images/bookInspection/info.png"
-                                            alt="info"
-                                            width={10}
-                                            height={10}
-                                            className="object-contain"
-                                        />
-                                    </span> */}
+                                    
                                 </div>
 
                                 {Object.values(selectAddOn).some((val) => val) && (

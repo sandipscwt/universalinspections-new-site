@@ -12,12 +12,21 @@ const HeroSection: React.FC = () => {
             className={`${style.heroSection}`}
         >
             <div className="absolute inset-0 z-0">
-                <Image
+                {/* <Image
                     src="/images/hero_img.png"
                     alt="Background"
                     fill
                     className="object-cover"
-                />
+                /> */}
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-center object-fill"
+                >
+                    <source src="https://universalinspections-static-assets.s3.amazonaws.com/banner_video/67beb46f8de3f1740551279983375.mp4" type="video/mp4" />
+                </video>
             </div>
 
             <Container>

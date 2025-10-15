@@ -5,6 +5,10 @@ import ScheduleInspectionSection from './_components/scheduleInspectionSection'
 import TestimonialsSection from './_components/testimonialSection'
 import HowItWorks from './_components/howItWork'
 import WarrantyInspection from './_components/warrantyInspection'
+import { generateMetadata } from '../utils/genaratemetadata'
+
+
+export const metadata = generateMetadata({ title: "Home | Universal Inspections" });
 
 const Home = () => {
     return (

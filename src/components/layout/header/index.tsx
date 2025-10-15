@@ -26,6 +26,16 @@ const Header: FC = () => {
         { href: "/opportunities", label: "Opportunities" },
     ];
 
+        const DeviceItems = [
+        { href: "/", label: "Home" },
+        { href: "/about", label: "About Us" },
+        { href: "/services", label: "Services" },
+        { href: "/blogs", label: "Blogs" },
+        { href: "/associates", label: "Our Associates" },
+        { href: "/warranties", label: "Extended Warranties" },
+        { href: "/financing", label: "Financing" },
+    ];
+
     return (
         <header className="w-full shadow-md">
             {/* Top Info Bar */}
@@ -189,44 +199,66 @@ const Header: FC = () => {
                                     <X className="w-8 h-8" />
                                 </button>
                             </div>
-                            <ul className="flex flex-col gap-3 pt-[50px] space-y-2">
+                            <ul className="flex flex-col  gap-3 pt-[50px] space-y-2">
 
-                                {menuItems.map(({ href, label }) => (
-                                    <li key={href}>
+                                {DeviceItems.map(({ href, label }) => (
+                                    <li key={href} className=" text-center">
 
-                                        <Link href={href} className="text-white" onClick={() => setMenuOpen(false)}>
+                                        <Link href={href} className="text-white  w-[100%]" onClick={() => setMenuOpen(false)}>
                                             {label}
                                         </Link>
                                     </li>
                                 ))}
 
                                 {/* Opportunities Dropdown */}
-                                <li className="relative">
+                                <li className="relative ">
+                                    {/* Header button */}
                                     <button
-                                        onClick={() => setOpportunitiesOpen(!opportunitiesOpen)}
-                                        className="flex items-center space-x-1 text-white"
+                                        onClick={() => setOpportunitiesOpen(!opportunitiesOpen) }
+                                        className="flex w-full  justify-center text-center  text-white px-4 py-2 hover:bg-[#2C4B52] rounded"
                                     >
                                         <span>Opportunities</span>
-                                        <ChevronDown className="w-4 h-4" />
+                                        <ChevronDown
+                                            className={`w-4 h-4 transform transition-transform duration-300 ${opportunitiesOpen ? "rotate-180" : ""
+                                                }`}
+                                        />
                                     </button>
 
-                                    {opportunitiesOpen && (
-                                        <ul className="absolute left-0 mt-1 bg-[#1F3339] rounded shadow-lg w-48 z-50">
-                                            <li>
+                                    {/* Accordion Content */}
+                                    <div
+                                        className={`overflow-hidden items-center justify-center  transition-all duration-300 ${opportunitiesOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                                            }`}
+                                    >
+                                        <ul className="bg-[#1F3339] rounded-b-lg">
+                                            <li className="text-center">
                                                 <Link
                                                     href="/opportunities/dispatchers"
-                                                    className="block px-4 py-2 hover:bg-[#2C4B52]"
-                                                    onClick={() => {
-                                                        setOpportunitiesOpen(false);
-                                                        setMenuOpen(false);
-                                                    }}
+                                                    className="block px-6 py-2 text-white hover:bg-[#2C4B52]"
+                                                    onClick={() => {setOpportunitiesOpen(false),setMenuOpen(false)}}
                                                 >
                                                     Dispatchers
                                                 </Link>
                                             </li>
+                                        <li className="text-center">
+                                                <Link
+                                                    href="/opportunities/drivers"
+                                                    className="block px-6 py-2 text-white hover:bg-[#2C4B52]"
+                                                    onClick={() => setOpportunitiesOpen(false)}
+                                                >
+                                                    Drivers
+                                                </Link>
+                                            </li>
+                                        <li className="text-center">
+                                                <Link
+                                                    href="/opportunities/fleet-owners"
+                                                    className="block px-6 py-2 text-white hover:bg-[#2C4B52]"
+                                                    onClick={() => setOpportunitiesOpen(false)}
+                                                >
+                                                    Fleet Owners
+                                                </Link>
+                                            </li>
                                         </ul>
-                                    )}
-
+                                    </div>
                                 </li>
                             </ul>
 
