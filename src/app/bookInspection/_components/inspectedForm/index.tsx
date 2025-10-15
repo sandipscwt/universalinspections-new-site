@@ -22,9 +22,6 @@ const InspectedForm: React.FC<InspectedFormProps> = ({ vehicalType }) => {
     const [error] = useState(false);
 
     const getdata = vahicalservices.find((it) => it.title.toLowerCase() == vehicalType.toLowerCase())
-    console.log('getdata---------------', getdata);
-    console.log('vehicalType --------------', vehicalType);
-
 
     const [selectAddOn, setSelectAddOn] = useState<{ [key: string]: boolean }>({
         carfax1: false,

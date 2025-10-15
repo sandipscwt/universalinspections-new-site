@@ -1,0 +1,298 @@
+.sectionContainer {
+    padding-top: clamp(30px, 8vw, 30px);
+    padding-bottom: clamp(30px, 8vw, 100px);
+}
+
+.contact_wrapper {
+    display: flex;
+    background-color: #ffffff;
+    border: 1px solid #f1e4b3;
+    border-radius: 8px;
+    padding-top: clamp(30px, 8vw, 45px);
+    padding-bottom: clamp(30px, 8vw, 60px);
+    padding-left: clamp(20px, 1.2vw, 30px);
+    padding-right: clamp(20px, 1.2vw, 30px);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+
+.comTitle {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(18px, 4vw, 24px);
+    line-height: clamp(18px, 4vw, 24px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #DAA628;
+}
+
+.vahical_name {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(14px, 4vw, 18px);
+    line-height: clamp(20px, 4vw, 24px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #000000;
+}
+
+.vahical_price {
+    font-family: var(--font-glacial);
+    font-weight: 700;
+    font-size: clamp(14px, 4vw, 18px);
+    line-height: clamp(20px, 4vw, 24px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #000000;
+    margin-left: 7px;
+}
+
+.vahicalinfo_name {
+    /* display: inline-flex;
+  align-items: center; */
+}
+
+/* .vahicalinfo_name::after {
+  content: "";
+  display: inline-block;
+  background: url("/images/bookInspection/info.png") no-repeat center center;
+  background-size: contain;
+  width: 18px;
+  height: 18px;
+  margin-left: 5px;
+transform: translateY(5px);
+cursor: pointer;
+} */
+
+.total {
+    font-family: var(--font-glacial);
+    font-weight: 700;
+    font-size: clamp(14px, 4vw, 17px);
+    line-height: clamp(20px, 4vw, 24px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #000000;
+}
+
+.vehicalcard_html div p {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(14px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 24px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #000000;
+}
+
+.vehicalcard_html div ul li {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(14px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 24px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #000000;
+    list-style-type: disc;
+    margin-left: 15px;
+}
+
+.add_on p {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(14px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 24px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #000000;
+    margin-bottom: 7px;
+}
+
+.add_on span {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(12px, 4vw, 14px);
+    line-height: clamp(20px, 4vw, 24px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #000000;
+    display: flex;
+    margin-top: 3px;
+
+}
+
+.terms_section {
+    /* display: flex;
+    justify-content: center;
+    font-family: "Inter", sans-serif; */
+    margin-top: clamp(20px, 4vw, 30px);
+    width: 100%;
+
+}
+
+.terms_container {
+    height: 249px;
+    background: #ffffff;
+    border: 1px solid #abb1b8;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    overflow-y: auto;
+}
+
+/* ====== Headings ====== */
+.terms_container h3 {
+    font-family: var(--font-glacial);
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #000000;
+    font-size: clamp(14px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.updated_date {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    margin-bottom: 4px;
+    color: #000000;
+    font-size: clamp(14px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+/* ====== Content Box (Scrollable, Fixed Height) ====== */
+.terms_content {
+    overflow-y: auto;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: #334155;
+    background-color: #fff;
+}
+
+.terms_content p {
+    margin-bottom: 12px;
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    margin-bottom: 4px;
+    color: #000000;
+    font-size: clamp(14px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+/* ====== Lists ====== */
+.terms_content ul,
+.terms_content ol {
+    margin: 12px 0 12px 24px;
+    padding-left: 1rem;
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    color: #000000;
+    font-size: clamp(14px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.terms_content ul li {
+    list-style-type: disc;
+    margin-bottom: 6px;
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    color: #000000;
+    font-size: clamp(14px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.terms_content ol li {
+    list-style-type: decimal;
+    margin-bottom: 6px;
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    color: #000000;
+    font-size: clamp(14px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+/* ====== Scrollbar ====== */
+.term_-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terms_content::-webkit-scrollbar-thumb {
+    background: #DAA628 !important;
+    /* Red scrollbar thumb */
+    border-radius: 4px;
+}
+
+.terms_content::-webkit-scrollbar-thumb:hover {
+    background: #DAA628;
+}
+
+.terms_content::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 4px;
+}
+
+/* ====== Bottom Note ====== */
+.scroll_note {
+    margin-top: 12px;
+    text-align: center;
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    color: #000000;
+    font-size: clamp(14px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #EA5959;
+}
+
+.security {
+    font-family: var(--font-glacial);
+    font-weight: 700;
+    color: #000000;
+    font-size: clamp(12px, 4vw, 14px);
+    line-height: clamp(10px, 4vw, 13px);
+    line-height: 13.98px;
+    letter-spacing: 0%;
+    text-align: right;
+    vertical-align: middle;
+    text-transform: capitalize;
+    margin-left: 10px;
+
+}
+
+.infoimg {
+    height: 30px;
+    width: 30px;
+    border-radius: 9px;
+    position: absolute;
+    bottom: -12px;
+    left: 23%;
+}
+
+/* w-[18px] h-[18px] p rounded-full flex items-center justify-center */
+
+/* ====== Responsive ====== */
+
+@media (max-width: 1024px) {
+    .rightSideimg {
+        height: 360px;
+    }
+}
+
+@media (max-width: 640px) {
+    .terms_container {
+        padding: 16px;
+    }
+}

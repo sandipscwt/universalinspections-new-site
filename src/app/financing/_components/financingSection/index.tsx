@@ -109,12 +109,14 @@ function FinancingSection() {
                         ))}
                     </div>
 
-
                 </Container>
                 <div className={`${style.bottom}`}>
                     <p>Select a financing partner above to view their details, or</p>
                     <div className="p-0 mt-[30px] flex items-center justify-center">
-                        <ApplicationButton title="Proceed to General Application" href="/book" />
+                        <ApplicationButton title="Proceed to General Application" 
+                        // href="/financing/form"
+                        href="/book"
+                         />
                     </div>
                 </div>
             </div>
