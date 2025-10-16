@@ -1,5 +1,5 @@
 .sectionContainer {
-    padding-top: clamp(30px, 8vw, 30px);
+    padding-top: clamp(30px, 8vw, 100px);
     padding-bottom: clamp(30px, 8vw, 100px);
 }
 
@@ -16,6 +16,16 @@
     align-items: stretch;
     justify-content: space-between;
     gap: 2.5rem;
+}
+
+.contenttitle {
+    font-size: clamp(28px, 4vw, 38px);
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    color: #2C3037;
+    line-height: clamp(26px, 4vw, 38px);
+    text-align: center;
+    margin-bottom: clamp(20px,4vw,30px);
 }
 
 .comTitle {

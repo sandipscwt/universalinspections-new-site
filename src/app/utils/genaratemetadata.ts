@@ -18,8 +18,6 @@ export const generateMetadata = ({
     authors: [{ name: "Your Name", url }],
     creator: "Your Name",
     publisher: "My Website",
-    themeColor: "#ffffff",
-    viewport: "width=device-width, initial-scale=1",
     robots: "index, follow",
     openGraph: {
       title,

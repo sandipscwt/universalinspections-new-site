@@ -8,7 +8,7 @@ import { MdCall, MdEmail } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import InputfileComponent from "@/components/formFields/InputfileComponent";
 import TextArea from "@/components/formFields/TextArea";
-import Button from "@/components/layout/button";
+import  { FormButton } from "@/components/layout/button";
 
 
 const ContactSection = () => {
@@ -85,7 +85,7 @@ const ContactSection = () => {
 
                             {/* Submit */}
                             <div className="p-0 mt-[20px] flex items-start">
-                                <Button title="Submit" href="/book" />
+                                <FormButton title="Submit" />
                             </div>
                         </form>
                     </div>

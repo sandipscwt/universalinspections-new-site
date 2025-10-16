@@ -26,7 +26,7 @@ const Header: FC = () => {
         { href: "/opportunities", label: "Opportunities" },
     ];
 
-        const DeviceItems = [
+    const DeviceItems = [
         { href: "/", label: "Home" },
         { href: "/about", label: "About Us" },
         { href: "/services", label: "Services" },
@@ -140,12 +140,15 @@ const Header: FC = () => {
                                                             <Link href="/opportunities/dispatchers">
                                                                 Dispatchers
                                                             </Link>
-
+                                                        </li>
+                                                        <li>
                                                             <Link href="/opportunities/dispatchers">
-                                                                Dispatchers
+                                                                Inspector
                                                             </Link>
+                                                        </li>
+                                                        <li>
                                                             <Link href="/opportunities/dispatchers">
-                                                                Dispatchers
+                                                                Administrator
                                                             </Link>
                                                         </li>
                                                     </ul>
@@ -214,7 +217,7 @@ const Header: FC = () => {
                                 <li className="relative ">
                                     {/* Header button */}
                                     <button
-                                        onClick={() => setOpportunitiesOpen(!opportunitiesOpen) }
+                                        onClick={() => setOpportunitiesOpen(!opportunitiesOpen)}
                                         className="flex w-full  justify-center text-center  text-white px-4 py-2 hover:bg-[#2C4B52] rounded"
                                     >
                                         <span>Opportunities</span>
@@ -234,12 +237,12 @@ const Header: FC = () => {
                                                 <Link
                                                     href="/opportunities/dispatchers"
                                                     className="block px-6 py-2 text-white hover:bg-[#2C4B52]"
-                                                    onClick={() => {setOpportunitiesOpen(false),setMenuOpen(false)}}
+                                                    onClick={() => { setOpportunitiesOpen(false); setMenuOpen(false) }}
                                                 >
                                                     Dispatchers
                                                 </Link>
                                             </li>
-                                        <li className="text-center">
+                                            <li className="text-center">
                                                 <Link
                                                     href="/opportunities/drivers"
                                                     className="block px-6 py-2 text-white hover:bg-[#2C4B52]"
@@ -248,7 +251,7 @@ const Header: FC = () => {
                                                     Drivers
                                                 </Link>
                                             </li>
-                                        <li className="text-center">
+                                            <li className="text-center">
                                                 <Link
                                                     href="/opportunities/fleet-owners"
                                                     className="block px-6 py-2 text-white hover:bg-[#2C4B52]"

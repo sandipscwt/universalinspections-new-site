@@ -73,13 +73,15 @@ const WhatWeDoSection = () => {
                         {services.map((service, idx) => (
                             <div
                                 key={idx}
-                                className={`${style.cardBox}`}
+                                className="group h-[278px] bg-white cursor-pointer rounded-lg shadow-sm border border-[#DAA6284D] transition hover:bg-[#BD632F] hover:shadow-md flex flex-col justify-between py-[40px] px-[20px]"
                             >
-                                <div>
-                                    <Image src={service.icon} alt={service.title} width={62} height={62} className="object-cover" />
-                                </div>
-                                <h3 className={`text-2xl prompt-bold mt-3  ${service.color}`}>{service.title}</h3>
-                                <p className="text-base prompt-regular  text-[#2C3037] mt-2">{service.description}</p>
+                                <Link href={'/services/auto'}>
+                                    <div>
+                                        <Image src={service.icon} alt={service.title} width={62} height={62} className="object-cover group-hover:invert group-hover:brightness-0 group-hover:contrast-200" />
+                                    </div>
+                                    <h3 className={`text-2xl text-[#DAA628] prompt-bold mt-3 ${service.color} group-hover:text-white`}>{service.title}</h3>
+                                    <p className="text-base prompt-regular text-[#2C3037] mt-2 group-hover:text-white">{service.description}</p>
+                                </Link>
                             </div>
 
                         ))}

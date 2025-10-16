@@ -65,7 +65,7 @@ const AutomativeRvSection: React.FC = () => {
                         <div className="w-full h-auto ">
                             <div className="relative w-full  h-auto">
                                 <Image
-                                    src="/images/autoservice_group.png"
+                                    src="/images/autoservicee_group.png"
                                     alt="Automotive services"
                                     layout="responsive"
                                     width={556}
@@ -105,7 +105,7 @@ const AutomativeRvSection: React.FC = () => {
 
                             {/* Button */}
                             <div className="p-0">
-                                <Button title="Get Started" href="/book" />
+                                <Button title="Get Started" href="/bookInspection" />
                             </div>
                         </div>
 

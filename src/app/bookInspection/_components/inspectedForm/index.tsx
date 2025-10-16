@@ -7,7 +7,7 @@ import InputfileComponent from '@/components/formFields/InputfileComponent'
 import TextArea from '@/components/formFields/TextArea'
 import { HiOutlineCalendar } from "react-icons/hi2";
 import CheckBox from '@/components/formFields/CheckBox';
-import Button from '@/components/layout/button';
+import  { FormButton } from '@/components/layout/button';
 import HtmlRender from '@/components/HtmlRender';
 import CustomSelect from '@/components/formFields/CustomSelect';
 import { vahicalservices } from './data';
@@ -18,10 +18,21 @@ interface InspectedFormProps {
 }
 
 const InspectedForm: React.FC<InspectedFormProps> = ({ vehicalType }) => {
+
+
     const [message, setMessage] = useState('');
     const [error] = useState(false);
 
-    const getdata = vahicalservices.find((it) => it.title.toLowerCase() == vehicalType.toLowerCase())
+
+    const getdata = vahicalservices.find((it) => {
+        const compareValue = vehicalType?.trim()
+            ? vehicalType.toLowerCase()
+            : "standard / exotic / classic";
+
+        return it.title.toLowerCase() === compareValue;
+    });
+
+
 
     const [selectAddOn, setSelectAddOn] = useState<{ [key: string]: boolean }>({
         carfax1: false,
@@ -109,7 +120,7 @@ const InspectedForm: React.FC<InspectedFormProps> = ({ vehicalType }) => {
                         <h3
                             className={`text-[clamp(18px,4vw,24px)] w-[100%] lg:w-[80%]  leading-1.2 text-[#DAA628] prompt-bold mb-[clamp(20px,4vw,30px)]`}
                         >
-                            Vahical Form
+                            Vehicle Details
                         </h3>
                         {vehicalType === "RV / Motorhome" && (
                             <div className=" mb-[20PX]">
@@ -417,9 +428,9 @@ const InspectedForm: React.FC<InspectedFormProps> = ({ vehicalType }) => {
                             </div>
                             <p className={`${style.security}`}>Secured with industry-standard TLS encryption</p>
                         </div>
-                        
+
                         <div className="p-0 mt-[clamp(20px,4vw,30px)] flex items-start">
-                            <Button title="Submit" href="/book" />
+                            <FormButton title="Submit"  />
                         </div>
 
                     </form>
@@ -465,7 +476,7 @@ const InspectedForm: React.FC<InspectedFormProps> = ({ vehicalType }) => {
                                         </Link>
 
                                     </p>
-                                    
+
                                 </div>
 
                                 {Object.values(selectAddOn).some((val) => val) && (
@@ -473,7 +484,7 @@ const InspectedForm: React.FC<InspectedFormProps> = ({ vehicalType }) => {
                                         <p className={`${style.vahical_name}`}>Add on :</p>
 
                                         {Object.entries(selectAddOn)
-                                            .filter(([_, isSelected]) => isSelected)
+                                            .filter(([, isSelected]) => isSelected)
                                             .map(([key]) => {
                                                 const selectedItem = addonList.find((item) => item.id === key);
                                                 return (

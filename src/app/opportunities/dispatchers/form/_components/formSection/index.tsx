@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import style from "./style.module.css";
 import InputfileComponent from '@/components/formFields/InputfileComponent';
 import TextArea from '@/components/formFields/TextArea';
-import Button from '@/components/layout/button';
+import  { FormButton } from '@/components/layout/button';
 import RadioGroup from '@/components/formFields/RadioGroup';
 import CustomSelect from '@/components/formFields/CustomSelect';
 
@@ -144,7 +144,7 @@ const FormSection = () => {
 
                             {/* Submit */}
                             <div className="p-0 mt-[20px] flex items-start">
-                                <Button title="Submit" href="/book" />
+                                    <FormButton title="Submit"  />
                             </div>
                         </form>
                     </div>

@@ -32,7 +32,7 @@ const WarrantyInspection: NextPage = () => {
                             Ensure your client’s assets are safeguarded with comprehensive extended warranty inspections from Universal Inspections. Our team provides meticulous assessments for a range of vehicles—including automotive, RV, marine, and motorcycles—ensuring they meet the standards required by extended warranty plans. Our expert inspections identify potential issues early, minimizing costly repairs and maximizing asset value and reliability for your clients.
                         </p>
                         <div className="p-0 pt-[20px]">
-                            <Button title="Get Started" href="/book" />
+                            <Button title="Get Started" href="/bookInspection" />
                         </div>
                     </div>
 

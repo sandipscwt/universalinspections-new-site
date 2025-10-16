@@ -2,6 +2,7 @@ import Container from '@/components/container';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import style from "./style.module.css";
+import Link from 'next/link';
 
 const steps = [
     {
@@ -45,12 +46,12 @@ const HowItWorks: NextPage = () => {
                 <div className=" grid grid-cols-1 lg:grid-cols-2  ">
 
                     {/* Left Image Section */}
-                    <div className={`relative left-0 h-[480px] w-[100%] lg:left-[-150px] lg:w-[705px] lg:h-[480px] flex justify-center ${style.section_img}`}>
+                    <div className={`relative left-0 lg:top-[-10px]  h-[480px] w-[100%] lg:left-[-95px] lg:w-[600px] lg:h-[480px] flex justify-center ${style.section_img}`}>
                         <Image
                             src="/images/work_bg.png"
                             alt="Mechanic with car lift"
                             fill
-                            className="w-[100%] h-[100%] object-fill"
+                            className="w-[100%] h-[100%] object-contain"
                         />
                     </div>
 
@@ -59,18 +60,23 @@ const HowItWorks: NextPage = () => {
                         {steps.map((step) => (
                             <div
                                 key={step.id}
-                                className={`flex bg-white  items-center space-x-4 border border-[#DAA6284D] rounded-[8px]  px-5 py-[22px] hover:shadow-md transition-shadow cursor-pointer `}
+                                className={`flex bg-white  items-center space-x-4 border border-[#DAA6284D] rounded-[8px] px-5 py-[22px] hover:shadow-md transition-shadow cursor-pointer `}
                             >
-                                <div className="relative h-[28px] w-[28px]">
-                                    <Image
-                                        src={step.icon}
-                                        alt={step.title}
-                                        fill
-                                        className="object-contain absolute "
-                                    />
-                                </div>
-                                <p className={`${style.stepTitle}`}>{step.title}</p>
+                                <Link className='flex gap gap-4' href={"/bookInspection"}>
+                                    <div className="relative h-[28px] w-[28px]">
+                                        <Image
+                                            src={step.icon}
+                                            alt={step.title}
+                                            fill
+                                            className="object-contain absolute "
+                                        />
+                                    </div>
+                                    <p className={`${style.stepTitle}`}>{step.title}</p>
+
+                                </Link>
                             </div>
+
+
                         ))}
                     </div>
 

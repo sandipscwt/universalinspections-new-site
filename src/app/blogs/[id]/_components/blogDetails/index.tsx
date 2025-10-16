@@ -82,8 +82,8 @@ function BlogDetails() {
                 </div>
   
                 <div className={`${style.bottom}`}>
-                    <PvrButton title="previous Post" href="/book" />
-                    <NextButton title="Next Post" href="/book" />
+                    <PvrButton title="previous Post" href="/blogs" />
+                    <NextButton title="Next Post" href="/" />
                 </div>
             </Container>
         </section>

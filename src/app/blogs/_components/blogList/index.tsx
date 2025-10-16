@@ -18,7 +18,7 @@ function BlogList() {
             link: "/services/auto",
         },
         {
-            image: "/images/blog/singel_blog.png",
+            image: "/images/blog/singel_blog1.png",
             date: "20",
             month: "June",
             title: "Blog Topic Here",
@@ -26,7 +26,7 @@ function BlogList() {
             link: "/services/auto",
         },
         {
-            image: "/images/blog/singel_blog.png",
+            image: "/images/blog/singel_blog2.png",
             date: "20",
             month: "June",
             title: "Blog Topic Here",
@@ -34,7 +34,7 @@ function BlogList() {
             link: "/services/auto",
         },
         {
-            image: "/images/blog/singel_blog.png",
+            image: "/images/blog/singel_blog3.png",
             date: "20",
             month: "June",
             title: "Blog Topic Here",
@@ -42,7 +42,7 @@ function BlogList() {
             link: "/services/auto",
         },
         {
-            image: "/images/blog/singel_blog.png",
+            image: "/images/blog/singel_blog4.png",
             date: "20",
             month: "June",
             title: "Blog Topic Here",
@@ -50,7 +50,7 @@ function BlogList() {
             link: "/services/auto",
         },
         {
-            image: "/images/blog/singel_blog.png",
+            image: "/images/blog/singel_blog5.png",
             date: "20",
             month: "June",
             title: "Blog Topic Here",
@@ -58,7 +58,7 @@ function BlogList() {
             link: "/services/auto",
         },
         {
-            image: "/images/blog/singel_blog.png",
+            image: "/images/blog/singel_blog6.png",
             date: "20",
             month: "June",
             title: "Blog Topic Here",
@@ -66,7 +66,7 @@ function BlogList() {
             link: "/services/auto",
         },
         {
-            image: "/images/blog/singel_blog.png",
+            image: "/images/blog/singel_blog7.png",
             date: "20",
             month: "June",
             title: "Blog Topic Here",
@@ -74,7 +74,7 @@ function BlogList() {
             link: "/services/auto",
         },
         {
-            image: "/images/blog/singel_blog.png",
+            image: "/images/blog/singel_blog8.png",
             date: "20",
             month: "June",
             title: "Blog Topic Here",
@@ -132,9 +132,8 @@ function BlogList() {
                 </div>
 
                 <div className="p-0 mt-[39px] flex items-center justify-center">
-                    <Button title="load More" href="/book" />
+                    <Button title="Load More" href="/" />
                 </div>
-
             </Container>
         </section>
     )

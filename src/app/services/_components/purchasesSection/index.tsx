@@ -71,6 +71,7 @@ const PurchasesSection = () => {
                             key={idx}
                             className="group h-[278px] bg-white cursor-pointer rounded-lg shadow-sm border border-[#DAA6284D] transition hover:bg-[#BD632F] hover:shadow-md flex flex-col justify-between py-[40px] px-[20px]"
                         >
+                            <Link href={'/services/auto'}>
                             <div>
                                 <Image
                                     src={service.icon}
@@ -88,7 +89,7 @@ const PurchasesSection = () => {
                             <p className="text-base prompt-regular text-[#2C3037] mt-2 group-hover:text-white">
                                 {service.description}
                             </p>
-                            <Link href={'/services/auto'}>
+                            
 
                                 <div className="flex items-center gap-1 mt-4 text-sm font-medium text-[#2C3037] group-hover:text-white">
                                     <span className="text-[clamp(12px,4vw,16)] font-glacial-regular group-hover:text-white">

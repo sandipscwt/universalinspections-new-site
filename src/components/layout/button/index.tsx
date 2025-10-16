@@ -6,7 +6,9 @@ interface ButtonProps {
   title: string;
   href: string;
 }
-
+interface FormButtonProps {
+  title: string;
+}
 const Button = ({ title, href }: ButtonProps) => {
   return (
     <div className="inline-flex rounded-md overflow-hidden text-[clamp(12px,4vw,14px)]">
@@ -21,6 +23,23 @@ const Button = ({ title, href }: ButtonProps) => {
           <ArrowRight className="w-5 h-5 text-white" />
         </span>
       </Link>
+    </div>
+  );
+};
+export const FormButton = ({ title }: FormButtonProps) => {
+  return (
+    <div className="inline-flex rounded-md overflow-hidden text-[clamp(12px,4vw,14px)]">
+      <button className={style.button_sty}>
+        {/* Text part */}
+        <span className={style.textPart}>
+          {title}
+        </span>
+
+        {/* Arrow part */}
+        <span className={style.arrowPart}>
+          <ArrowRight className="w-5 h-5 text-white" />
+        </span>
+      </button>
     </div>
   );
 };

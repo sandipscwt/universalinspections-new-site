@@ -5,9 +5,8 @@ import Container from '@/components/container';
 import InputfileComponent from '@/components/formFields/InputfileComponent';
 import CustomSelect from '@/components/formFields/CustomSelect';
 import TextArea from '@/components/formFields/TextArea';
-import { HiOutlineCalendar } from 'react-icons/hi2';
-import Image from 'next/image';
-import Button from '@/components/layout/button';
+import  { FormButton } from '@/components/layout/button';
+import { MdCheck } from 'react-icons/md';
 
 const FinanceForm = () => {
     const [message, setMessage] = useState('');
@@ -51,16 +50,25 @@ const FinanceForm = () => {
         { value: 'Lakshadweep', label: 'Lakshadweep' },
         { value: 'Puducherry', label: 'Puducherry' }
     ];
-    const [selected, setSelected] = useState<{ [key: string]: boolean }>({
-        carfax1: false,
-        carfax2: false,
-    });
+
+    const benefits = [
+        "Competitive interest rates",
+        "Flexible loan terms",
+        "Quick approval process",
+        "Expert financial guidance",
+        "Multiple lender options",
+    ];
+
 
     return (
         <section className={`${style.sectionContainer} bg-[#ffffff]`}>
-            <Container>
 
-                <div className="flex flex-col lg:flex-row lg:items-start gap-[30px]">
+            <h2 className={`${style.contenttitle}`}>
+                Finaacing Application
+            </h2>
+
+            <Container>
+                <div className="flex  flex-col lg:flex-row lg:items-start gap-[30px]">
                     {/* Left Section */}
                     <form className="w-full lg:w-[70%] bg-white border border-[#f1e4b3] rounded-lg pb-[50px] p-6 shadow-sm">
                         <h3
@@ -122,7 +130,7 @@ const FinanceForm = () => {
                             />
                         </div>
 
-                        
+
                         <h3
                             className={`text-[clamp(18px,4vw,24px)] w-[100%] lg:w-[80%]  leading-1.2 text-[#DAA628] prompt-bold mt-[clamp(20px,4vw,30px)] `}
                         >
@@ -172,7 +180,7 @@ const FinanceForm = () => {
                                 required
                             />
 
-                                <InputfileComponent
+                            <InputfileComponent
                                 placeholder="State*"
                                 required
                             />
@@ -186,7 +194,7 @@ const FinanceForm = () => {
                         <h3
                             className={`text-[clamp(18px,4vw,24px)] mt-[clamp(20px,4vw,30px)] w-[100%] lg:w-[80%]  leading-1.2 text-[#DAA628] prompt-bold `}
                         >
-                        Employment Information
+                            Employment Information
                         </h3>
 
                         <div className="grid grid-cols-1 mt-[20px]  md:grid-cols-2 gap-4">
@@ -195,11 +203,11 @@ const FinanceForm = () => {
                                 required
                             />
 
-                                <InputfileComponent
+                            <InputfileComponent
                                 placeholder="Annual Income *"
                                 required
                             />
-                            
+
                         </div>
 
                         <h3
@@ -214,11 +222,11 @@ const FinanceForm = () => {
                                 required
                             />
 
-                                <InputfileComponent
+                            <InputfileComponent
                                 placeholder="Preferred Loan Term"
                                 required
                             />
-                            
+
                         </div>
 
                         <div className=" mt-[clamp(20px,4vw,30px)] ">
@@ -231,7 +239,7 @@ const FinanceForm = () => {
                         </div>
 
                         <div className="p-0 mt-[clamp(20px,4vw,30px)] flex items-start">
-                            <Button title="Submit" href="/book" />
+                                <FormButton title="Submit"  />
                         </div>
 
                     </form>
@@ -241,12 +249,21 @@ const FinanceForm = () => {
                         <div className="">
 
                             <div className="space-y-4">
-                                <p className={`${style.comTitle}`}>Quick & Easy Financing</p>
+                                <p className={`${style.comTitle} mb-[20px]`}>Quick & Easy Financing</p>
 
-                                <div className=" gap-2 mb-3">
+                                <ul className="space-y-2">
+                                    {benefits.map((item, index) => (
+                                        <li key={index} 
+                                        className={`${style.vahical_name} ] flex items-start space-x-2`}>
+                                            <MdCheck  className="text-[#BD632F] mt-1" />
+                                            <span>{item}</span>
+                                        </li>
+                                    ))} 
+                                </ul>
+                                <div className=" gap-2 mt-[00px] mb-3">
                                     <p className='relative'>
-                                        <span className={`${style.vahical_name} ${style.vahicalinfo_name}`}>
-                                            Our financial experts will review your application and connect you with the best financing options available. You'll hear back from us within 24 hours.
+                                        <span className={`${style.vahical_name}`}>
+                                            {`Our financial experts will review your application and connect you with the best financing options available. You&apos;ll hear back from us within 24 hours.`}
                                         </span>
                                     </p>
                                 </div>
