@@ -2,6 +2,7 @@ import React from 'react';
 import style from './style.module.css';
 import Container from '@/components/container';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function AssociateSection() {
     const financingPartners = [
@@ -76,7 +77,7 @@ function AssociateSection() {
                                 key={partner.id}
                                 className="bg-white border border-gray-200 rounded-lg px-[20px] py-[clamp(20px,4vw,40px)]  hover:shadow-md transition-all duration-300"
                             >
-                                <div>
+                                <Link href={'/associates/alll'}>
                                     <div className={'flex flex-row'}>
                                         <div>
                                             <Image
@@ -102,7 +103,7 @@ function AssociateSection() {
                                         </div>
                                         <p className={`${style.location}`}>Birmingham, AL • 5.6 miles</p>
                                     </div>
-                                </div>
+                                </Link>
 
                             </div>
                         ))}

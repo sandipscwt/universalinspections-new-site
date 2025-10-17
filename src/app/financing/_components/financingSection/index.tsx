@@ -3,6 +3,7 @@ import style from './style.module.css';
 import Container from '@/components/container';
 import Image from 'next/image';
 import ApplicationButton from '@/components/layout/applicationButton';
+import Link from 'next/link';
 
 function FinancingSection() {
     const financingPartners = [
@@ -77,7 +78,7 @@ function FinancingSection() {
                                 key={partner.id}
                                 className="bg-white border border-gray-200 rounded-lg px-[20px] py-[clamp(20px,4vw,40px)]  hover:shadow-md transition-all duration-300"
                             >
-                                <div>
+                                <Link href={"/financing/abid"}>
                                     <div className={'flex flex-row'}>
                                         <div>
                                             <Image
@@ -103,7 +104,7 @@ function FinancingSection() {
                                         </div>
                                         <p className={`${style.location}`}>Birmingham, AL • 5.6 miles</p>
                                     </div>
-                                </div>
+                                </Link>
 
                             </div>
                         ))}

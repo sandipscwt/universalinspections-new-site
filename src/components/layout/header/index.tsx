@@ -142,12 +142,12 @@ const Header: FC = () => {
                                                             </Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="/opportunities/dispatchers">
+                                                            <Link href="/opportunities/inspectors">
                                                                 Inspector
                                                             </Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="/opportunities/dispatchers">
+                                                            <Link href="/opportunities/administrators">
                                                                 Administrator
                                                             </Link>
                                                         </li>
@@ -244,20 +244,20 @@ const Header: FC = () => {
                                             </li>
                                             <li className="text-center">
                                                 <Link
-                                                    href="/opportunities/drivers"
+                                                    href="/opportunities/inspectors"
                                                     className="block px-6 py-2 text-white hover:bg-[#2C4B52]"
                                                     onClick={() => setOpportunitiesOpen(false)}
                                                 >
-                                                    Drivers
+                                                    Inspector
                                                 </Link>
                                             </li>
                                             <li className="text-center">
                                                 <Link
-                                                    href="/opportunities/fleet-owners"
+                                                    href="/opportunities/administrators"
                                                     className="block px-6 py-2 text-white hover:bg-[#2C4B52]"
                                                     onClick={() => setOpportunitiesOpen(false)}
                                                 >
-                                                    Fleet Owners
+                                                    Administrator
                                                 </Link>
                                             </li>
                                         </ul>

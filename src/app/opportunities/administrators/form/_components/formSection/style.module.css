@@ -1,0 +1,34 @@
+.sectionContainer {
+    padding-top: clamp(30px, 8vw, 100px);
+    padding-bottom: clamp(30px, 8vw, 100px);
+}
+
+.contact_wrapper {
+    display: flex;
+    background-color: #ffffff;
+    border: 1px solid #f1e4b3;
+    border-radius: 8px;
+    padding-top: clamp(30px, 8vw, 45px);
+    padding-bottom: clamp(30px, 8vw, 60px);
+    padding-left: clamp(20px, 1.2vw, 30px);
+    padding-right: clamp(20px, 1.2vw, 30px);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+.titleContainer {
+    align-items: center;
+    justify-content: center;
+}
+
+.titleContainer h2 {
+    color: #212121;
+    text-align: center;
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: clamp(30px, 4vw, 48px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+}

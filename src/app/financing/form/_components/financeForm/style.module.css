@@ -58,6 +58,25 @@
     color: #000000;
     margin-left: 7px;
 }
+.applyTitle{
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(18px, 4vw, 22px);
+    line-height: clamp(28px, 4vw, 32px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-transform: capitalize;
+    color: #DAA628;
+}
+.address {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(12px, 4vw, 14px);
+    line-height: 26px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #212121;
+}
 
 .vahicalinfo_name {
     /* display: inline-flex;

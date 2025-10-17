@@ -1,0 +1,128 @@
+.sectionContainer {
+    padding-top: clamp(30px, 8vw, 100px);
+    padding-bottom: clamp(30px, 8vw, 100px);
+}
+
+.title {
+    color: #212121;
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: clamp(38px, 4vw, 48px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    border-bottom: 1px solid #E3E3E3;
+    padding-bottom: clamp(20px, 4vw, 40px);
+}
+
+.contacttitle {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(18px, 4vw, 22px);
+    line-height: clamp(28px, 4vw, 32px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-transform: capitalize;
+    color: #DAA628;
+    padding-top: 20px;
+}
+
+.address strong {
+    font-family: var(--font-glacial);
+    font-weight: 700;
+    font-size: clamp(12px, 4vw, 14px);
+    line-height: 26px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #212121;
+}
+
+.address {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(12px, 4vw, 14px);
+    line-height: 26px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #212121;
+}
+
+.summary {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(12px, 4vw, 14px);
+    line-height: 26px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #212121;
+    padding-top: 20px;
+    border-top: 1px solid #E3E3E3;
+}
+.applyTitle{
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(18px, 4vw, 22px);
+    line-height: clamp(28px, 4vw, 32px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-transform: capitalize;
+    color: #DAA628;
+}
+.applysubTitle{
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(14px, 4vw, 16px);
+    line-height: 26px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #212121;
+    margin-top: 10px;
+}
+
+.titleContainer p {
+    color: #212121;
+    text-align: center;
+    font-size: clamp(12px, 4vw, 16px);
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    margin-top: clamp(10px, 4vw, 20px);
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 38px);
+    color: #2A2D34;
+    line-height: clamp(30px, 4vw, 48px);
+}
+
+.sobTitle {
+    color: #2A2D34;
+    font-size: clamp(12px, 4vw, 16px);
+    margin-top: clamp(10px, 4vw, 20px);
+    font-family: var(--font-glacial);
+    font-weight: 400;
+}
+
+.callBox {
+    display: flex;
+    background-color: #BD632F;
+    height: 19px;
+    width: 19px;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+}
+
+.callText {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(11px, 2.5vw, 16px);
+    color: #FFFFFF;
+}

@@ -10,7 +10,7 @@ const DispatcherOpportunities = () => {
             <Container>
                 <div className={`${style.titleContainer}`}>
                     <h2>Dispatcher Opportunities</h2>
-                    <p>{`oin the Universal Inspections family as a dedicated dispatcher and be part of a team where your contributions truly matter! We&quot;re more than just colleagues; we&quot;re a supportive and goal-oriented group that celebrates each other's success.`}</p>
+                    <p>{`Join the Universal Inspections family as a dedicated dispatcher and be part of a team where your contributions truly matter! We&quot;re more than just colleagues; we&quot;re a supportive and goal-oriented group that celebrates each other's success.`}</p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-10 items-center mt-[clamp(20px,4vw,30px)]">

@@ -1,0 +1,16 @@
+.sectionContainer {
+    padding-top: clamp(30px, 8vw, 100px);
+    padding-bottom: clamp(30px, 8vw, 100px);
+}
+
+.dispatcher_wrapper {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #f1e4b3;
+    border-radius: 8px;
+    padding-top: clamp(30px, 8vw, 60px);
+    padding-bottom: clamp(30px, 8vw, 60px);
+    padding-left: clamp(25px, 8vw, 50px);
+    padding-right: clamp(25px, 8vw, 50px);
+    overflow: hidden;
+}

@@ -9,60 +9,60 @@ function WarrantySection() {
             title: "Protection from Unexpected Repairs: ",
             description:
                 "Mechanical breakdowns can happen anytime. An extended warranty covers costly repairs that your standard warranty no longer does.",
-            icon: "/images/warranty/protection.png",
+            icon: "/images/warranty/protection.svg",
         },
         {
             title: "Roadside Assistance Perks:",
             description:
                 "Many plans include extras like towing, flat tire service, battery jumpstarts, and even rental car reimbursement.",
-            icon: "/images/warranty/assistance.png",
+            icon: "/images/warranty/assistance.svg",
         },
         {
             title: "Budget Friendly",
             description: "Avoid large, surprise repair bills. You'll pay a fixed amount (or deductible), making your car expenses more predictable.",
-            icon: "/images/warranty/budget_friendly.png",
+            icon: "/images/warranty/budget_friendly.svg",
         },
         {
             title: "Nationwide Coverage:",
             description:
                 "Most extended warranties let you get repairs done anywhere in the U.S. at certified repair shops—not just the dealership.",
-            icon: "/images/warranty/nationWide.png",
+            icon: "/images/warranty/nationWide.svg",
         },
         {
             title: "Covers Major Components:",
             description:
                 "Many warranties cover vital and expensive systems—like the engine, transmission, electrical, and air conditioning.",
-            icon: "/images/warranty/cover_major.png",
+            icon: "/images/warranty/cover_major.svg",
         },
         {
             title: "Customizable Plans:",
             description:
                 "Choose coverage that fits your driving habits, car age, and budget. Some plans even offer bumper-to-bumper protection.",
-            icon: "/images/warranty/customizable.png",
+            icon: "/images/warranty/customizable.svg",
         },
         {
             title: "Peace of Mind:",
             description:
                 "Travel and drive with confidence knowing you're protected, especially if your factory warranty has expired.",
-            icon: "/images/warranty/prece_of_mind.png",
+            icon: "/images/warranty/prece_of_mind.svg",
         },
         {
             title: "Long-Term Savings:",
             description:
                 "A single major repair (like a blown engine or bad transmission) can cost more than the warranty itself.",
-            icon: "/images/warranty/long_term_saving.png",
+            icon: "/images/warranty/long_term_saving.svg",
         },
         {
             title: "Increases Resale Value:",
             description:
                 "Cars with a transferable extended warranty can be more attractive to buyers, making your car easier to sell.",
-            icon: "/images/warranty/increases_resal.png",
+            icon: "/images/warranty/increases_resal.svg",
         },
         {
             title: "Covers High-Tech Components: ",
             description:
                 "Modern vehicles are loaded with expensive electronics—an extended warranty helps protect those high-tech systems too.",
-            icon: "/images/warranty/cover_highTech.png",
+            icon: "/images/warranty/cover_highTech.svg",
         },
     ];
 
