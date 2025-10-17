@@ -14,8 +14,8 @@ import { MapPin } from "lucide-react";
 const FinanceForm = () => {
     const [message, setMessage] = useState('');
     const [error] = useState(false);
-    const searchParams = useSearchParams();
-    const financerId = searchParams.get('form-Id');
+    // const searchParams = useSearchParams();
+    // const financerId = searchParams.get('form-Id');
 
     const stateOptions = [
         { value: 'Andhra Pradesh', label: 'Andhra Pradesh' },
@@ -76,7 +76,7 @@ const FinanceForm = () => {
                 <div className="flex  flex-col lg:flex-row lg:items-start gap-[30px]">
                     {/* Left Section */}
                     <form className="w-full lg:w-[70%] bg-white border border-[#f1e4b3] rounded-lg pb-[50px] p-6 shadow-sm">
-                        {financerId && (
+                        { true && (
                             <div className="bg-white shadow-lg mb-5 rounded-2xl p-5 border border-gray-100 ">
                                 <h3 className={`${style.applyTitle}`}>
                                     Financer Name
