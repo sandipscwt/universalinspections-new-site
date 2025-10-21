@@ -1,8 +1,11 @@
+"use client";
 import Container from '@/components/container';
 import Button from '@/components/layout/button';;
 import Image from 'next/image';
 import React from 'react';
 import style from "./style.module.css";
+import { motion } from "framer-motion";
+import MotionComponent from '@/components/layout/motionComponent/motionComponent';
 
 const services = [
     {
@@ -32,6 +35,16 @@ const services = [
 ];
 
 const AutomativeRvSection: React.FC = () => {
+
+    const inspectionImages = [
+        {
+            img1: '/images/1.png',
+            img2: '/images/2.png',
+            img3: '/images/3.png',
+            title: "Need Any Service"
+        }
+    ];
+
     return (
         <section className="bg-white section-spacing-y-top">
             <Container className=''>
@@ -61,18 +74,9 @@ const AutomativeRvSection: React.FC = () => {
             <div className={`${style.serviceSection}`}>
                 <Container>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        {/* Left Column - Image */}
-                        <div className="w-full h-auto ">
-                            <div className="relative w-full  h-auto">
-                                <Image
-                                    src="/images/autoservicee_group.png"
-                                    alt="Automotive services"
-                                    layout="responsive"
-                                    width={556}
-                                    height={641}
-                                    className="object-cover relative transform translate-y-[0%] lg:translate-y-[-10%]"
-                                />
-                            </div>
+                    
+                        <div>
+                            <MotionComponent images={inspectionImages} />
                         </div>
 
                         {/* Right Column - Service Items */}

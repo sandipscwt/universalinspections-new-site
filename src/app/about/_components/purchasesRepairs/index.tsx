@@ -1,7 +1,9 @@
+"use client";
 import Container from '@/components/container'
 import Image from 'next/image'
 import React from 'react'
 import style from "./style.module.css";
+import MotionComponent from '@/components/layout/motionComponent/motionComponent';
 
 const PurchasesRepairs = () => {
 
@@ -30,6 +32,15 @@ const PurchasesRepairs = () => {
             description:
                 'Our rigorous inspections safeguard your purchase. Identify potential issues before they become costly problems. Protect yourself from hidden surprises with a Universal Inspection.',
         },
+    ];
+
+    const inspectionImages = [
+        {
+            img1: '/images/about/1.png',
+            img2: '/images/about/2.png',
+            img3: '/images/about/3.png',
+            title: "Our Value"
+        }
     ];
 
     return (
@@ -73,17 +84,9 @@ const PurchasesRepairs = () => {
                     </div>
 
                     {/* Left Column - Image */}
-                    <div className="w-full h-auto ">
-                        <div className="relative w-full  h-auto">
-                            <Image
-                                src="/images/about/purchasesRepairs.png"
-                                alt="Automotive services"
-                                layout="responsive"
-                                width={556}
-                                height={641}
-                                className="object-cover relative "
-                            />
-                        </div>
+
+                    <div className='mt-[40px]'>
+                        <MotionComponent images={inspectionImages} />
                     </div>
 
                 </div>

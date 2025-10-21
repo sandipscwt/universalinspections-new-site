@@ -71,76 +71,74 @@ const FinanceForm = () => {
             <h2 className={`${style.contenttitle}`}>
                 Finaacing Application
             </h2>
-
             <Container>
                 <div className="flex  flex-col lg:flex-row lg:items-start gap-[30px]">
                     {/* Left Section */}
                     <form className="w-full lg:w-[70%] bg-white border border-[#f1e4b3] rounded-lg pb-[50px] p-6 shadow-sm">
-                        { true && (
+                        {true && (
                             <div className="bg-white shadow-lg mb-5 rounded-2xl p-5 border border-gray-100 ">
                                 <h3 className={`${style.applyTitle}`}>
                                     Financer Name
                                 </h3>
                                 <div className="mt-[10px]">
 
-                                <div className="flex items-start space-x-2">
-                                    <div className="px-1 py-1 rounded bg-[#DAA628]">
-                                        <MapPin className="w-4 h-4  text-[#2A2D34]" />
+                                    <div className="flex items-start space-x-2">
+                                        <div className="px-1 py-1 rounded bg-[#DAA628]">
+                                            <MapPin className="w-4 h-4  text-[#2A2D34]" />
+                                        </div>
+                                        <p className={`${style.address}`}>
+                                            <strong>Address:</strong> 123 Main St, Birmingham, Alabama 35242
+                                        </p>
                                     </div>
-                                    <p className={`${style.address}`}>
-                                        <strong>Address:</strong> 123 Main St, Birmingham, Alabama 35242
-                                    </p>
-                                </div>
 
-                                <div className="flex items-start space-x-2 mt-[18px]">
-                                    <div className="px-1 py-1 rounded bg-[#DAA628]">
-                                        <Image
-                                            src="/images/phone-call.png"
-                                            alt="call"
-                                            width={14}
-                                            height={14}
-                                            className="object-contain"
-                                        />
+                                    <div className="flex items-start space-x-2 mt-[18px]">
+                                        <div className="px-1 py-1 rounded bg-[#DAA628]">
+                                            <Image
+                                                src="/images/phone-call.png"
+                                                alt="call"
+                                                width={14}
+                                                height={14}
+                                                className="object-contain"
+                                            />
+                                        </div>
+                                        <p className={`${style.address}`}>
+                                            <strong>Phone:</strong> 2055555555
+                                        </p>
+
                                     </div>
-                                    <p className={`${style.address}`}>
-                                        <strong>Phone:</strong> 2055555555
-                                    </p>
 
-                                </div>
+                                    <div className="flex items-start space-x-2  mt-[18px]">
+                                        <div className="px-1 py-1 rounded bg-[#DAA628]">
+                                            <Image
+                                                src="/images/mail-inbox-app.png"
+                                                alt="mail"
+                                                width={14}
+                                                height={14}
+                                                className="object-contain"
+                                            />
+                                        </div>
+                                        <p className={`${style.address}`}>
+                                            <strong>Email:</strong> contact@financer.com
+                                        </p>
 
-                                <div className="flex items-start space-x-2  mt-[18px]">
-                                    <div className="px-1 py-1 rounded bg-[#DAA628]">
-                                        <Image
-                                            src="/images/mail-inbox-app.png"
-                                            alt="mail"
-                                            width={14}
-                                            height={14}
-                                            className="object-contain"
-                                        />
                                     </div>
-                                    <p className={`${style.address}`}>
-                                        <strong>Email:</strong> contact@financer.com
-                                    </p>
 
-                                </div>
-
-                                <div className="flex items-start space-x-2  mt-[18px]">
-                                    <div className="px-1 py-1 rounded bg-[#DAA628]">
-                                        <Image
-                                            src="/images/web-site.png"
-                                            alt="mail"
-                                            width={14}
-                                            height={14}
-                                            className="object-contain"
-                                        />
+                                    <div className="flex items-start space-x-2  mt-[18px]">
+                                        <div className="px-1 py-1 rounded bg-[#DAA628]">
+                                            <Image
+                                                src="/images/web-site.png"
+                                                alt="mail"
+                                                width={14}
+                                                height={14}
+                                                className="object-contain"
+                                            />
+                                        </div>
+                                        <p className={`${style.address}`}>
+                                            <strong>Website:</strong> examplefinancer.com
+                                        </p>
                                     </div>
-                                    <p className={`${style.address}`}>
-                                        <strong>Website:</strong> examplefinancer.com
-                                    </p>
+
                                 </div>
-
-                            </div>
-
                             </div>
                         )}
 
@@ -181,7 +179,7 @@ const FinanceForm = () => {
 
                         </div>
 
-                        
+
                         <div className=" mt-[20px]">
                             <InputfileComponent
                                 placeholder="VIN"
