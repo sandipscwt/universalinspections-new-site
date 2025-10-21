@@ -4,7 +4,6 @@ import Button from '@/components/layout/button';;
 import Image from 'next/image';
 import React from 'react';
 import style from "./style.module.css";
-import { motion } from "framer-motion";
 import MotionComponent from '@/components/layout/motionComponent/motionComponent';
 
 const services = [

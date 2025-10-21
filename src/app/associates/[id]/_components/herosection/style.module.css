@@ -1,4 +1,9 @@
 .heroSection {
-    position: relative;
-height: 560px;
+    height:clamp(420px,50vw,720px);
+}
+
+@media (max-width: 720px) {
+    .heroSection {
+    height:clamp(235px,60vw,420px);
+}
 }
