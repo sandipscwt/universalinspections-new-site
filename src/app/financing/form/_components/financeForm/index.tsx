@@ -9,13 +9,14 @@ import { FormButton } from '@/components/layout/button';
 import { MdCheck } from 'react-icons/md';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import { MapPin } from "lucide-react";
+import { MapPin, RefreshCcw } from "lucide-react";
+import Link from 'next/link';
 
 const FinanceForm = () => {
     const [message, setMessage] = useState('');
     const [error] = useState(false);
-    // const searchParams = useSearchParams();
-    // const financerId = searchParams.get('form-Id');
+    const searchParams = useSearchParams();
+    const financerId = searchParams.get('form-Id');
 
     const stateOptions = [
         { value: 'Andhra Pradesh', label: 'Andhra Pradesh' },
@@ -75,70 +76,90 @@ const FinanceForm = () => {
                 <div className="flex  flex-col lg:flex-row lg:items-start gap-[30px]">
                     {/* Left Section */}
                     <form className="w-full lg:w-[70%] bg-white border border-[#f1e4b3] rounded-lg pb-[50px] p-6 shadow-sm">
-                        {true && (
+                        {financerId && (
                             <div className="bg-white shadow-lg mb-5 rounded-2xl p-5 border border-gray-100 ">
-                                <h3 className={`${style.applyTitle}`}>
-                                    Financer Name
-                                </h3>
-                                <div className="mt-[10px]">
+                                <div className="relative flex flex-col p-4 md:p-6 rounded-lg">
+                                    {/* Financer Info */}
+                                    <div>
+                                        <h3 className={`${style.applyTitle}`}>Financer Name</h3>
 
-                                    <div className="flex items-start space-x-2">
-                                        <div className="px-1 py-1 rounded bg-[#DAA628]">
-                                            <MapPin className="w-4 h-4  text-[#2A2D34]" />
+                                        <div className="mt-[10px] space-y-[18px]">
+                                            <div className="flex items-start space-x-2">
+                                                <div className="px-1 py-1 rounded bg-[#DAA628]">
+                                                    <MapPin className="w-4 h-4 text-[#2A2D34]" />
+                                                </div>
+                                                <p className={`${style.address}`}>
+                                                    <strong>Address:</strong> 123 Main St, Birmingham, Alabama 35242
+                                                </p>
+                                            </div>
+
+                                            <div className="flex items-start space-x-2">
+                                                <div className="px-1 py-1 rounded bg-[#DAA628]">
+                                                    <Image
+                                                        src="/images/phone-call.png"
+                                                        alt="call"
+                                                        width={14}
+                                                        height={14}
+                                                        className="object-contain"
+                                                    />
+                                                </div>
+                                                <p className={`${style.address}`}>
+                                                    <strong>Phone:</strong> 2055555555
+                                                </p>
+                                            </div>
+
+                                            <div className="flex items-start space-x-2">
+                                                <div className="px-1 py-1 rounded bg-[#DAA628]">
+                                                    <Image
+                                                        src="/images/mail-inbox-app.png"
+                                                        alt="mail"
+                                                        width={14}
+                                                        height={14}
+                                                        className="object-contain"
+                                                    />
+                                                </div>
+                                                <p className={`${style.address}`}>
+                                                    <strong>Email:</strong> contact@financer.com
+                                                </p>
+                                            </div>
+
+                                            <div className="flex items-start space-x-2">
+                                                <div className="px-1 py-1 rounded bg-[#DAA628]">
+                                                    <Image
+                                                        src="/images/web-site.png"
+                                                        alt="mail"
+                                                        width={14}
+                                                        height={14}
+                                                        className="object-contain"
+                                                    />
+                                                </div>
+                                                <p className={`${style.address}`}>
+                                                    <strong>Website:</strong> examplefinancer.com
+                                                </p>
+                                            </div>
                                         </div>
-                                        <p className={`${style.address}`}>
-                                            <strong>Address:</strong> 123 Main St, Birmingham, Alabama 35242
-                                        </p>
                                     </div>
 
-                                    <div className="flex items-start space-x-2 mt-[18px]">
-                                        <div className="px-1 py-1 rounded bg-[#DAA628]">
-                                            <Image
-                                                src="/images/phone-call.png"
-                                                alt="call"
-                                                width={14}
-                                                height={14}
-                                                className="object-contain"
-                                            />
-                                        </div>
-                                        <p className={`${style.address}`}>
-                                            <strong>Phone:</strong> 2055555555
-                                        </p>
-
-                                    </div>
-
-                                    <div className="flex items-start space-x-2  mt-[18px]">
-                                        <div className="px-1 py-1 rounded bg-[#DAA628]">
-                                            <Image
-                                                src="/images/mail-inbox-app.png"
-                                                alt="mail"
-                                                width={14}
-                                                height={14}
-                                                className="object-contain"
-                                            />
-                                        </div>
-                                        <p className={`${style.address}`}>
-                                            <strong>Email:</strong> contact@financer.com
-                                        </p>
-
-                                    </div>
-
-                                    <div className="flex items-start space-x-2  mt-[18px]">
-                                        <div className="px-1 py-1 rounded bg-[#DAA628]">
-                                            <Image
-                                                src="/images/web-site.png"
-                                                alt="mail"
-                                                width={14}
-                                                height={14}
-                                                className="object-contain"
-                                            />
-                                        </div>
-                                        <p className={`${style.address}`}>
-                                            <strong>Website:</strong> examplefinancer.com
-                                        </p>
-                                    </div>
-
+                                    {/* Change Partner Button */}
+                                    <Link
+                                        href="/financing"
+                                        className="absolute top-5 sm:top-3 lg:top-4 right-0 sm:right-2 lg:right-4 
+             flex items-center justify-center gap-[2px] sm:gap-1 md:gap-2 
+             border border-[#DAA628] bg-[#DAA628] text-black rounded-md 
+             transition-all duration-300 hover:bg-[#BD632F] hover:text-white 
+             px-1.5 sm:px-3 md:px-4 
+             py-[2px] sm:py-[4px] md:py-[6px] 
+             h-[22px] sm:h-[34px] md:h-[40px] lg:h-[40px]
+             text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px]
+             font-glacial-regular shadow-md"
+                                    >
+                                        <RefreshCcw className="w-[10px] h-[10px] sm:w-[14px] sm:h-[14px] md:w-[18px] md:h-[18px]" />
+                                        <span className="whitespace-nowrap">Change Partner</span>
+                                    </Link>
                                 </div>
+
+
+
                             </div>
                         )}
 
