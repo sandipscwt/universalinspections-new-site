@@ -53,7 +53,7 @@ const MotionComponent = ({ images }: MotionComponentProps) => {
                             />
                         </motion.div>
                         <div>
-                            <h4 className="prompt-bold text-[clamp(16px,2vw,22px)] w-full ">{images[0].title}</h4>
+                            <h4 className="prompt-bold text-white leading-[30px] text-[clamp(16px,2vw,22px)] w-full ">{images[0].title}</h4>
                         </div>
                     </div>
                 </div>

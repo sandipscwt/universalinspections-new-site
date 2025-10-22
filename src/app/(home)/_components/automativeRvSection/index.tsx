@@ -40,7 +40,7 @@ const AutomativeRvSection: React.FC = () => {
             img1: '/images/1.png',
             img2: '/images/2.png',
             img3: '/images/3.png',
-            title: "Need Any Service"
+            title: "Pre-Purchase Inspections"
         }
     ];
 
