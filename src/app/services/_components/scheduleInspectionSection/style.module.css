@@ -1,0 +1,33 @@
+.title {
+    color: #2C3037;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 700;
+    font-family: 'Prompt', 'Prompt Fallback';
+    line-height: clamp(30px, 4vw, 48px);
+}
+
+.subTitle {
+    color: #2A2D34;
+    font-size: clamp(12px, 4vw, 16);
+    margin-top: clamp(10px, 4vw, 20px);
+    margin-bottom: 30px;
+    font-family: var(--font-glacial);
+    font-weight: 400;
+}
+
+.scheduleBox {
+    position: relative;
+    border: 1px solid #DAA6284D;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.scheduleId {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: clamp(35px, 4vw, 68px);
+    color: #DAA6281A;
+    font-family: 'Prompt', 'Prompt Fallback';
+    font-weight: 700;
+}
