@@ -10,11 +10,11 @@ import DOMPurify from "dompurify";
 interface Service {
     id: number;
     name: string;
-    banner_image: string; 
+    banner_image: string;
     icon: string;
     image: string | null;
-    short_content: string; 
-    content: string; 
+    short_content: string;
+    content: string;
     status: number;
     slug: string;
     created_at: string;
@@ -48,6 +48,14 @@ const WhatWeDoSection: React.FC<Props> = ({ data }) => {
         return `${process.env.NEXT_PUBLIC_IMAGE_URL}/${path}`;
     };
 
+    const sanitizeHTML = (html: string) => {
+        if (typeof DOMPurify?.sanitize === 'function') {
+            return DOMPurify.sanitize(html);
+        }
+        // console.log('DOMPurify not available, returning original HTML');
+        return html;
+    };
+
     return (
         <section className={`${style.container} overflow-hidden relative`}>
             <Container>
@@ -55,7 +63,7 @@ const WhatWeDoSection: React.FC<Props> = ({ data }) => {
                 {data.service_background_image && (
                     <div className="absolute inset-0 z-0 opacity-20">
                         <Image
-                            src={data.service_background_image?getFullImageUrl(data.service_background_image):""}
+                            src={data.service_background_image ? getFullImageUrl(data.service_background_image) : ""}
                             alt="Background"
                             fill
                             className="object-cover"
@@ -97,10 +105,17 @@ const WhatWeDoSection: React.FC<Props> = ({ data }) => {
                                     <h3 className={`text-2xl text-[#DAA628] prompt-bold mt-3 group-hover:text-white`}>
                                         {service.name}
                                     </h3>
-                                    <p
+                                    {/* <p
                                         className="text-base prompt-regular text-[#2C3037] mt-2 group-hover:text-white"
                                         dangerouslySetInnerHTML={{
                                             __html: DOMPurify.sanitize(service.short_content),
+                                        }}
+                                    /> */}
+
+                                    <p
+                                        className="text-base prompt-regular text-[#2C3037] mt-2 group-hover:text-white"
+                                        dangerouslySetInnerHTML={{
+                                            __html: sanitizeHTML(service.short_content),
                                         }}
                                     />
                                 </Link>

@@ -7,50 +7,50 @@ import CustomButton from '@/components/layout/customButton';
 import Image from 'next/image';
 
 interface ScheduleStep {
-    [key: string]: unknown; 
+    [key: string]: unknown;
 }
 
 export interface ServicesBottomSection {
-  heading: string;
-  content: string;
-  image: string;
-  steps: ScheduleStep[]; 
-  button_text: string;
+    heading: string;
+    content: string;
+    image: string;
+    steps: ScheduleStep[];
+    button_text: string;
 }
 
 interface Props {
-  data: ServicesBottomSection;
+    data: ServicesBottomSection;
 }
 
 const ScheduleInspectionSection: React.FC<Props> = ({ data }) => {
-  if (!data) return null;
+    if (!data) return null;
 
-  const getFullImageUrl = (path: string) => {
-  if (!path) return "";
-  if (path.startsWith("http")) return path;
-  if (path.startsWith("/")) return path;
-  return `${process.env.NEXT_PUBLIC_IMAGE_URL}/${path}`;
-};
+    const getFullImageUrl = (path: string) => {
+        if (!path) return "";
+        if (path.startsWith("http")) return path;
+        if (path.startsWith("/")) return path;
+        return `${process.env.NEXT_PUBLIC_IMAGE_URL}/${path}`;
+    };
 
-const steps = [
-    { id: 1, title: "Schedule Your Inspection", description: "" },
-    { id: 2, title: "Get A Professional Evaluation", description: "" },
-    { id: 3, title: "Receive a Comprehensive Report", description: "" },
-    { id: 4, title: "Make Informed Decision About Your Purchase", description: "" },
-];
+    const steps = [
+        { id: 1, title: "Schedule Your Inspection", description: "" },
+        { id: 2, title: "Get A Professional Evaluation", description: "" },
+        { id: 3, title: "Receive a Comprehensive Report", description: "" },
+        { id: 4, title: "Make Informed Decision About Your Purchase", description: "" },
+    ];
 
 
-  return (
-    <section className='bg-[#FFFFFF] py-[clamp(30px,4vw,100px)]'>
-      <Container>
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          {/* Left Side - Text and Cards */}
-          <div>
-            <h2 className={`${style.title} w-[100%] lg:w-[90%]`}>{data.heading}</h2>
+    return (
+        <section className='bg-[#FFFFFF] py-[clamp(30px,4vw,100px)]'>
+            <Container>
+                <div className="grid md:grid-cols-2 gap-10 items-center">
+                    {/* Left Side - Text and Cards */}
+                    <div>
+                        <h2 className={`${style.title} w-[100%] lg:w-[90%]`}>{data.heading}</h2>
 
-            <p className={`${style.subTitle}`} dangerouslySetInnerHTML={{ __html: data.content }} />
+                        <p className={`${style.subTitle}`} dangerouslySetInnerHTML={{ __html: data.content }} />
 
-            {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                        {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
               {data.steps.length
                 ? data.steps.map((step, index) => (
                     <div key={index} className={`${style.scheduleBox} hover:shadow-sm transition-shadow overflow-hidden`}>
@@ -79,7 +79,7 @@ const steps = [
                 : null}
             </div> */}
 
-             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {steps.map((step) => (
 
                                 <div key={step.id} className={`${style.scheduleBox} hover:shadow-sm transition-shadow overflow-hidden  `}>
@@ -106,29 +106,29 @@ const steps = [
                             ))}
                         </div>
 
-            <div className="mt-[30px]">
-              <CustomButton title={data.button_text || "Book an Inspection Today!"} href="/bookInspection" />
-            </div>
-          </div>
+                        <div className="mt-[30px]">
+                            <CustomButton title={data.button_text || "Book an Inspection Today!"} href="/bookInspection" />
+                        </div>
+                    </div>
 
-          <div>
-            {data.image && (
-              <div className="w-full h-auto relative">
-                <Image
-                  src={data?.image?getFullImageUrl(data?.image):""}
-                  alt="Schedule Inspection"
-                  width={556}
-                  height={641}
-                  unoptimized
-                  className="object-cover relative"
-                />
-              </div>
-            )}
-          </div>
-        </div>
-      </Container>
-    </section>
-  );
+                    <div>
+                        {data.image && (
+                            <div className="w-full h-auto relative">
+                                <Image
+                                    src={data?.image ? getFullImageUrl(data?.image) : ""}
+                                    alt="Schedule Inspection"
+                                    width={556}
+                                    height={641}
+                                    unoptimized
+                                    className="object-cover relative"
+                                />
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </Container>
+        </section>
+    );
 };
 
 export default ScheduleInspectionSection;

@@ -1,13 +1,13 @@
 export const dynamic = "force-dynamic";
 
 import React, { Suspense } from 'react'
-import HeroSection from '../_components/herosection'
+// import HeroSection from '../_components/herosection'
 import FinanceForm from './_components/financeForm'
 
 const Page = () => {
   return (
     <>
-      <HeroSection />
+      {/* <HeroSection /> */}
       <Suspense fallback={<div>Loading...</div>}>
         <FinanceForm />
       </Suspense>

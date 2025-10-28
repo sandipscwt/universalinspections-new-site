@@ -19,10 +19,8 @@ const DrivenSection: React.FC<DrivenSectionProps> = ({ data }) => {
             </section>
         );
     }
-
-    // ✅ Helper to get full image URL
     const getFullImageUrl = (path: string) => {
-        if (!path) return "/images/about/driven.png"; // fallback
+        if (!path) return "/images/about/driven.png"; 
         if (path.startsWith("http")) return path;
         return `${process.env.NEXT_PUBLIC_IMAGE_URL}/${path}`;
     };
@@ -34,14 +32,16 @@ const DrivenSection: React.FC<DrivenSectionProps> = ({ data }) => {
                 <div className="grid md:grid-cols-2 gap-10 items-center">
                     {/* ✅ Left Image */}
                     <div className="w-full h-auto">
-                        <div className="relative w-full h-auto">
+                        <div className="relative w-full h-[434px]">
                             <Image
-                                src={data?.banner_bottom_section_image ? getFullImageUrl(data?.banner_bottom_section_image) : ""}
-                                alt={data.banner_bottom_section_heading || "Driven Section"}
-                                className="object-cover w-full h-auto"
+                                src={data?.banner_bottom_section_image ? getFullImageUrl(data?.banner_bottom_section_image) : "/images/about/driven.png"}
+                                alt={data?.banner_bottom_section_heading || "Driven Section"}
+                                fill
                                 unoptimized
+                                priority
                             />
                         </div>
+
                     </div>
 
                     {/* ✅ Right Content */}

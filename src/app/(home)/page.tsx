@@ -123,7 +123,7 @@ const Home = async () => {
     try {
         const res = await ClientFetch(`${process.env.API_URL}/home-page-data`, { cache: "no-store" })
         const HomedataRaw = await res.json()
-        console.log("Homedata-------", JSON.stringify(HomedataRaw, null, 2))
+        // console.log("Homedata-------", JSON.stringify(HomedataRaw, null, 2))
         const data: HomeAPIResponse = HomedataRaw?.data
         const bannerData = data?.banner_section
 
@@ -133,10 +133,10 @@ const Home = async () => {
 
 
 
-        console.log("purchaseData------->>>>>", JSON.stringify(purchaseData, null, 2))
+        // console.log("purchaseData------->>>>>", JSON.stringify(purchaseData, null, 2))
         const servicesData = data?.services_section
 
-        console.log("servicesData------->>>>>", JSON.stringify(servicesData, null, 2))
+        // console.log("servicesData------->>>>>", JSON.stringify(servicesData, null, 2))
         const scheduleData = data?.schedule_inspection_section
         const howItWorkData = data?.how_it_works_section
 

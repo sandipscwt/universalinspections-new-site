@@ -34,9 +34,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
             <div className="absolute inset-0 z-0">
                 <Image
                     src={data?.banner_image ? getFullImageUrl(data?.banner_image) : ""}
-                    alt={data.banner_heading || "About Us"}
-                    className="object-cover w-full h-full"
+                    alt={data?.banner_heading || "About Us"}
+                    fill
+                    className="object-cover"
                     unoptimized
+                    priority
                 />
             </div>
 

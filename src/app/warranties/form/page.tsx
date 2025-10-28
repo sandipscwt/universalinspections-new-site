@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroSection from '../_components/herosection'
+// import HeroSection from '../_components/herosection'
 import WarrantyForm from './_components/warrantyForm'
 
 
@@ -7,7 +7,7 @@ import WarrantyForm from './_components/warrantyForm'
 const page = () => {
   return (
     <>
-        <HeroSection/>
+        {/* <HeroSection/> */}
         <WarrantyForm/>
     </>
   )

@@ -69,7 +69,7 @@ const PurchasesSection: React.FC<PurchasesSectionProps> = ({ services, bannerBot
                     {services.map((service) => (
                         <div
                             key={service.id}
-                            className="group h-[278px] bg-white cursor-pointer rounded-lg shadow-sm border border-[#DAA6284D] transition hover:bg-[#BD632F] hover:shadow-md flex flex-col justify-between"
+                            className="group h-[278px] bg-white cursor-pointer rounded-lg shadow-sm border border-[#DAA6284D] transition hover:bg-[#BD632F] hover:shadow-md flex flex-col justify-between py-[40px] px-[20px]"
                         >
                             <Link href={`/services/${service.slug}`}>
                                 <div>
@@ -102,6 +102,8 @@ const PurchasesSection: React.FC<PurchasesSectionProps> = ({ services, bannerBot
                         </div>
                     ))}
                 </div>
+
+
             </Container>
         </section>
     );

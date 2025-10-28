@@ -9,6 +9,9 @@ const nextConfig = {
         pathname: '/storage/uploads/photos/**',
       },
     ],
+    dangerouslyAllowSVG: true, 
+    contentDispositionType: 'inline',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;", 
   },
 };
 
