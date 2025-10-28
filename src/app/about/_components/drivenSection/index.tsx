@@ -27,7 +27,6 @@ const DrivenSection: React.FC<DrivenSectionProps> = ({ data }) => {
         return `${process.env.NEXT_PUBLIC_IMAGE_URL}/${path}`;
     };
 
-    const imageUrl = getFullImageUrl(data.banner_bottom_section_image);
 
     return (
         <section className="bg-white py-[clamp(30px,4vw,100px)]">

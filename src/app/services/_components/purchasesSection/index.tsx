@@ -3,8 +3,8 @@ import React from "react";
 import style from "./style.module.css";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
-// 🧩 Interfaces
 export interface ServiceItem {
     id: number;
     name: string;
@@ -69,15 +69,16 @@ const PurchasesSection: React.FC<PurchasesSectionProps> = ({ services, bannerBot
                     {services.map((service) => (
                         <div
                             key={service.id}
-                            className="group h-[278px] bg-white cursor-pointer rounded-lg shadow-sm border border-[#DAA6284D] transition hover:bg-[#BD632F] hover:shadow-md flex flex-col justify-between py-[40px] px-[20px]"
+                            className="group h-[278px] bg-white cursor-pointer rounded-lg shadow-sm border border-[#DAA6284D] transition hover:bg-[#BD632F] hover:shadow-md flex flex-col justify-between"
                         >
                             <Link href={`/services/${service.slug}`}>
                                 <div>
-                                    <img
-                                        src={getFullImageUrl(service.icon)}
+                                    <Image
+                                        src={service?.icon?getFullImageUrl(service?.icon):""}
                                         alt={service.name}
                                         width={62}
                                         height={62}
+                                        unoptimized
                                         className="object-cover group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
                                     />
                                 </div>

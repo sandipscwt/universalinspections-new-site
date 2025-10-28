@@ -4,23 +4,22 @@ import Container from '@/components/container';
 import React from 'react';
 import style from "./style.module.css";
 import CustomButton from '@/components/layout/customButton';
+import Image from 'next/image';
 
-interface Step {
-  id: number;
-  title: string;
-  description?: string;
+interface ScheduleStep {
+    [key: string]: unknown; 
 }
 
-interface ScheduleInspectionData {
+export interface ServicesBottomSection {
   heading: string;
   content: string;
   image: string;
-  steps: Step[];
+  steps: ScheduleStep[]; 
   button_text: string;
 }
 
 interface Props {
-  data: ScheduleInspectionData;
+  data: ServicesBottomSection;
 }
 
 const ScheduleInspectionSection: React.FC<Props> = ({ data }) => {
@@ -115,11 +114,12 @@ const steps = [
           <div>
             {data.image && (
               <div className="w-full h-auto relative">
-                <img
-                  src={getFullImageUrl(data.image)}
+                <Image
+                  src={data?.image?getFullImageUrl(data?.image):""}
                   alt="Schedule Inspection"
                   width={556}
                   height={641}
+                  unoptimized
                   className="object-cover relative"
                 />
               </div>

@@ -4,17 +4,10 @@ import ScheduleInspectionSection from "./_components/scheduleInspectionSection";
 import { generateMetadata } from "../utils/genaratemetadata";
 import { ClientFetch } from "@/actions/client-fetch";
 import HeroSection from "./_components/herosection";
-
-/* ----------------------------------------------
-   ✅ Metadata
----------------------------------------------- */
 export const metadata = generateMetadata({
   title: "Services | Universal Inspections",
 });
 
-/* ----------------------------------------------
-   ✅ Define Interfaces for Type Safety
----------------------------------------------- */
 
 export interface BannerSection {
   banner_image: string | null;
@@ -24,7 +17,7 @@ export interface BannerSection {
 
 export interface BannerBottomSection {
   heading: string | null;
-  content: string; // contains HTML
+  content: string; 
 }
 
 export interface ServiceItem {
@@ -43,11 +36,15 @@ export interface ServiceItem {
   deleted_at: string | null;
 }
 
+interface ScheduleStep {
+    [key: string]: unknown; 
+}
+
 export interface ServicesBottomSection {
   heading: string;
-  content: string; // HTML
+  content: string;
   image: string;
-  steps: any[]; // if backend adds steps in future
+  steps: ScheduleStep[]; 
   button_text: string;
 }
 
@@ -63,6 +60,8 @@ export interface ServicesApiResponse {
   message: string;
   data: ServicesPageData;
 }
+
+
 
 
 const Services = async () => {

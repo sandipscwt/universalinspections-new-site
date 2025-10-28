@@ -6,18 +6,16 @@ import style from "./style.module.css";
 import CustomButton from '@/components/layout/customButton';
 import Image from 'next/image';
 
-interface Step {
-    id: number;
-    title: string;
-    description?: string;
+interface ScheduleStep {
+    [key: string]: unknown; 
 }
 
 interface ScheduleInspectionData {
-    heading: string;
-    content: string;
-    image: string;
-    steps: Step[];
-    button_text: string;
+    heading: string
+    content: string
+    image: string
+    steps: ScheduleStep[]
+    button_text: string
 }
 
 interface Props {

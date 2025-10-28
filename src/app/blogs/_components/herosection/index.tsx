@@ -2,6 +2,7 @@ import React from "react";
 import style from "./style.module.css";
 import Container from "@/components/container";
 import Breadcrumbs from "@/components/layout/breadcrumbs";
+import Image from "next/image";
 
 interface HeroSectionProps {
   data: {
@@ -29,21 +30,20 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
 
   return (
     <section className={`relative w-full bg-contain bg-center ${style.heroSection}`}>
-      {/* ✅ Background image */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={getFullImageUrl(data.banner_image)}
+        <Image
+          src={data.banner_image?getFullImageUrl(data.banner_image):""}
           alt={data.banner_heading || "Blog"}
           className="object-cover w-full h-full"
+          unoptimized
         />
       </div>
 
       <Container>
-        {/* ✅ Foreground content */}
         <div
           className={`relative ${style.heroContent} z-10 flex flex-col items-start justify-center text-white`}
         >
-          <h1 className="text-[clamp(32px,4vw,58px)] prompt-bold !leading-[clamp(30px,5vw,68px)] sm:leading-snug md:leading-normal">
+          <h1 className="text-[clamp(32px,4vw,58px)] prompt-bold sm:leading-snug md:leading-normal">
             {data.banner_heading || "Blog"}
           </h1>
 

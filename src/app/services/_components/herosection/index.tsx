@@ -3,6 +3,7 @@ import React from "react";
 import style from "./style.module.css";
 import Container from "@/components/container";
 import Breadcrumbs from "@/components/layout/breadcrumbs";
+import Image from "next/image";
 
 interface HeroSectionProps {
   data: {
@@ -29,12 +30,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
     >
       <div className="absolute inset-0 z-0">
 
-          <img
-            src={backgroundUrl || "/images/services/services_bg.png"}
+          <Image
+            src={backgroundUrl ?  backgroundUrl :"/images/services/services_bg.png"}
             alt="Banner background"
-            // fill
+            fill
             className="object-cover"
-            // priority
+            priority
+            unoptimized
           />
 
       </div>

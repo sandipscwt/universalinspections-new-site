@@ -10,13 +10,16 @@ import DOMPurify from "dompurify";
 interface Service {
     id: number;
     name: string;
-    banner_image: string;
-    file_type: string;
+    banner_image: string; 
     icon: string;
-    image: string;
-    short_content: string;
-    content: string;
+    image: string | null;
+    short_content: string; 
+    content: string; 
+    status: number;
     slug: string;
+    created_at: string;
+    updated_at: string;
+    deleted_at: string | null;
 }
 
 interface ServicesSectionData {
@@ -52,7 +55,7 @@ const WhatWeDoSection: React.FC<Props> = ({ data }) => {
                 {data.service_background_image && (
                     <div className="absolute inset-0 z-0 opacity-20">
                         <Image
-                            src={getFullImageUrl(data.service_background_image)}
+                            src={data.service_background_image?getFullImageUrl(data.service_background_image):""}
                             alt="Background"
                             fill
                             className="object-cover"

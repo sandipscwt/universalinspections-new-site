@@ -40,8 +40,7 @@ interface PurchaseInspectionData {
 interface Service {
     id: number;
     name: string;
-    banner_image: string | null;
-    file_type: string;
+    banner_image: string; 
     icon: string;
     image: string | null;
     short_content: string; 
@@ -64,35 +63,19 @@ interface ServicesDataType {
     services: Service[]
 }
 
+interface ScheduleStep {
+    [key: string]: unknown; 
+}
+
 interface ScheduleInspectionData {
     heading: string
     content: string
     image: string
-    steps: any[]
+    steps: ScheduleStep[]
     button_text: string
 }
 
 
-
-// interface ServicesData {
-//     service_heading: string
-//     service_content: string
-//     service_background_image: string
-//     service_bottom_heading: string
-//     service_bottom_contact_text1: string
-//     service_bottom_contact_text2: string
-//     service_bottom_icon1: string
-//     service_bottom_icon2: string
-//     services: Service[]      // ✅ fixed
-// }
-
-// interface ScheduleInspectionData {
-//     heading: string
-//     content: string
-//     image: string
-//     steps: ScheduleStep[]    // ✅ fixed
-//     button_text: string
-// }
 
 
 interface HowItWorksStep {
