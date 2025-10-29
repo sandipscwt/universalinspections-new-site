@@ -53,6 +53,16 @@
 }
 
 /* Paragraph inside sectionlist */
+
+.sectionlist h2 {
+    font-family: var(--font-glacial);
+    font-weight: 700;
+    font-size: clamp(16px, 4vw, 22px);
+    line-height: clamp(24px, 4vw, 30px);
+    color: #212121;
+    margin-bottom: 16px;
+}
+
 .sectionlist p {
     font-family: var(--font-glacial);
     font-weight: 700;
@@ -103,7 +113,7 @@
 }
 
 /* Bottom Buttons */
-.bottom { 
+.bottom {
     display: flex;
     flex-direction: row;
     align-items: center;

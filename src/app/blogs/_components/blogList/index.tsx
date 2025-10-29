@@ -10,6 +10,7 @@ export interface BlogListItem {
     id: number;
     title: string;
     banner_image: string;
+    featured_image:string;
     content: string;
     slug: string;
     created_at: string;
@@ -62,16 +63,24 @@ const BlogList: React.FC<BlogListProps> = ({ blogs, data }) => {
                                 className="group rounded-lg overflow-hidden bg-white shadow-sm transition hover:shadow-md cursor-pointer"
                             >
                                 <Link href={`/blogs/${post.slug}`}>
-                                    {/* ✅ Blog image */}
+
                                     <div className="relative h-[200px] w-full">
+                                    
                                         <Image
-                                            src={post?.banner_image ? getFullImageUrl(post?.banner_image) : "/images/blog/singel_blog.png"}
-                                            alt={post.title}
+                                            src={
+                                                post?.featured_image
+                                                    ? getFullImageUrl(post.featured_image)
+                                                    : post?.banner_image
+                                                        ? getFullImageUrl(post.banner_image)
+                                                        : ""
+                                            }
+                                            alt={post?.title || "Blog Image"}
                                             fill
                                             className="object-cover transition-transform duration-300 group-hover:scale-105"
                                             unoptimized
                                         />
-                                        {/* ✅ Date badge */}
+
+
                                         <div className={`${style.datebadge}`}>
                                             <p className={`${style.date}`}>{day}</p>
                                             <p className={`${style.month}`}>{month}</p>

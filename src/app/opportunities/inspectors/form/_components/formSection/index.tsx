@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import style from "./style.module.css";
 import InputfileComponent from '@/components/formFields/InputfileComponent';
 import TextArea from '@/components/formFields/TextArea';
-import  { FormButton } from '@/components/layout/button';
+import { FormButton } from '@/components/layout/button';
 import RadioGroup from '@/components/formFields/RadioGroup';
 import CustomSelect from '@/components/formFields/CustomSelect';
 
@@ -13,10 +13,43 @@ const FormSection = () => {
     const [message, setMessage] = useState('');
     const [error] = useState(false);
 
-    const shareOptions = [
-        { value: 'public', label: 'Public' },
-        { value: 'private', label: 'Private' },
-        { value: 'limited', label: 'Limited' },
+    const stateOptions = [
+        { value: 'Andhra Pradesh', label: 'Andhra Pradesh' },
+        { value: 'Arunachal Pradesh', label: 'Arunachal Pradesh' },
+        { value: 'Assam', label: 'Assam' },
+        { value: 'Bihar', label: 'Bihar' },
+        { value: 'Chhattisgarh', label: 'Chhattisgarh' },
+        { value: 'Goa', label: 'Goa' },
+        { value: 'Gujarat', label: 'Gujarat' },
+        { value: 'Haryana', label: 'Haryana' },
+        { value: 'Himachal Pradesh', label: 'Himachal Pradesh' },
+        { value: 'Jharkhand', label: 'Jharkhand' },
+        { value: 'Karnataka', label: 'Karnataka' },
+        { value: 'Kerala', label: 'Kerala' },
+        { value: 'Madhya Pradesh', label: 'Madhya Pradesh' },
+        { value: 'Maharashtra', label: 'Maharashtra' },
+        { value: 'Manipur', label: 'Manipur' },
+        { value: 'Meghalaya', label: 'Meghalaya' },
+        { value: 'Mizoram', label: 'Mizoram' },
+        { value: 'Nagaland', label: 'Nagaland' },
+        { value: 'Odisha', label: 'Odisha' },
+        { value: 'Punjab', label: 'Punjab' },
+        { value: 'Rajasthan', label: 'Rajasthan' },
+        { value: 'Sikkim', label: 'Sikkim' },
+        { value: 'Tamil Nadu', label: 'Tamil Nadu' },
+        { value: 'Telangana', label: 'Telangana' },
+        { value: 'Tripura', label: 'Tripura' },
+        { value: 'Uttar Pradesh', label: 'Uttar Pradesh' },
+        { value: 'Uttarakhand', label: 'Uttarakhand' },
+        { value: 'West Bengal', label: 'West Bengal' },
+        { value: 'Andaman and Nicobar Islands', label: 'Andaman and Nicobar Islands' },
+        { value: 'Chandigarh', label: 'Chandigarh' },
+        { value: 'Dadra and Nagar Haveli and Daman and Diu', label: 'Dadra and Nagar Haveli and Daman and Diu' },
+        { value: 'Delhi', label: 'Delhi' },
+        { value: 'Jammu and Kashmir', label: 'Jammu and Kashmir' },
+        { value: 'Ladakh', label: 'Ladakh' },
+        { value: 'Lakshadweep', label: 'Lakshadweep' },
+        { value: 'Puducherry', label: 'Puducherry' }
     ];
 
     // const handleSubmit = () => {
@@ -38,7 +71,7 @@ const FormSection = () => {
                 <div className={`${style.contact_wrapper}`}>
                     <div className={`${style.titleContainer} text-center`}>
                         <h2>
-                                Become an Inspectors
+                            Become an Inspectors
                         </h2>
 
                         <form className='mt-[20px]'>
@@ -82,15 +115,33 @@ const FormSection = () => {
 
                             <div className=" mt-[20px]  gap-3 grid grid-cols-1 sm:grid-cols-2">
                                 <CustomSelect
-                                    options={shareOptions}
+                                    options={stateOptions}
                                     // value={formData.shareOption}
                                     // onChange={handleSelectChange('shareOption')}
-                                    placeholder="Select share option..."
+                                    placeholder="Select State"
                                 />
 
                                 <InputfileComponent
                                     placeholder="Zip Code"
                                     required
+                                />
+                            </div>
+
+                            <div className="relative flex flex-col sm:flex-row items-center bg-white border border-[#2A2D3461] rounded-md shadow-sm h-auto sm:h-[45px] mt-[20px] p-2 sm:p-0">
+                                <RadioGroup
+                                    label="Work With Other Inspection Companies?"
+                                    options={['Yes', 'No']}
+                                    onChange={handleAvailabilityChange}
+
+                                />
+                            </div>
+
+                            <div className="relative flex flex-col sm:flex-row items-center bg-white border border-[#2A2D3461] rounded-md shadow-sm h-auto sm:h-[45px] mt-[20px] p-2 sm:p-0">
+                                <RadioGroup
+                                    label="Interested In Mobile Mechanic Work?"
+                                    options={['Yes', 'No']}
+                                    onChange={handleAvailabilityChange}
+
                                 />
                             </div>
 
@@ -107,21 +158,14 @@ const FormSection = () => {
                             {/* Message */}
                             <div className="mt-[20px]">
                                 <TextArea
-                                    placeholder="Dispatching Experience"
+                                    placeholder="ASE & Other Certifications"
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
                                     error={error}
                                 />
                             </div>
 
-                            <div className="mt-[20px]">
-                                <TextArea
-                                    placeholder="Software Proficiency (e.g., Google Workspace, MS Office, Dispatching Software)"
-                                    value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
-                                    error={error}
-                                />
-                            </div>
+                            
 
                             <div className="mt-[20px]">
                                 <TextArea
@@ -144,7 +188,7 @@ const FormSection = () => {
 
                             {/* Submit */}
                             <div className="p-0 mt-[20px] flex items-start">
-                                    <FormButton title="Submit"  />
+                                <FormButton title="Submit" />
                             </div>
                         </form>
                     </div>

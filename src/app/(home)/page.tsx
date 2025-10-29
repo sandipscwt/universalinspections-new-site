@@ -40,11 +40,11 @@ interface PurchaseInspectionData {
 interface Service {
     id: number;
     name: string;
-    banner_image: string; 
+    banner_image: string;
     icon: string;
     image: string | null;
-    short_content: string; 
-    content: string; 
+    short_content: string;
+    content: string;
     status: number;
     slug: string;
     created_at: string;
@@ -63,8 +63,12 @@ interface ServicesDataType {
     services: Service[]
 }
 
-interface ScheduleStep {
-    [key: string]: unknown; 
+export interface ScheduleStep {
+  id: number;
+  content: string; 
+  created_at: string;
+  updated_at: string;
+  deleted_at: string | null;
 }
 
 interface ScheduleInspectionData {

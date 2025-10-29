@@ -5,24 +5,35 @@ import Container from "@/components/container";
 import Breadcrumbs from "@/components/layout/breadcrumbs";
 
 
-const Herosection: React.FC = () => {
+interface HeroProps {
+    title: string;
+    banner: string;
+}
+
+const Herosection: React.FC<HeroProps> = ({ title, banner }) => {
+    
+    const getFullImageUrl = (path: string) => {
+        if (!path) return "/images/blog/blog_bg.png";
+        if (path.startsWith("http")) return path;
+        return `${process.env.NEXT_PUBLIC_IMAGE_URL}/${path}`;
+    };
     return (
         <section
             className={`relative w-full bg-contain bg-center ${style.heroSection}`}
         >
-            {/* Background image */}
             <div className="absolute inset-0 z-0">
+                
                 <Image
-                  src="/images/blog/blog_bg.png"
-                    alt="Background"
+                    src={banner? getFullImageUrl(banner) : ""}
+                    alt={title || "Blog"}
                     fill
                     className="object-cover"
+                    unoptimized
                     priority
                 />
             </div>
 
             <Container>
-                {/* Content container */}
                 <div
                     className={`relative ${style.heroContent} z-10 flex flex-col items-start justify-center text-white`}
                 >
@@ -30,12 +41,11 @@ const Herosection: React.FC = () => {
                         Blog
                     </h1>
 
-                    {/* Breadcrumbs */}
                     <Breadcrumbs
                         items={[
                             { label: "Home", href: "/" },
                             { label: "Blog", href: "/" },
-                            { label: "Blog topic here" },
+                            { label: title },
                         ]}
                         separator=">"
                         className="mt-2 text-[clamp(14px,2vw,18px)] font-glacial-regular"
