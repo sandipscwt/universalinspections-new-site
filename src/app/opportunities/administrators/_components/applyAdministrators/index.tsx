@@ -3,16 +3,27 @@ import style from './style.module.css'
 import Container from '@/components/container'
 import Image from 'next/image'
 import CustomButton from '@/components/layout/customButton'
+import HtmlRender from '@/components/HtmlRender';
 
-const ApplyAdministrators = () => {
 
-    const PrePurchase = [
-        "Minimum of 2 years of experience in an administrative role",
-        "Proficiency in standard office software (e.g., Google Workspace, Excel)",
-        "Excellent written and verbal communication skills",
-        "Strong organizational and time-management abilities",
-        "Ability to work independently and as part of a team",
-    ];
+interface ApplyAdministratorsProps {
+  data: {
+    heading3?: string;
+    content3?: string;
+    image?: string;
+  };
+}
+
+
+const ApplyAdministrators: React.FC<{ data: ApplyAdministratorsProps }> = ({ data }) => {
+
+    // const PrePurchase = [
+    //     "Minimum of 2 years of experience in an administrative role",
+    //     "Proficiency in standard office software (e.g., Google Workspace, Excel)",
+    //     "Excellent written and verbal communication skills",
+    //     "Strong organizational and time-management abilities",
+    //     "Ability to work independently and as part of a team",
+    // ];
 
     return (
         <section className={`${style.sectionContainer} bg-[#ffffff]`}>
@@ -31,10 +42,10 @@ const ApplyAdministrators = () => {
 
                     <div className="relative z-10">
                         <h2 className="text-[#DAA628] text-2xl font-semibold mb-5">
-                        Opportunities for Administrators
+                        {data?.data?.heading3}
                         </h2>
-
-                        <ul className="space-y-3 mt-[clamp(10px,4vw,17px)]">
+                         <HtmlRender htmlString={`${data?.data?.content3}`} />
+                        {/* <ul className="space-y-3 mt-[clamp(10px,4vw,17px)]">
                             {PrePurchase.map((item, index) => (
                                 <li key={index} className="flex items-start space-x-4">
                                     <div className="w-max">
@@ -47,7 +58,7 @@ const ApplyAdministrators = () => {
                                     </div>
                                 </li>
                             ))}
-                        </ul>
+                        </ul> */}
 
                         <div className="mt-[clamp(20px,4vw,40px)]">
                             <CustomButton title="Apply As Administrators" href="/opportunities/administrators/form" />
