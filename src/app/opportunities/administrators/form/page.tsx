@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroSection from '../_components/heroSection'
+//import HeroSection from '../_components/heroSection'
 import FormSection from './_components/formSection'
 
 
@@ -7,7 +7,7 @@ import FormSection from './_components/formSection'
 const page = () => {
     return (
         <>
-            <HeroSection />
+            {/* <HeroSection /> */}
             <FormSection/>
         </>
     )
