@@ -3,14 +3,26 @@ import style from './style.module.css'
 import Container from '@/components/container'
 import Image from 'next/image'
 import Link from 'next/link'
+import HtmlRender from '@/components/HtmlRender';
 
-const DispatcherOpportunities = () => {
+interface DispatcherOpportunitiesProps {
+  data: {
+    heading1?: string;
+    content1?: string;
+    heading2?: string;
+    content2?: string;
+    image?: string;
+  };
+}
+
+
+const DispatcherOpportunities: React.FC<{ data: DispatcherOpportunitiesProps }> = ({ data }) => {
     return (
         <section className={`${style.sectionContainer} bg-[#ffffff]`}>
             <Container>
                 <div className={`${style.titleContainer}`}>
-                    <h2>Dispatcher Opportunities</h2>
-                    <p>{`Join the Universal Inspections family as a dedicated dispatcher and be part of a team where your contributions truly matter! We&quot;re more than just colleagues; we&quot;re a supportive and goal-oriented group that celebrates each other's success.`}</p>
+                    <h2> {data?.data?.heading1} </h2>
+                    <HtmlRender htmlString={`${data?.data?.content1}`} />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-10 items-center mt-[clamp(20px,4vw,30px)]">
@@ -18,7 +30,7 @@ const DispatcherOpportunities = () => {
                         <div className="w-full h-auto ">
                             <div className="relative w-full  h-auto">
                                 <Image
-                                    src="/images/opportunitie/od_bg.png"
+                                    src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${data?.data?.image}`}
                                     alt="Driven Section"
                                     layout="responsive"
                                     width={555}
@@ -30,10 +42,10 @@ const DispatcherOpportunities = () => {
                     </div>
 
                     <div>
-                        <h2 className={`${style.title} w-[100%] lg:w-[90%]`}>Opportunities for Dispatchers</h2>
+                        <h2 className={`${style.title} w-[100%] lg:w-[90%]`}> {data?.data?.heading2} </h2>
 
                         <p className={`${style.sobTitle}`}>
-                            {`At Universal Inspections, our success is also driven by our dedicated and efficient dispatch team. We are committed to providing the highest level of support to our operations and our clients by ensuring seamless coordination of our field operations. Both full-time and part-time positions are available to accommodate different work preferences and lifestyles. If you have a strong administrative background, excellent organizational and communication skills, and a passion for contributing to a dynamic team, we encourage you to get in touch with us by email at`}
+                            <HtmlRender htmlString={`${data?.data?.content2}`} />
                         </p>
 
                         <div className="flex items-center mt-[22px]">
