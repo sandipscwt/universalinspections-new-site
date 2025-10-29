@@ -1,76 +1,56 @@
-import Container from "@/components/container"
-import Image from "next/image"
+import Container from "@/components/container";
+import Image from "next/image";
+import HtmlRender from "@/components/HtmlRender";
 import style from "./style.module.css";
 
-
-const EmpoweringSection = () => {
-
-    const PrePurchase = [
-        "Assess overall vehicle condition",
-        "Identify potential safety concerns",
-        "Evaluate mechanical and structural integrity",
-        "Provide detailed reports with photographic evidence",
-    ];
-
-    return (
-        <section className='bg-white py-[clamp(30px,4vw,100px)]'>
-            <Container>
-                <div className="grid md:grid-cols-2 gap-10 items-center">
-                    <div>
-                        <div className="w-full h-auto ">
-                            <div className="relative w-full  h-auto">
-                                <Image
-                                    src="/images/services/service_type.png"
-                                    alt="Driven Section"
-                                    layout="responsive"
-                                    width={555}
-                                    height={434}
-                                    className="object-cover relative"
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <h2 className={`${style.title} w-[100%] lg:w-[90%]`}>Empowering Informed Vehicle Purchases</h2>
-
-                            <p className={`${style.sobTitle}`}>
-                                We recognize the critical role thorough and reliable inspections play in pre-purchase automotive decisions. Our meticulous inspectors conduct comprehensive evaluations, providing you or your clients with a clear understanding of a vehicles condition before a sale. By employing detailed inspection protocols and cutting-edge diagnostic tools, we deliver the unbiased crucial information needed for confident purchasing decisions.
-                            </p>
-                        </div>
-                        <div>
-                            <h2 className={`${style.sectitle}`}>Partnering for Buyer Confidence</h2>
-
-                            <p className={`${style.sobTitle}`}>
-                                We offer a range of pre-purchase inspection services designed to meet various needs. We provide the flexibility required for different vehicle types and buyer preferences. Our aim is to be a trusted resource, fostering transparency and building confidence in the pre-owned vehicle market.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h2 className={`${style.sectitle} w-[100%]`}>Your Pre-Purchase Confidence, Our Commitment.</h2>
-
-                    <div className="space-y-3 mt-[clamp(10px,4vw,17px)]">
-                        {PrePurchase.map((item, index) => (
-                            <div key={index} className="flex items-start space-x-4">
-                                <div className="w-max">
-                                    <div className="!w-[15px] !h-[15px] bg-[#BD632F] rounded-[3px] mt-1"></div>
-                                </div>
-                                <div>
-                                    <p className="text-[clamp(12px,4vw,16px)] text-[#203740] font-glacial-bold">
-                                        {item}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-            </Container>
-
-        </section>
-    )
+interface ServiceDetailsProps {
+  data: {
+    id: number;
+    name: string;
+    banner_image: string;
+    file_type: string;
+    icon: string;
+    image: string;
+    short_content: string;
+    content: string;
+    status: number;
+    slug: string;
+    created_at: string;
+    updated_at: string;
+    deleted_at: string | null;
+  };
 }
 
-export default EmpoweringSection
+const EmpoweringSection: React.FC<ServiceDetailsProps> = ({ data }) => {
+  const getFullImageUrl = (path: string) => {
+    if (!path) return "/images/blog/blog_bg.png";
+    if (path.startsWith("http")) return path;
+    return `${process.env.NEXT_PUBLIC_IMAGE_URL}/${path}`;
+  };
+
+  return (
+    <section className="bg-white py-[clamp(30px,4vw,100px)] w-full">
+      <Container>
+        <div className="relative w-full">
+          {/* LEFT IMAGE */}
+          <div className="md:float-left md:w-[45%] w-full md:mr-8 mb-6">
+            <Image
+              src={data?.image ? getFullImageUrl(data.image) : ""}
+              alt={data?.name}
+              width={700}
+              height={500}
+              className="object-cover w-full h-auto rounded-xl"
+              unoptimized
+            />
+          </div>
+
+             <div className={`sectionContentli ${style.sectionlist}`}>
+            <HtmlRender htmlString={data?.content ?? ""} />
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+};
+
+export default EmpoweringSection;

@@ -24,7 +24,7 @@ export interface BlogItem {
     title: string;
     banner_image: string;
     featured_image: string;
-    short_content?: string | null;
+    short_content: string ;
     content: string;
     status: number;
     slug: string;
@@ -46,7 +46,7 @@ const Blogs = async () => {
     try {
         const res = await ClientFetch(`${process.env.API_URL}/blog-page-data`, { cache: "no-store" });
         const blogData: BlogApiResponse = await res.json();
-        // console.log('blogData-----------list-------------', JSON.stringify(blogData), 2, null);
+        console.log('blogData-----------list-------------', JSON.stringify(blogData), 2, null);
 
         const pageContent = blogData?.data?.page_content;
         const blogs = blogData?.data?.blogs || [];
@@ -60,7 +60,7 @@ const Blogs = async () => {
     } catch (error) {
         console.error("Error fetching Blogs page data:", error);
         return (
-            <div className="p-10 text-center text-red-600">
+            <div className="p-10 text-center text-red-400">
                 Failed to load Blogs page data. Please try again later.
             </div>
         );

@@ -65,7 +65,7 @@
 
 .sectionlist p {
     font-family: var(--font-glacial);
-    font-weight: 700;
+    font-weight: 400;
     font-size: clamp(12px, 4vw, 16px);
     line-height: clamp(20px, 4vw, 25.9px);
     letter-spacing: 0%;

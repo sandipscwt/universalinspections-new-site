@@ -21,10 +21,9 @@ interface BlogDetailItem {
 interface BlogDetailsApiResponse {
   status: boolean;
   message: string;
-  data: BlogDetailItem[]; // ✅ FIXED
+  data: BlogDetailItem[]; 
 }
 
-// ✅ Keep params as Promise (Next.js 15+)
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   try {
     const resolvedParams = await params;
@@ -39,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     }
 
     const blogData: BlogDetailsApiResponse = await res.json();
-    const blog = blogData?.data?.[0]; // ✅ FIXED
+    const blog = blogData?.data?.[0]; 
 
     if (!blog) {
       return createMetadata({ title: "Blog Not Found | Universal Inspections" });
@@ -93,7 +92,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   } catch (error) {
     console.error("Error fetching Blog details:", error);
     return (
-      <div className="p-10 text-center text-red-600">
+      <div className="p-10 text-center text-red-400">
         Failed to load Blog details. Please try again later.
       </div>
     );

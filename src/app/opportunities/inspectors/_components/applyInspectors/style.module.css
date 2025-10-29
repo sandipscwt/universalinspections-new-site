@@ -14,3 +14,74 @@
     padding-right: clamp(25px, 8vw, 50px);
     overflow: hidden;
 }
+
+.sectionlist {
+    padding-right: 10px;
+}
+
+/* Paragraph inside sectionlist */
+
+.sectionlist h2 {
+    font-family: var(--font-glacial);
+    font-weight: 700;
+    font-size: clamp(16px, 4vw, 22px);
+    line-height: clamp(24px, 4vw, 30px);
+    color: #212121;
+    margin-bottom: 10px;
+}
+
+.sectionlist p {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(12px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 25.9px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #212121;
+    margin-bottom: 10px;
+}
+
+/* List styling (UL + OL) */
+.sectionlist ul,
+.sectionlist ol {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+/* Unordered list bullets */
+.sectionlist ul li {
+    list-style-type: none;
+}
+
+/* Ordered list numbers */
+.sectionlist ol li {
+    list-style-type: decimal;
+}
+
+/* Common list item style */
+.sectionlist ul li,
+.sectionlist ol li {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(12px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    color: #212121;
+}
+
+/* Ordered list marker styling */
+.sectionlist ol li::marker {
+    color: #212121;
+    font-family: var(--font-glacial);
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .sectionlist {
+        height: auto;
+        /* max-height: 249px; */
+    }
+}

@@ -5,13 +5,15 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/layout/button";
 import Image from "next/image";
+import DOMPurify from 'isomorphic-dompurify';
 
 export interface BlogListItem {
     id: number;
     title: string;
     banner_image: string;
-    featured_image:string;
+    featured_image: string;
     content: string;
+    short_content: string;
     slug: string;
     created_at: string;
 }
@@ -65,7 +67,7 @@ const BlogList: React.FC<BlogListProps> = ({ blogs, data }) => {
                                 <Link href={`/blogs/${post.slug}`}>
 
                                     <div className="relative h-[200px] w-full">
-                                    
+
                                         <Image
                                             src={
                                                 post?.featured_image
@@ -79,8 +81,6 @@ const BlogList: React.FC<BlogListProps> = ({ blogs, data }) => {
                                             className="object-cover transition-transform duration-300 group-hover:scale-105"
                                             unoptimized
                                         />
-
-
                                         <div className={`${style.datebadge}`}>
                                             <p className={`${style.date}`}>{day}</p>
                                             <p className={`${style.month}`}>{month}</p>
@@ -89,12 +89,15 @@ const BlogList: React.FC<BlogListProps> = ({ blogs, data }) => {
 
                                     {/* ✅ Card Body */}
                                     <div className="p-4 flex flex-col justify-between h-[160px]">
-                                        <h3 className="prompt-bold text-[#DAA628] group-hover:text-[#BD632F] text-[clamp(16px,4vw,24px)] leading-[clamp(24px,4vw,29px)]">
+                                        <h3 className="prompt-bold text-[#DAA628] group-hover:text-[#BD632F] line-clamp-1 text-[clamp(16px,4vw,24px)] leading-[clamp(24px,4vw,29px)]">
                                             {post.title}
                                         </h3>
                                         <div
                                             className="font-glacial-regular text-[#2C3037] mt-2 group-hover:text-gray-700 text-[clamp(14px,4vw,16px)] leading-[clamp(22px,4vw,25px)] line-clamp-2"
-                                            dangerouslySetInnerHTML={{ __html: post.content }}
+                                            // dangerouslySetInnerHTML={{ __html: post.content }}
+                                            dangerouslySetInnerHTML={{
+                                                __html: DOMPurify.sanitize(post.short_content || post.content || ''),
+                                            }}
                                         />
 
                                         <div className="flex items-center gap-1 mt-4 text-sm font-medium text-[#2C3037] font-glacial-regular group-hover:text-[#BD632F]">

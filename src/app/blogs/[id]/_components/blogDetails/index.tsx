@@ -62,9 +62,9 @@ const BlogDetails: React.FC<BlogDetailsProps> = ({ data }) => {
                     />
                 </div>
 
-                <p className={`${style.blogtitle}`}>
+                {/* <p className={`${style.blogtitle}`}>
                     {data.short_content}
-                </p>
+                </p> */}
 
                 <div className={`sectionContentli ${style.sectionlist}`}>
                     <HtmlRender htmlString={data?.content} />
