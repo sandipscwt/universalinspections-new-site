@@ -102,21 +102,19 @@ const WhatWeDoSection: React.FC<Props> = ({ data }) => {
                                         />
 
                                     </div>
-                                    <h3 className={`text-2xl text-[#DAA628] prompt-bold mt-3 group-hover:text-white`}>
+    
+                                    <h3
+                                        className={`flex items-center justify-start text-[24px] text-[#DAA628] prompt-bold mt-4 group-hover:text-white h-[70px]`}
+                                    >
                                         {service.name}
                                     </h3>
-                                    {/* <p
-                                        className="text-base prompt-regular text-[#2C3037] mt-2 group-hover:text-white"
-                                        dangerouslySetInnerHTML={{
-                                            __html: DOMPurify.sanitize(service.short_content),
-                                        }}
-                                    /> */}
 
                                     <p
-                                        className="text-base prompt-regular text-[#2C3037] mt-2 group-hover:text-white"
+                                        className="text-[16px] line-clamp-2 prompt-regular text-[#2C3037] mt-2 group-hover:text-white"
                                         dangerouslySetInnerHTML={{
                                             __html: sanitizeHTML(service.short_content),
                                         }}
+
                                     />
                                 </Link>
                             </div>

@@ -21,3 +21,114 @@
     line-height: clamp(20px, 4vw, 24px);
     letter-spacing: 0%;
 }
+
+
+.sectionlist {
+    padding-right: 10px;
+}
+
+/* Paragraph inside sectionlist */
+
+.sectionlist h2 {
+    font-family: var(--font-glacial);
+    font-weight: 700;
+    font-size: clamp(16px, 4vw, 22px);
+    line-height: clamp(24px, 4vw, 30px);
+    color: #212121;
+    margin-bottom: 15px;
+}
+
+
+.sectionlist h3 {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(16px, 4vw, 24px);
+    color: #DAA628;
+    margin-top: clamp(15px, 4vw, 30px);
+    line-height: clamp(20px, 4vw, 24px);
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.sectionlist h4 {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(16px, 4vw, 24px);
+    color: #DAA628;
+    margin-top: clamp(15px, 4vw, 30px);
+    line-height: clamp(20px, 4vw, 24px);
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.sectionlist h5 {
+font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(16px, 4vw, 24px);
+    color: #DAA628;
+    margin-top: clamp(15px, 4vw, 30px);
+    line-height: clamp(20px, 4vw, 24px);
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+
+.sectionlist p {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(12px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 25.9px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #212121;
+    margin-bottom: 5px;
+    /* color: rgb(93, 14, 230); */
+}
+
+/* List styling (UL + OL) */
+.sectionlist ul,
+.sectionlist ol {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    padding-left: 1.5rem;
+    /* color: rgb(14, 161, 230); */
+}
+
+/* Unordered list bullets */
+.sectionlist ul li {
+    list-style-type: none;
+}
+
+/* Ordered list numbers */
+.sectionlist ol li {
+    list-style-type: decimal;
+}
+
+/* Common list item style */
+.sectionlist ul li,
+.sectionlist ol li {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(12px, 4vw, 16px);
+    /* line-height: clamp(20px, 4vw, 26px); */
+    letter-spacing: 0%;
+    color: #212121;
+    /* color: rgb(179, 255, 0); */
+}
+
+/* Ordered list marker styling */
+.sectionlist ol li::marker {
+    color: #212121;
+    font-family: var(--font-glacial);
+    font-weight: 700;
+    /* color: red; */
+}
+
+@media (max-width: 768px) {
+    .sectionlist {
+        height: auto;
+        /* max-height: 249px; */
+    }
+}

@@ -30,6 +30,40 @@
     margin-bottom: 10px;
 }
 
+.sectionlist h3 {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(16px, 4vw, 24px);
+    color: #DAA628;
+    margin-top: clamp(15px, 4vw, 30px);
+    line-height: clamp(20px, 4vw, 24px);
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.sectionlist h4 {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(16px, 4vw, 24px);
+    color: #DAA628;
+    margin-top: clamp(15px, 4vw, 30px);
+    line-height: clamp(20px, 4vw, 24px);
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.sectionlist h5 {
+font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(16px, 4vw, 24px);
+    color: #DAA628;
+    margin-top: clamp(15px, 4vw, 30px);
+    line-height: clamp(20px, 4vw, 24px);
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+
 .sectionlist p {
     font-family: var(--font-glacial);
     font-weight: 400;

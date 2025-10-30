@@ -22,16 +22,56 @@
 .checkboxContainer {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-    margin-top: 14px;
+    width: 55%;
+    align-content: center;
+    margin-top: 15px;
+}
+
+.checkboxInput {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 19px;
+  height: 19px;
+  border-radius: 5px;
+  background-color: #FFFFFF; 
+  cursor: pointer;
+  position: relative;
+  border: none; 
+  transition: all 0.2s ease;
+}
+
+.checkboxInput:checked {
+  background-color: #DAA628; 
+  border: 1px solid #BD632F; 
+}
+
+.checkboxInput:checked::after {
+  content: "✔";
+  position: absolute;
+  top: 1px;
+  left: 5px;
+  color: #FFFFFF; 
+  font-size: 10px;
+  line-height: 17px;
+}
+
+.checklabel {
+    color: #2A2D34;
+    font-size: clamp(14px, 4vw, 16px);
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    line-height: clamp(20px, 4vw, 24px);
+    letter-spacing: 0%;
+    color: #FFFFFF;
 }
 
 .leftSection {
     background-color: #DAA628;
     display: flex;
-    padding-top: clamp(70px,4vw,108px);
+    padding-top: clamp(70px, 4vw, 108px);
     padding-bottom: 76px;
     align-items: center;
     justify-content: center;
@@ -40,7 +80,7 @@
 .rightSection {
     background-color: #BD632F;
     display: flex;
-    padding-top: clamp(40px,4vw,108px);
+    padding-top: clamp(40px, 4vw, 108px);
     padding-bottom: 76px;
     align-items: center;
     justify-content: center;
@@ -72,14 +112,14 @@
 }
 
 .financeCard {
-    padding-top: clamp(25px,4vw,59px);
-    padding-bottom: clamp(25px,4vw,68px);
-    padding-right: clamp(0px,2vw,47px);
-    padding-left: clamp(0px,2vw,47px);
+    padding-top: clamp(25px, 4vw, 59px);
+    padding-bottom: clamp(25px, 4vw, 68px);
+    padding-right: clamp(0px, 2vw, 47px);
+    padding-left: clamp(0px, 2vw, 47px);
     background-color: #F8F8F8;
     border-radius: 8px;
     position: relative;
-    top:-40px
+    top: -40px
 }
 
 .financeTitle {
@@ -116,4 +156,3 @@
     color: #2C3037;
     margin-left: 18px;
 }
-

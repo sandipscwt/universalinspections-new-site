@@ -2,58 +2,47 @@ import React from 'react'
 import style from './style.module.css'
 import Container from '@/components/container'
 import Image from 'next/image'
+import HtmlRender from '@/components/HtmlRender'
+export interface SearchBottomSection {
+    data: {
+        div1_heading: string;
+        div1_content: string;
+        div1_image: string;
+        div2_heading: string;
+        div2_content: string;
+        div2_image: string;
+    }
+}
+const RepairShops: React.FC<SearchBottomSection> = ({ data }) => {
 
-const RepairShops = () => {
-    const PrePurchase = [
-        "Accurate Diagnosis",
-        "Clear Explanations (no jargon)",
-        "Ongoing Progress Updates",
-        "Detailed, itemized invoices",
-        "Upfront, honest estimates",
-        "High-standard workmanship",
-        "Quality Parts (options explained)",
-        "Adherence to estimates",
-        "Thorough post-repair testing",
-        "Warranty on parts and labor",
-        "Timely service",
-        "Courteous, respectful staff",
-        "Proper vehicle care",
-        "Decisions respected (even if declining repairs)",
-        "Convenient options (scheduling, loaners)",
-        "Easy payment options",
-        "Clean, organized shop",
-        "Preventative maintenance advice (no pressure)",
-        "Post-service follow-up."
-    ];
+    const getFullImageUrl = (path: string) => {
+        if (!path) return "/images/associates/shop_img.png";
+        if (path.startsWith("http")) return path;
+        return `${process.env.NEXT_PUBLIC_IMAGE_URL}/${path}`;
+    };
     return (
         <section className={`${style.sectionContainer} bg-[#ffffff]`}>
             <Container>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-10">
-                        <div className="space-y-2 mt-[clamp(20px,4vw,30px)]">
-                        <h2 className={`${style.sectionTitle}`}>Automotive Dealers</h2>
-                        {PrePurchase.map((item, index) => (
-                            <div key={index} className="flex items-start space-x-3">
-                                <div className="w-max">
-                                    <div className="!w-[12px] !h-[12px] bg-[#BD632F] rounded-[3px] mt-1"></div>
-                                </div>
-                                <div>
-                                    <p className={`${style.sectionItem}`}>
-                                        {item}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
+                    <div className="space-y-2 mt-[clamp(20px,4vw,30px)]">
+                        <h2 className={`${style.sectionTitle}`}>{data?.div2_heading}</h2>
+
+                        <div className={`sectionContentli ${style.sectionlist}`}>
+                            <HtmlRender htmlString={`${data?.div2_content}`} />
+                        </div>
                     </div>
 
                     <div className="w-full h-auto">
                         <div className="relative w-fullh-auto">
                             <Image
-                                src="/images/associates/shop_img.png"
+                                src={data?.div2_image ? getFullImageUrl(data?.div2_image) : ""}
                                 alt="Automotive Dealers"
                                 layout="responsive"
                                 width={555}
                                 height={434}
                                 className="object-cover relative"
+                                priority
+                                unoptimized
                             />
                         </div>
                     </div>
