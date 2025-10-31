@@ -67,7 +67,7 @@ export interface ServicesApiResponse {
 
 const Services = async () => {
     try {
-        const res = await ClientFetch(`${process.env.API_URL}/service-page-data`, {
+        const res = await ClientFetch(`${process.env.NEXT_PUBLIC_API_URL}/service-page-data`, {
             cache: "no-store",
         });
         const servicesData: ServicesApiResponse = await res.json();

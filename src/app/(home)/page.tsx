@@ -125,7 +125,7 @@ interface HomeAPIResponse {
 
 const Home = async () => {
     try {
-        const res = await ClientFetch(`${process.env.API_URL}/home-page-data`, { cache: "no-store" })
+        const res = await ClientFetch(`${process.env.NEXT_PUBLIC_API_URL}/home-page-data`, { cache: "no-store" })
         const HomedataRaw = await res.json()
         // console.log("Homedata-------", JSON.stringify(HomedataRaw, null, 2))
         const data: HomeAPIResponse = HomedataRaw?.data

@@ -97,7 +97,7 @@ export async function generateMetadata({
         const resolvedParams = await params;
         const slug = resolvedParams.id;
 
-        const res = await ClientFetch(`${process.env.API_URL}/financer-details/${slug}`, {
+        const res = await ClientFetch(`${process.env.NEXT_PUBLIC_API_URL}/financer-details/${slug}`, {
             cache: "no-store",
         });
 
@@ -113,7 +113,7 @@ export async function generateMetadata({
         }
 
         const baseUrl =
-            process.env.API_URL ||
+            process.env.NEXT_PUBLIC_API_URL ||
             "https://simpreative.in/universal-inspection-api";
         const fullImageUrl = financer.financer_detail?.banner_image
             ? `${baseUrl}/${financer.financer_detail.banner_image}`
@@ -140,7 +140,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
         const resolvedParams = await params;
         const slug = resolvedParams.id;
 
-        const apiUrl = `${process.env.API_URL}/financer-details/${slug}`;
+        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/financer-details/${slug}`;
         console.log("Financer apiUrl apiUrl -------", apiUrl);
         const res = await ClientFetch(apiUrl, { cache: "no-store" });
         const financerResponse: ApiResponse = await res.json();

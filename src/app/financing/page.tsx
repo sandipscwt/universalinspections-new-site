@@ -30,7 +30,7 @@ export interface FinancingResponse {
 const Financing = async () => {
 
     try {
-        const res = await ClientFetch(`${process.env.API_URL}/financing-page-data`, { cache: "no-store" });
+        const res = await ClientFetch(`${process.env.NEXT_PUBLIC_API_URL}/financing-page-data`, { cache: "no-store" });
         const financeData: FinancingResponse = await res.json();
         const pageContent = financeData?.data;
 

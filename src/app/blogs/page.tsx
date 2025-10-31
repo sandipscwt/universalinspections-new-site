@@ -43,15 +43,15 @@ export interface BlogApiResponse {
 }
 
 const Blogs = async () => {
-    const apiUrl = process.env.API_URL;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
     // ✅ Validate environment variable
     if (!apiUrl) {
-        console.error("❌ Missing API_URL environment variable");
+        console.error("❌ Missing NEXT_PUBLIC_API_URL environment variable");
         return (
             <div className="p-10 text-center text-red-500">
                 <h2 className="text-xl font-semibold mb-2">Configuration Error</h2>
-                <p>Missing <strong>API_URL</strong> environment variable. Please check your deployment settings.</p>
+                <p>Missing <strong>NEXT_PUBLIC_API_URL</strong> environment variable. Please check your deployment settings.</p>
             </div>
         );
     }

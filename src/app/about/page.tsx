@@ -52,7 +52,7 @@ export interface AboutApiResponse {
 
 const About = async () => {
     try {
-        const res = await ClientFetch(`${process.env.API_URL}/about-page-data`, { cache: "no-store" });
+        const res = await ClientFetch(`${process.env.NEXT_PUBLIC_API_URL}/about-page-data`, { cache: "no-store" });
         const aboutData: AboutApiResponse = await res.json();
         const bannerData = aboutData?.data?.banner_section;
         const drivenData = aboutData?.data?.banner_bottom_section;

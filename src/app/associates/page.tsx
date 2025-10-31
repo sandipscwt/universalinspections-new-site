@@ -45,7 +45,7 @@ export interface AssociatesResponse {
 const Associates = async () => {
 
     try {
-        const res = await ClientFetch(`${process.env.API_URL}/associate-page-data`, { cache: "no-store" });
+        const res = await ClientFetch(`${process.env.NEXT_PUBLIC_API_URL}/associate-page-data`, { cache: "no-store" });
         const associateData: AssociatesResponse = await res.json();
         // console.log('associateData----------------', JSON.stringify(associateData), null, 2);
 

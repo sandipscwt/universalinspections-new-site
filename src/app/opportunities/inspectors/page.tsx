@@ -35,7 +35,7 @@ interface ApiResponse  {
 export const metadata = generateMetadata({ title: "Opportunities | Universal Inspections" });
 const page = async() => {
 
-    const res = await ClientFetch(`${process.env.API_URL}/opportunity-details/inspector`, { cache: "no-store" });
+    const res = await ClientFetch(`${process.env.NEXT_PUBLIC_API_URL}/opportunity-details/inspector`, { cache: "no-store" });
         const inspectorResponse: ApiResponse = await res.json();
     
         const heroData = {

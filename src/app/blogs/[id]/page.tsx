@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
         const resolvedParams = await params;
         const slug = resolvedParams.id;
 
-        const res = await ClientFetch(`${process.env.API_URL}/blog-details/${slug}`, {
+        const res = await ClientFetch(`${process.env.NEXT_PUBLIC_API_URL}/blog-details/${slug}`, {
             cache: "no-store",
         });
 
@@ -73,7 +73,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
         const resolvedParams = await params;
         const slug = resolvedParams.id;
 
-        const apiUrl = `${process.env.API_URL}/blog-details/${slug}`;
+        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/blog-details/${slug}`;
         const res = await ClientFetch(apiUrl, { cache: "no-store" });
         const blogData: BlogDetailsApiResponse = await res.json();
 

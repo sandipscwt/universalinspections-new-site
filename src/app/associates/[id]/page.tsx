@@ -93,7 +93,7 @@ export async function generateMetadata({
         const resolvedParams = await params;
         const slug = resolvedParams.id;
 
-        const res = await ClientFetch(`${process.env.API_URL}/associate-details/${slug}`, {
+        const res = await ClientFetch(`${process.env.NEXT_PUBLIC_API_URL}/associate-details/${slug}`, {
             cache: "no-store",
         });
 
@@ -108,7 +108,7 @@ export async function generateMetadata({
             return createMetadata({ title: "Commercial User Not Found | Universal Inspections" });
         }
 
-        const baseUrl = process.env.API_URL || "https://simpreative.in/universal-inspection-api";
+        const baseUrl = process.env.NEXT_PUBLIC_API_URL || "https://simpreative.in/universal-inspection-api";
         const fullImageUrl = commercial.detail?.banner_image
             ? `${baseUrl}/${commercial.detail.banner_image}`
             : `${baseUrl}/default-banner.jpg`;
@@ -133,7 +133,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
         const resolvedParams = await params;
         const slug = resolvedParams.id;
 
-        const apiUrl = `${process.env.API_URL}/associate-details/${slug}`;
+        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/associate-details/${slug}`;
         console.log("Commercial apiUrl -------", apiUrl);
         
         const res = await ClientFetch(apiUrl, { cache: "no-store" });

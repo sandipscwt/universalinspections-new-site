@@ -36,7 +36,7 @@ interface ApiResponse  {
 
 const page = async () => {
 
-    const res = await ClientFetch(`${process.env.API_URL}/opportunity-details/dispatcher`, { cache: "no-store" });
+    const res = await ClientFetch(`${process.env.NEXT_PUBLIC_API_URL}/opportunity-details/dispatcher`, { cache: "no-store" });
     const dispatcherResponse: ApiResponse = await res.json();
 
     const heroData = {

@@ -35,7 +35,7 @@ export interface WarrantyApiResponse {
 const Warranties = async () => {
 
     try {
-        const res = await ClientFetch(`${process.env.API_URL}/extended-warrenties-page-data`, { cache: "no-store" });
+        const res = await ClientFetch(`${process.env.NEXT_PUBLIC_API_URL}/extended-warrenties-page-data`, { cache: "no-store" });
         const warrantyData: WarrantyApiResponse = await res.json();
         // console.log('warrantyData----------------', JSON.stringify(warrantyData), null, 2);
         const pageContent = warrantyData?.data;
