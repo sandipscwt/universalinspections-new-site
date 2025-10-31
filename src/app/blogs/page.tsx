@@ -57,7 +57,7 @@ const Blogs = async () => {
     const blogData: BlogApiResponse = await res.json();
     const pageContent = blogData?.data?.page_content;
     const blogs = blogData?.data?.blogs || [];
-
+    console.log(blogs, 'blogs');
     if (!pageContent) {
       return (
         <div className="p-10 text-center text-red-400">
@@ -69,11 +69,11 @@ const Blogs = async () => {
     return (
       <>
         <HeroSection data={pageContent} />
-        {blogs.length > 0 ? (
+        {/* {blogs.length > 0 ? (
           <BlogList blogs={blogs} data={pageContent} />
         ) : (
           <div className="p-10 text-center text-gray-500">No blogs available.</div>
-        )}
+        )} */}
       </>
     );
   } catch (error) {
