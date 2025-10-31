@@ -8,6 +8,7 @@ interface ButtonProps {
 }
 interface FormButtonProps {
   title: string;
+  disabled?: boolean;
 }
 const Button = ({ title, href }: ButtonProps) => {
   return (
@@ -26,10 +27,10 @@ const Button = ({ title, href }: ButtonProps) => {
     </div>
   );
 };
-export const FormButton = ({ title }: FormButtonProps) => {
+export const FormButton = ({ title, disabled = false }: FormButtonProps) => {
   return (
     <div className="inline-flex rounded-md overflow-hidden text-[clamp(12px,4vw,14px)]">
-      <button className={style.button_sty}>
+      <button className={style.button_sty} disabled={disabled}>
         {/* Text part */}
         <span className={style.textPart}>
           {title}

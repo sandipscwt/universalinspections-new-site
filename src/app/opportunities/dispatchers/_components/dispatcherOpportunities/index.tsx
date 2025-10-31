@@ -44,9 +44,9 @@ const DispatcherOpportunities: React.FC<{ data: DispatcherOpportunitiesProps }> 
                     <div>
                         <h2 className={`${style.title} w-[100%] lg:w-[90%]`}> {data?.data?.heading2} </h2>
 
-                        <p className={`${style.sobTitle}`}>
+                        <span className={`${style.sobTitle}`}>
                             <HtmlRender htmlString={`${data?.data?.content2}`} />
-                        </p>
+                        </span>
 
                         <div className="flex items-center mt-[22px]">
                             <div className={`${style.callBox}`}>

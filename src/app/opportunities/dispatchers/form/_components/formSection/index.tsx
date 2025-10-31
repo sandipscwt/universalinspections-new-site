@@ -1,68 +1,113 @@
 "use client";
 import Container from '@/components/container'
-import React, { useState } from 'react'
+import React, { useEffect, useMemo, useState } from "react";
 import style from "./style.module.css";
 import InputfileComponent from '@/components/formFields/InputfileComponent';
 import TextArea from '@/components/formFields/TextArea';
-import  { FormButton } from '@/components/layout/button';
+import { FormButton } from '@/components/layout/button';
 import RadioGroup from '@/components/formFields/RadioGroup';
 import CustomSelect from '@/components/formFields/CustomSelect';
+import { useForm, Controller, useWatch } from "react-hook-form";
+import { ServerFetch } from '@/actions/server-fetch';
+import { ErrorToast, SuccessToast } from "@/lib/toast";
+
+type OptionType = { value: string; label: string };
+
+
+type FormValues = {
+    first_name: string;
+    last_name: string;
+    phone: string;
+    email: string;
+    address: string;
+    country: string;
+    state: string;
+    city: string;
+    zip: string;
+    availability_preference: "Full-Time" | "Part-Time" | "Either";
+    dispatching_experience: string;
+    software_proficiency: string;
+    education: string;
+    work_experience: string;
+};
 
 const FormSection = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors, isSubmitting }, reset,
+        watch,
+        setValue,
+        trigger,
+        resetField,
+    } = useForm<FormValues>({
+        defaultValues: {
+            //availability_preference: "Either",
+        },
+        mode: "onChange",
+        reValidateMode: "onChange",
+        shouldFocusError: true,
+    });
 
-    const [message, setMessage] = useState('');
-    const [error] = useState(false);
+    const [countryOptions, setCountryOptions] = useState<OptionType[]>([]);
+    const [countryOpt, setCountryOpt] = useState<OptionType | null>(null);
+    const [stateOptions, setStateOptions] = useState<OptionType[]>([]);
+    const [stateOpt, setStateOpt] = useState<OptionType | null>(null);
 
-    const stateOptions = [
-        { value: 'Andhra Pradesh', label: 'Andhra Pradesh' },
-        { value: 'Arunachal Pradesh', label: 'Arunachal Pradesh' },
-        { value: 'Assam', label: 'Assam' },
-        { value: 'Bihar', label: 'Bihar' },
-        { value: 'Chhattisgarh', label: 'Chhattisgarh' },
-        { value: 'Goa', label: 'Goa' },
-        { value: 'Gujarat', label: 'Gujarat' },
-        { value: 'Haryana', label: 'Haryana' },
-        { value: 'Himachal Pradesh', label: 'Himachal Pradesh' },
-        { value: 'Jharkhand', label: 'Jharkhand' },
-        { value: 'Karnataka', label: 'Karnataka' },
-        { value: 'Kerala', label: 'Kerala' },
-        { value: 'Madhya Pradesh', label: 'Madhya Pradesh' },
-        { value: 'Maharashtra', label: 'Maharashtra' },
-        { value: 'Manipur', label: 'Manipur' },
-        { value: 'Meghalaya', label: 'Meghalaya' },
-        { value: 'Mizoram', label: 'Mizoram' },
-        { value: 'Nagaland', label: 'Nagaland' },
-        { value: 'Odisha', label: 'Odisha' },
-        { value: 'Punjab', label: 'Punjab' },
-        { value: 'Rajasthan', label: 'Rajasthan' },
-        { value: 'Sikkim', label: 'Sikkim' },
-        { value: 'Tamil Nadu', label: 'Tamil Nadu' },
-        { value: 'Telangana', label: 'Telangana' },
-        { value: 'Tripura', label: 'Tripura' },
-        { value: 'Uttar Pradesh', label: 'Uttar Pradesh' },
-        { value: 'Uttarakhand', label: 'Uttarakhand' },
-        { value: 'West Bengal', label: 'West Bengal' },
-        { value: 'Andaman and Nicobar Islands', label: 'Andaman and Nicobar Islands' },
-        { value: 'Chandigarh', label: 'Chandigarh' },
-        { value: 'Dadra and Nagar Haveli and Daman and Diu', label: 'Dadra and Nagar Haveli and Daman and Diu' },
-        { value: 'Delhi', label: 'Delhi' },
-        { value: 'Jammu and Kashmir', label: 'Jammu and Kashmir' },
-        { value: 'Ladakh', label: 'Ladakh' },
-        { value: 'Lakshadweep', label: 'Lakshadweep' },
-        { value: 'Puducherry', label: 'Puducherry' }
-    ];
+    useEffect(() => {
+        register("country", { required: "Country is required" });
+        register("state", { required: "State is required" });
+    }, [register]);
 
-    // const handleSubmit = () => {
-    //     if (!message.trim()) {
-    //         setError(true);
-    //     } else {
-    //         setError(false);
-    //         alert(`Message submitted: ${message}`);
-    //     }
-    // }
+    // Load countries
+    useEffect(() => {
+        (async () => {
+            const res = await ServerFetch(`/country-list-data`, { cache: "no-store" });
+            setCountryOptions(
+                (res?.data ?? []).map((c: any) => ({ value: String(c.id), label: c.name }))
+            );
+        })();
+    }, []);
 
-    const handleAvailabilityChange = (value: string) => {
-        console.log('Selected:', value);
+    // When country changes, fetch states
+    useEffect(() => {
+        const id = countryOpt?.value;
+        if (!id) {
+            setStateOptions([]);
+            setStateOpt(null);
+            return;
+        }
+        (async () => {
+            const res = await ServerFetch(`/state-list-data-of-country/${id}`, { cache: "no-store" });
+            //const json = res.data;
+            setStateOptions(
+                (res?.data ?? []).map((s: any) => ({ value: String(s.id), label: s.name }))
+            );
+            resetField("state");
+            setStateOpt(null);
+            // optionally validate country
+            trigger("country");
+        })();
+    }, [countryOpt, resetField, trigger]);
+
+    const onSubmit = async (data: FormValues) => {
+        const dispatcherApp = await ServerFetch(
+            `/submit-dispatcher-application`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            }
+        );
+        console.log(dispatcherApp);
+        if (dispatcherApp?.status) {
+            SuccessToast(dispatcherApp?.message);
+            reset();
+        } else {
+            ErrorToast(dispatcherApp?.message);
+        }
     };
 
     return (
@@ -74,68 +119,113 @@ const FormSection = () => {
                             Start Your Career as a Dispatcher
                         </h2>
 
-                        <form className='mt-[20px]'>
+                        <form className='mt-[20px]' onSubmit={handleSubmit(onSubmit)} noValidate>
 
 
                             <div className=" mt-[20px]  gap-3 grid grid-cols-1 sm:grid-cols-2">
                                 <InputfileComponent
                                     placeholder="First Name"
-                                    required
+                                    {...register("first_name", { required: "First Name is required" })}
                                 />
-
+                                {errors.first_name && <p className="text-red-500 text-sm">{errors.first_name.message}</p>}
                                 <InputfileComponent
                                     placeholder="Last Name"
-                                    required
+                                    {...register("last_name", { required: "Last Name is required" })}
                                 />
+                                {errors.last_name && <p className="text-red-500 text-sm">{errors.last_name.message}</p>}
                             </div>
 
                             <div className=" mt-[20px]  gap-3 grid grid-cols-1 sm:grid-cols-2">
                                 <InputfileComponent
                                     placeholder="Phone"
-                                    required
+                                    {...register("phone", {
+                                        required: "Phone is required",
+                                        pattern: { value: /^[0-9+\-() ]+$/, message: "Invalid phone number" },
+                                    })}
                                 />
-
+                                {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
                                 <InputfileComponent
                                     placeholder="Email"
-                                    required
+                                    type="email"
+                                    {...register("email", {
+                                        required: "Email is required",
+                                        pattern: { value: /^\S+@\S+$/i, message: "Invalid email address" },
+                                    })}
                                 />
+                                {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
                             </div>
 
                             <div className=" mt-[20px]  gap-3 grid grid-cols-1 sm:grid-cols-2">
                                 <InputfileComponent
                                     placeholder="Address"
-                                    required
+                                    {...register("address", { required: "Address is required" })}
                                 />
+                                {errors.address && <p className="text-red-500 text-sm">{errors.address.message}</p>}
 
-                                <InputfileComponent
-                                    placeholder="City"
+                                <CustomSelect
+                                    placeholder="Select Country"
+                                    options={countryOptions}
+                                    value={countryOpt}
+                                    onChange={(opt) => {
+                                        setCountryOpt(opt);
+                                        setValue("country", opt?.value ?? "", { shouldValidate: true, shouldDirty: true });
+                                        // If you want instant validation message update:
+                                        trigger("country");
+                                    }}
                                     required
+                                    error={!!errors.country}
                                 />
+                                {errors.country && (
+                                    <p className="text-red-500 text-sm">{errors.country.message}</p>
+                                )}
+
                             </div>
 
                             <div className=" mt-[20px]  gap-3 grid grid-cols-1 sm:grid-cols-2">
                                 <CustomSelect
+                                    placeholder={countryOpt ? "Select State" : "Select a country first"}
                                     options={stateOptions}
-                                    // value={formData.shareOption}
-                                    // onChange={handleSelectChange('shareOption')}
-                                    placeholder="Select State"
+                                    value={stateOpt}
+                                    onChange={(opt) => {
+                                        setStateOpt(opt);
+                                        setValue("state", opt?.value ?? "", { shouldValidate: true, shouldDirty: true });
+                                        trigger("state");
+                                    }}
+                                    disabled={!countryOpt}
+                                    required
+                                    error={!!errors.state}
                                 />
-
-                                
+                                {errors.state && (
+                                    <p className="text-red-500 text-sm">{errors.state.message}</p>
+                                )}
 
                                 <InputfileComponent
-                                    placeholder="Zip Code"
-                                    required
+                                    placeholder="City"
+                                    {...register("city", { required: "City is required" })}
                                 />
+                                {errors.city && <p className="text-red-500 text-sm">{errors.city.message}</p>}
+
+
+                            </div>
+                            <div className="relative flex flex-col sm:flex-row items-center bg-white border border-[#2A2D3461] rounded-md shadow-sm h-auto sm:h-[45px] mt-[20px] p-2 sm:p-0">
+                                <InputfileComponent
+                                    placeholder="Zip Code"
+                                    {...register("zip", { required: "Zip code is required" })}
+                                />
+                                {errors.zip && <p className="text-red-500 text-sm">{errors.zip.message}</p>}
                             </div>
 
                             <div className="relative flex flex-col sm:flex-row items-center bg-white border border-[#2A2D3461] rounded-md shadow-sm h-auto sm:h-[45px] mt-[20px] p-2 sm:p-0">
                                 <RadioGroup
                                     label="Availability Preference:"
-                                    options={['Full-Time', 'Part-Time', 'Either']}
-                                    onChange={handleAvailabilityChange}
-
+                                    name="availability_preference"
+                                    options={["Full-Time", "Part-Time", "Either"]}
+                                    register={register}
+                                    rules={{ required: "Please select availability" }}
                                 />
+                                {errors.availability_preference && (
+                                    <p className="text-red-500 text-sm">{errors.availability_preference.message}</p>
+                                )}
                             </div>
 
 
@@ -143,43 +233,39 @@ const FormSection = () => {
                             <div className="mt-[20px]">
                                 <TextArea
                                     placeholder="Dispatching Experience"
-                                    value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
-                                    error={error}
+                                    {...register("dispatching_experience", { required: "Please enter your experience" })}
                                 />
+                                {errors.dispatching_experience && <p className="text-red-500 text-sm">{errors.dispatching_experience.message}</p>}
                             </div>
 
                             <div className="mt-[20px]">
                                 <TextArea
                                     placeholder="Software Proficiency (e.g., Google Workspace, MS Office, Dispatching Software)"
-                                    value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
-                                    error={error}
+                                    {...register("software_proficiency", { required: "Please list your software proficiency" })}
                                 />
+                                {errors.software_proficiency && <p className="text-red-500 text-sm">{errors.software_proficiency.message}</p>}
                             </div>
 
                             <div className="mt-[20px]">
                                 <TextArea
                                     placeholder="Education"
-                                    value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
-                                    error={error}
+                                    {...register("education", { required: "Education is required" })}
                                 />
+                                {errors.education && <p className="text-red-500 text-sm">{errors.education.message}</p>}
                             </div>
 
                             <div className="mt-[20px]">
                                 <TextArea
                                     placeholder="Work Experience"
-                                    value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
-                                    error={error}
+                                    {...register("work_experience", { required: "Work experience is required" })}
                                 />
+                                {errors.work_experience && <p className="text-red-500 text-sm">{errors.work_experience.message}</p>}
                             </div>
 
 
                             {/* Submit */}
                             <div className="p-0 mt-[20px] flex items-start">
-                                    <FormButton title="Submit"  />
+                                <FormButton title={isSubmitting ? "Submitting..." : "Submit"} disabled={isSubmitting} />
                             </div>
                         </form>
                     </div>
