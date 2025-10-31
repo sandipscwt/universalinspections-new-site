@@ -39,7 +39,7 @@ export interface FinancingPartner {
     state_code: string;
     distance: number;
     formatted_distance: string;
-    slug: string | null;
+    slug: string ;
 }
 const libraries: ("places")[] = ["places"];
 
@@ -223,7 +223,8 @@ const FinancingSection: React.FC<FinancingData> = ({ data }) => {
                                     key={partner.id}
                                     className="bg-white border border-gray-200 rounded-lg px-[20px] py-[clamp(20px,4vw,40px)]  hover:shadow-md transition-all duration-300"
                                 >
-                                    <Link href={"/financing/abid"}>
+                                    <Link href={`/financing/${partner.slug}`} >
+                                    
                                         <div className={'flex flex-row'}>
                                             <div>
                                                 <Image

@@ -22,7 +22,7 @@ export interface Associate {
   state_code: string;
   distance: number;
   formatted_distance: string;
-  slug: string | null;
+  slug: string ;
 }
 
 export interface AssociateApiResponse {
@@ -40,7 +40,7 @@ const AssociateSection: React.FC<BannerBottomSection> = ({ data }) => {
   const [results, setResults] = useState<Associate[]>([]);
   const [loading, setLoading] = useState(false);
   const [count, setCount] = useState(0);
-  const [types, setTypes] = useState<string[]>([]); // ✅ Now supports multiple dealer types
+  const [types, setTypes] = useState<string[]>([]); 
   const [error, setError] = useState("");
 
   const GOOGLE_MAPS_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string;
@@ -85,7 +85,6 @@ const AssociateSection: React.FC<BannerBottomSection> = ({ data }) => {
     setZip(value);
   };
 
-  // ✅ FIXED: Now sends dealer_type as array
   const handleSearch = async (
     zipCode: string,
     dealerTypes: string[],
@@ -142,7 +141,7 @@ const AssociateSection: React.FC<BannerBottomSection> = ({ data }) => {
     return () => clearTimeout(delayDebounce);
   }, [zip, types, coords]);
 
-  // ✅ MULTI SELECT FIX: toggle type selection
+
   const handleTypeSelect = (selectedType: string) => {
     setTypes((prev) =>
       prev.includes(selectedType)
@@ -152,7 +151,7 @@ const AssociateSection: React.FC<BannerBottomSection> = ({ data }) => {
   };
 
   const dealerTypes = [
-    { label: "Repairs", value: "repairs" },
+    { label: "Repairs", value: "repair_shop" },
     { label: "Commercial", value: "commercial" },
     { label: "Dealers", value: "dealer" },
     { label: "RV", value: "rv" },
@@ -213,7 +212,7 @@ const AssociateSection: React.FC<BannerBottomSection> = ({ data }) => {
             <p className="text-red-800 text-sm mt-1 font-medium">{error}</p>
           )}
 
-          {/* ✅ MULTI SELECT CHECKBOXES */}
+
           <div className="flex flex-row justify-between mt-[15px]">
             {[dealerTypes.slice(0, 2), dealerTypes.slice(2, 4)].map(
               (group, i) => (
@@ -227,7 +226,7 @@ const AssociateSection: React.FC<BannerBottomSection> = ({ data }) => {
                     >
                       <input
                         type="checkbox"
-                        checked={types.includes(value)} // ✅ multiple selection check
+                        checked={types.includes(value)} 
                         onChange={() => handleTypeSelect(value)}
                         className={style.checkboxInput}
                       />
@@ -263,14 +262,16 @@ const AssociateSection: React.FC<BannerBottomSection> = ({ data }) => {
                   key={partner.id}
                   className="bg-white border border-gray-200 rounded-lg px-[20px] py-[clamp(20px,4vw,40px)] hover:shadow-md transition-all duration-300"
                 >
-                  <Link href={"/financing/abid"}>
+                  <Link 
+                  href={`/associates/${partner.slug}`}
+                  >
                     <div className="flex flex-row">
                       <Image
-                        src="/images/finance/financeName.png"
-                        alt="Finance Company"
+                        src="/images/associates/service.png"
+                        alt="Associates"
                         height={18}
                         width={19}
-                        className="object-cover"
+                        className="object-contain"
                       />
                       <h4 className={`${style.Financercom}`}>{partner.name}</h4>
                     </div>
@@ -281,7 +282,7 @@ const AssociateSection: React.FC<BannerBottomSection> = ({ data }) => {
                         alt="Finance Company"
                         height={18}
                         width={13}
-                        className="object-cover"
+                    className="object-contain"
                       />
                       <p className={`${style.location}`}>
                         {partner.city}, {partner.state}

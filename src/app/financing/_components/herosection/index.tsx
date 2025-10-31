@@ -4,37 +4,12 @@ import style from "./style.module.css";
 import Container from "@/components/container";
 import Breadcrumbs from "@/components/layout/breadcrumbs";
 
-export interface FinancingResponse {
-    status: boolean;
-    message: string;
-    data: FinancingData;
+interface HeroSectionProps {
+  banner_heading: string;
+  banner_image: string;
 }
 
-export interface FinancingData {
-    data: {
-        id: number;
-        banner_heading: string;
-        banner_image: string;
-        file_type: string;
-        search_heading: string;
-        search_text: string;
-        button_above_text: string;
-        button_text: string;
-        created_at: string;
-        updated_at: string;
-        deleted_at: string | null;
-    }
-}
-
-const HeroSection: React.FC<FinancingData> = ({ data }) => {
-
-    if (!data) {
-        return (
-            <section className="w-full py-20 text-center text-gray-500">
-                Loading hero section...
-            </section>
-        );
-    }
+const HeroSection: React.FC<HeroSectionProps> = ({ banner_heading, banner_image }) => {
 
     const getFullImageUrl = (path: string) => {
         if (!path) return "/images/finance/finance_bg.png";
@@ -49,7 +24,7 @@ const HeroSection: React.FC<FinancingData> = ({ data }) => {
             {/* Background image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src={data?.banner_image ? getFullImageUrl(data?.banner_image) : ""}
+                    src={banner_image ? getFullImageUrl(banner_image) : ""}
                     alt="Background"
                     fill
                     className="object-cover"
@@ -65,7 +40,7 @@ const HeroSection: React.FC<FinancingData> = ({ data }) => {
                 >
                     <h1 className="text-[clamp(32px,4vw,58px)] prompt-bold !leading-[clamp(30px,5vw,68px)] sm:leading-snug md:leading-normal">
 
-                        {data.banner_heading || "Financing"}
+                        {banner_heading || "Financing"}
                     </h1>
 
                     {/* Breadcrumbs */}

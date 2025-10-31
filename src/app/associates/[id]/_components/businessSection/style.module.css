@@ -65,3 +65,107 @@
     padding-top: 20px;
     border-top: 1px solid #E3E3E3;
 }
+
+.sectionlist {
+    padding-right: 10px;
+}
+
+.sectionlist h2 {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 38px);
+    color: #2A2D34;
+    line-height: clamp(32px, 4vw, 48px);
+    margin-bottom: 20px;
+
+}
+
+.sectionlist h3 {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(16px, 4vw, 24px);
+    color: #DAA628;
+    margin-top: clamp(15px, 4vw, 30px);
+    line-height: clamp(20px, 4vw, 24px);
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.sectionlist h4 {
+    font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(16px, 4vw, 24px);
+    color: #DAA628;
+    margin-top: clamp(15px, 4vw, 30px);
+    line-height: clamp(20px, 4vw, 24px);
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.sectionlist h5 {
+font-family: "Prompt", "Prompt Fallback";
+    font-weight: 700;
+    font-size: clamp(16px, 4vw, 24px);
+    color: #DAA628;
+    margin-top: clamp(15px, 4vw, 30px);
+    line-height: clamp(20px, 4vw, 24px);
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.sectionlist p {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(12px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 25.9px);
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #212121;
+    margin-bottom: 5px;
+}
+
+/* List styling (UL + OL) */
+.sectionlist ul,
+.sectionlist ol {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 0;
+    padding-left: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Unordered list bullets */
+.sectionlist ul li {
+    list-style-type: none;
+}
+
+/* Ordered list numbers */
+.sectionlist ol li {
+    list-style-type: decimal;
+}
+
+/* Common list item style */
+.sectionlist ul li,
+.sectionlist ol li {
+    font-family: var(--font-glacial);
+    font-weight: 400;
+    font-size: clamp(12px, 4vw, 16px);
+    line-height: clamp(20px, 4vw, 26px);
+    letter-spacing: 0%;
+    color: #212121;
+}
+
+/* Ordered list marker styling */
+.sectionlist ol li::marker {
+    color: #212121;
+    font-family: var(--font-glacial);
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .sectionlist {
+        height: auto;
+        /* max-height: 249px; */
+    }
+}

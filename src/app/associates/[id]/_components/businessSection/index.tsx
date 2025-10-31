@@ -5,20 +5,87 @@ import { useState, useEffect } from "react";
 import { MapPin, X } from "lucide-react";
 import style from './style.module.css'
 import Container from "@/components/container";
+import HtmlRender from "@/components/HtmlRender";
 
-const imageData = [
-    { src: "/images/associates/a.png", alt: "Mr Transmission", span: 1, height: 180 },
-    { src: "/images/associates/b.png", alt: "Garage", span: 1, height: 180 },
-    { src: "/images/associates/c.png", alt: "Team", span: 1, height: 180 },
-    { src: "/images/associates/d.png", alt: "Exterior", span: 1, height: 180 },
-    { src: "/images/associates/e.png", alt: "Front Desk", span: 1, height: 180 },
-    { src: "/images/associates/f.png", alt: "Front Desk", span: 1, height: 180 },
-];
+export interface UserData {
+    data: {
+        id: number;
+        first_name: string | null;
+        last_name: string | null;
+        email: string | null;
+        country_code_id: number | null;
+        phone: string | null;
+        contact_name: string | null;
+        dob: string | null;
+        country_id: number | null;
+        state_id: number | null;
+        city: string | null;
+        street_address: string | null;
+        zip: string | null;
+        latitude: string | null;
+        longitude: string | null;
+        profile_photo: string | null;
+        website: string | null;
+        status: number | null;
+        priority: number | null;
+        slug: string | null;
+        email_verified_at: string | null;
+        created_at: string | null;
+        updated_at: string | null;
+        deleted_at: string | null;
+        meta_data: {
+            meta_title: string | null;
+            meta_description: string | null;
+            meta_keywords: string | null;
+        };
+        detail: Detail | null;
+        country: Country | null;
+        state: State | null;
+        country_code: string | null;
+        roles: Role[];
+    }
+}
 
-const BusinessSection = () => {
+export interface Country {
+    id: number;
+    name: string;
+}
+
+export interface State {
+    id: number;
+    name: string;
+}
+
+export interface Role {
+    id: number;
+    name: string;
+    guard_name: string;
+    created_at: string | null;
+    updated_at: string | null;
+    pivot: RolePivot;
+}
+
+export interface RolePivot {
+    model_type: string;
+    model_id: number;
+    role_id: number;
+}
+
+export interface Detail {
+    id: number;
+    user_id: number;
+    main_logo: string;
+    header_logo: string;
+    banner_image: string;
+    gallery_photos: string[];
+    additional_information: string | null;
+    created_at: string | null;
+    updated_at: string | null;
+}
+
+const BusinessSection: React.FC<UserData> = ({ data }) => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-    // Close modal when pressing Esc key
     useEffect(() => {
         const handleEsc = (e: KeyboardEvent) => {
             if (e.key === "Escape") setSelectedImage(null);
@@ -27,47 +94,58 @@ const BusinessSection = () => {
         return () => window.removeEventListener("keydown", handleEsc);
     }, []);
 
+    const getFullImageUrl = (path: string) => {
+        if (!path) return "";
+        if (path.startsWith("http")) return path;
+        return `${process.env.NEXT_PUBLIC_IMAGE_URL}/${path}`;
+    };
+
     return (
         <section className={`${style.sectionContainer} bg-white`}>
             <Container>
-
-                <div className=" grid md:grid-cols-2 gap-10">
+                <div className="grid md:grid-cols-2 gap-10">
                     {/* Left Side - Image Grid */}
                     <div className="grid grid-cols-2 gap-4">
-                        {imageData.map((img, index) => (
+                        {data?.detail?.gallery_photos?.map((imgSrc, index) => (
                             <div
                                 key={index}
-                                className={`${img.span === 2 ? "col-span-2" : ""} cursor-pointer`}
-                                onClick={() => setSelectedImage(img.src)}
+                                className="cursor-pointer"
+                                onClick={() => setSelectedImage(imgSrc)}
                             >
                                 <Image
-                                    src={img.src}
-                                    alt={img.alt}
+                                    src={imgSrc ? getFullImageUrl(imgSrc) : ""}
+                                    alt={'gallery Image'}
                                     width={600}
                                     height={400}
-                                    className={`rounded-xl object-cover w-full ${img.height === 250 ? "h-[250px]" : "h-[180px]"
-                                        } transition-transform duration-300 hover:scale-[1.03]`}
+                                    className="rounded-xl object-cover w-full h-[180px] transition-transform duration-300 hover:scale-[1.03]"
                                 />
+
                             </div>
                         ))}
                     </div>
 
                     {/* Right Side - Info */}
-
                     <div>
                         <div className={`${style.titlecontainer}`}>
                             <h2 className={`${style.title}`}>
-                                Mr. Transmission
+                                {data?.first_name || 'Business Name'}
                             </h2>
-                            <Image
-                                src={'../images/associates/mr_logo.svg'}
-                                alt={'Logo'}
-                                height={23}
-                                width={165}
-                                className="object-contain"
-                            />
-                        </div>
+                            {data?.detail?.main_logo && (
+                                <div>
+                                    <Image
+                                        src={data?.detail?.main_logo ? getFullImageUrl(data?.detail?.main_logo) : ""}
+                                        alt={'Logo'}
+                                        height={23}
+                                        width={80}
+                                        className="object-contain"
+                                        unoptimized
+                                    />
+                                </div>
 
+                            )}
+
+
+                        </div>
 
                         {/* Contact Info */}
                         <div className="pb-[30px]">
@@ -76,74 +154,97 @@ const BusinessSection = () => {
                             </h3>
 
                             <div className="mt-[20px]">
-                                <div className="flex items-start space-x-2">
-                                    <div className="px-1 py-1 rounded bg-[#DAA628]">
-                                        <MapPin className="w-4 h-4  text-[#2A2D34]" />
+                                {/* Address */}
+                                {(data?.street_address || data?.city || data?.state?.name) && (
+                                    <div className="flex items-start space-x-2">
+                                        <div className="px-1 py-1 rounded bg-[#DAA628]">
+                                            <MapPin className="w-4 h-4 text-[#2A2D34]" />
+                                        </div>
+                                        <p className={`${style.address}`}>
+                                            <strong>Address:</strong> {[
+                                                data.street_address,
+                                                data.city,
+                                                data.state?.name,
+                                                data.zip
+                                            ].filter(Boolean).join(', ')}
+                                        </p>
                                     </div>
-                                    <p className={`${style.address}`}>
-                                        <strong>Address:</strong> 123 Main St, Birmingham, Alabama 35242
-                                    </p>
-                                </div>
+                                )}
 
-                                <div className="flex items-start space-x-2 mt-[18px]">
-                                    <div className="px-1 py-1 rounded bg-[#DAA628]">
-                                        <Image
-                                            src="/images/phone-call.png"
-                                            alt="call"
-                                            width={14}
-                                            height={14}
-                                            className="object-contain"
-                                        />
+                                {/* Phone */}
+                                {data?.phone && (
+                                    <div className="flex items-start space-x-2 mt-[18px]">
+                                        <div className="px-1 py-1 rounded bg-[#DAA628]">
+                                            <Image
+                                                src="/images/phone-call.png"
+                                                alt="call"
+                                                width={14}
+                                                height={14}
+                                                className="object-contain"
+                                            />
+                                        </div>
+                                        <p className={`${style.address}`}>
+                                            <strong>Phone:</strong> {data.phone}
+                                        </p>
                                     </div>
-                                    <p className={`${style.address}`}>
-                                        <strong>Phone:</strong> 2055555555
-                                    </p>
+                                )}
 
-                                </div>
-
-                                <div className="flex items-start space-x-2  mt-[18px]">
-                                    <div className="px-1 py-1 rounded bg-[#DAA628]">
-                                        <Image
-                                            src="/images/mail-inbox-app.png"
-                                            alt="mail"
-                                            width={14}
-                                            height={14}
-                                            className="object-contain"
-                                        />
+                                {/* Email */}
+                                {data?.email && (
+                                    <div className="flex items-start space-x-2 mt-[18px]">
+                                        <div className="px-1 py-1 rounded bg-[#DAA628]">
+                                            <Image
+                                                src="/images/mail-inbox-app.png"
+                                                alt="mail"
+                                                width={14}
+                                                height={14}
+                                                className="object-contain"
+                                            />
+                                        </div>
+                                        <p className={`${style.address}`}>
+                                            <strong>Email:</strong> {data.email}
+                                        </p>
                                     </div>
-                                    <p className={`${style.address}`}>
-                                        <strong>Email:</strong> contact@financer.com
-                                    </p>
+                                )}
 
-                                </div>
-
-                                <div className="flex items-start space-x-2  mt-[18px]">
-                                    <div className="px-1 py-1 rounded bg-[#DAA628]">
-                                        <Image
-                                            src="/images/web-site.png"
-                                            alt="mail"
-                                            width={14}
-                                            height={14}
-                                            className="object-contain"
-                                        />
+                                {/* Website */}
+                                {data?.website && (
+                                    <div className="flex items-start space-x-2 mt-[18px]">
+                                        <div className="px-1 py-1 rounded bg-[#DAA628]">
+                                            <Image
+                                                src="/images/web-site.png"
+                                                alt="website"
+                                                width={14}
+                                                height={14}
+                                                className="object-contain"
+                                            />
+                                        </div>
+                                        <p className={`${style.address}`}>
+                                            <strong>Website:</strong> {data.website}
+                                        </p>
                                     </div>
-                                    <p className={`${style.address}`}>
-                                        <strong>Website:</strong> examplefinancer.com
-                                    </p>
-                                </div>
-
+                                )}
                             </div>
                         </div>
 
-                        <p className={`${style.summary}`}>
-                            Mr. Transmission is proud to be your locally-owned Pelham transmission repair shop serving the Alabaster and Calera area for years. While there may be a wide range of Alabama auto repair options around, we pride ourselves on exceptional customer service. That extends from our free performance check to our state-of-the-art diagnostic equipment to our honest assessments – and unlike some competitors, we back all major repairs with a Nationwide Warranty. When you step through our door, we’re committed to building a long-lasting relationship. So from the time you bring your car in for its free check to the time you get your second fluid flush to the time you need a new clutch, we’ll be here every step of the way to make your vehicle repair experience the way you want it.
-                        </p>
+                        {/* Additional Information */}
+                        {data?.detail?.additional_information && (
+                            // <div
+                            //     className={`${style.summary}`}
+                            //     dangerouslySetInnerHTML={{ __html: data.detail.additional_information }}
+                            // />
+                            <div className={`sectionContentli ${style.sectionlist}`}>
+                                <HtmlRender htmlString={data?.detail?.additional_information ?? ""} />
+                            </div>
+                        )}
 
-
+                        {/* <div className={`sectionContentli ${style.sectionlist}`}>
+                            <HtmlRender htmlString={data?.detail?.additional_information ?? ""} />
+                        </div> */}
                     </div>
                 </div>
-
             </Container>
+
             {/* Fullscreen Modal for Image Preview */}
             {selectedImage && (
                 <div
@@ -151,23 +252,25 @@ const BusinessSection = () => {
                     onClick={() => setSelectedImage(null)}
                 >
                     <div
-                        className="relative max-w-5xl w-full px-4"
+                        className="relative w-full h-full max-w-7xl max-h-[90vh] mx-4"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <button
                             onClick={() => setSelectedImage(null)}
-                            className="absolute top-4 right-4 bg-white/30 hover:bg-white/60 text-white p-2 rounded-full transition"
+                            className="absolute top-4 right-4 bg-white/30 hover:bg-white/60 text-white p-2 rounded-full transition z-10"
                         >
                             <X className="w-6 h-6" />
                         </button>
 
-                        <Image
-                            src={selectedImage}
-                            alt="Full Image"
-                            width={1200}
-                            height={800}
-                            className="w-full h-auto rounded-xl object-contain shadow-2xl"
-                        />
+                        <div className="relative w-full h-full">
+                            <Image
+                                src={selectedImage ? getFullImageUrl(selectedImage) : ""}
+                                alt="Full Image"
+                                fill
+                                className="object-contain rounded-xl shadow-2xl"
+                                unoptimized
+                            />
+                        </div>
                     </div>
                 </div>
             )}

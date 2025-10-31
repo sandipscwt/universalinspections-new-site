@@ -32,13 +32,16 @@ const Financing = async () => {
     try {
         const res = await ClientFetch(`${process.env.API_URL}/financing-page-data`, { cache: "no-store" });
         const financeData: FinancingResponse = await res.json();
-        // console.log('financeData----------------', JSON.stringify(financeData), null, 2);
-
         const pageContent = financeData?.data;
 
         return (
             <>
-                {pageContent && (<HeroSection data={pageContent} />)}
+                {pageContent && (
+                    <HeroSection
+                        banner_heading={pageContent.banner_heading}
+                        banner_image={pageContent.banner_image}
+                    />
+                )}
                 {pageContent && (<FinancingSection data={pageContent} />)}
             </>
         );

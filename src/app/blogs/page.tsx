@@ -46,8 +46,6 @@ const Blogs = async () => {
     try {
         const res = await ClientFetch(`${process.env.API_URL}/blog-page-data`, { cache: "no-store" });
         const blogData: BlogApiResponse = await res.json();
-        console.log('blogData-----------list-------------', JSON.stringify(blogData), 2, null);
-
         const pageContent = blogData?.data?.page_content;
         const blogs = blogData?.data?.blogs || [];
 
