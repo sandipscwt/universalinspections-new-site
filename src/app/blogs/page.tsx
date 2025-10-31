@@ -45,10 +45,6 @@ export interface BlogApiResponse {
 const Blogs = async () => {
     try {
         const res = await ClientFetch(`${process.env.NEXT_PUBLIC_API_URL}/blog-page-data`, { cache: "no-store" });
-        if (!res.ok) {
-            throw new Error(`Failed to fetch blogs: ${res.status}`);
-        }
-
         const blogData: BlogApiResponse = await res.json();
         const pageContent = blogData?.data?.page_content;
         const blogs = blogData?.data?.blogs || [];
